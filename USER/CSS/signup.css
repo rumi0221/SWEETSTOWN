@@ -2,19 +2,22 @@ span.required {
     color:red;
 }
 
+h2 {
+    text-align: center;
+}
 
-form{
-    text-align: left;
-    line-height: 3;
+
+.content{
     width: fit-content;
     margin: 0 auto;
-}
-h1{
-    text-align: center;
 }
 
 button{
     width: 12em;
     height: 3em;
+   
+}
+p {
+    text-align: center;
 }
 
