@@ -1,0 +1,33 @@
+div {
+    text-align: center;
+}
+
+.checkmark002{
+	padding-left:100px;
+	position:relative;
+}
+
+.checkmark002:before,
+.checkmark002:after{
+	content:"";
+	display:block;
+	position:absolute;
+}
+.checkmark002:before{
+	width:96px;
+	height:96px;
+	border-radius:60px;
+	background:#ffffff;
+	border:1px solid #000000;
+	left:0;top:0px;
+}
+.checkmark002:after{
+	border-left:2px solid #000000;
+	border-bottom:2px solid #000000;
+	width:36px;
+	height:23px;
+	-webkit-transform:rotate(-45deg);
+	transform:rotate(-45deg);
+	left:28px;
+	top:30px;
+}
