@@ -1,0 +1,17 @@
+.Header{
+    position: fixed; /*ヘッダーを固定*/
+    width: 100%;
+    padding: 10px;
+    background-color: #8B4513;
+    color: #FFFFFF;
+    font-family: serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.back{
+    float: left; 
+    color: #FFFFFF;
+    background-color: #8B4513;
+
+}
