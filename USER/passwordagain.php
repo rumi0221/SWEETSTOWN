@@ -8,16 +8,16 @@
 </head>
 <body>
 <h4>パスワード再設定</h4>
-    <form action="passwordagain-ok.html" method="post">
+    <form action="passwordagain-ok.php" method="post">
 
         <div class="content">
             <dl>
                 <dt>メールアドレス</dt>
                 <dd><input type="text" name="mall"></dd>
                 <dt>新しいパスワード</dt>
-                <dd><input type="text" name="newpass"></dd>
+                <dd><input type="pass" name="newpass"></dd>
                 <dt>新しいパスワード(確認)</dt>
-                <dd><input type="text" name="newpass2"></dd>
+                <dd><input type="pass" name="newpass2"></dd>
             </dl>
 
             <p><button type="submit">登録</button></p>
