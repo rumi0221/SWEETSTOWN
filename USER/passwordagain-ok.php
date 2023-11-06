@@ -12,10 +12,17 @@
     <?php
     $pdo=new PDO($connect,USER,PASS);
     if(strcmp($_POST['newpass'],$_POST['newpass2']) == 0){
-        $sql=$pdo->prepare('update member set pass = ? where mail = ?');
-        $sql->execute([$_POST['newpass'],$_POST['mall']]);
-        echo '<p>新しいパスワードが設定されました</p>';
-        echo '<a href="login-input.php">ログイン画面へ</a>';
+        $sql=$pdo->prepare('select member_id from member where mail = ?');
+        $sql->execute([$_POST['mall']]);
+        $count = $sql -> rowCount();
+        if($count == 1){
+            $sql=$pdo->prepare('update member set pass = ? where mail = ?');
+            $sql->execute([$_POST['newpass'],$_POST['mall']]);
+            echo '<p>新しいパスワードが設定されました</p>';
+            echo '<a href="login-input.php">ログイン画面へ</a>';
+        }else if($count == 0){
+            echo '<font color="red">入力されたメールアドレスが正しくありません</font>';
+        }
     }else{
         echo '<font color="red">入力されたパスワードが等しくありません</font>';
     }
