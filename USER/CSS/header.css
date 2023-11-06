@@ -1,17 +1,16 @@
 .Header{
     position: fixed; /*ヘッダーを固定*/
     width: 100%;
-    padding: 10px;
+    top: 0; /*上部から配置の基準位置を決める*/
+    left: 0; /*左から配置の基準位置を決める*/
+    padding: 10px; /*ヘッダーの余白を指定する（上下左右）*/
     background-color: #8B4513;
     color: #FFFFFF;
-    font-family: serif;
+    font-family: serif; /*フォント変更*/
     font-size: 20px;
     text-align: center;
 }
 
-.back{
-    float: left; 
-    color: #FFFFFF;
-    background-color: #8B4513;
-
+body{
+    background-color: #FFF8E8;
 }
