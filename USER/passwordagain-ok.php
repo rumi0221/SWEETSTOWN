@@ -13,7 +13,7 @@
     $pdo=new PDO($connect,USER,PASS);
     if(strcmp($_POST['newpass'],$_POST['newpass2']) == 0){
         $sql=$pdo->prepare('update member set pass = ? where mail = ?');
-        $sql->execute([$_POST['newpass'],$_POST['mail']]);
+        $sql->execute([$_POST['newpass'],$_POST['mall']]);
         echo '<p>新しいパスワードが設定されました</p>';
         echo '<a href="login-input.php">ログイン画面へ</a>';
     }else{
