@@ -9,7 +9,8 @@
 <body>
   <form action="login.php" method="post">
     <h1>登録が完了しました</1><br>
-    <p><img= src="img/check.png"></p>
+
+    <p><img alt="image" src="image/ check.png"></p>
     <button type="submit">ログイン画面へ</button>
   </form>
 </body>
