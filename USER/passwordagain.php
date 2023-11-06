@@ -7,15 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <h4>パスワード再設定</h4><br>
-    <form action="passwordagain-ok.php" method="post">
-        <p>メールアドレス</p>
-        <input type="text" name="mail"><br><br>
-        <p>新しいパスワード</p>
-        <input type="pass" name="newpass"><br><br>
-        <p>新しいパスワード（確認）</p>
-        <input type="pass" name="newpassok">
-        <button type="submit">登録</button>
+<h4>パスワード再設定</h4>
+    <form action="passwordagain-ok.html" method="post">
+
+        <div class="content">
+            <dl>
+                <dt>メールアドレス</dt>
+                <dd><input type="text" name="mall"></dd>
+                <dt>新しいパスワード</dt>
+                <dd><input type="text" name="newpass"></dd>
+                <dt>新しいパスワード(確認)</dt>
+                <dd><input type="text" name="newpass2"></dd>
+            </dl>
+
+            <p><button type="submit">登録</button></p>
+
+            <a href="#" onclick="history.back(-1);return false;">戻る</a>
+        </div>
     </form>
 </body>
 </html>
