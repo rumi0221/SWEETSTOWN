@@ -7,20 +7,30 @@
     <link rel="stylesheet" href="css/signup.css">
 </head>
 <body>
-    <h1>新規登録</h1>
+    <h2>新規登録</h2>
+
     <hr size="1">
+    <div class="content">
     <form action="signup-ok.html" method="post">
-        <span class="item">名前<span class="required">＊必須</span></span><br>
-        <input type="text" name="name"><br>
-        <span class="item">名前(フリガナ)<span class="required ">＊必須</span></span><br>
-        <input type="text" name="name1"><br>
-        <span class="item">メールアドレス<span class="required">＊必須</span></span><br>
-        <input type="email" name="email"><br>
-        <span class="item">パスワード<span class="required">＊必須</span></span><br>
-        <input type="password" name="pass"><br>
-        <button type="submit">確認画面へ</button><br>
+        <dl>
+            <dt>名前<span class="required">＊必須</span></dt>
+            <dd><input type = "text" name = "name"></dd>
+            <dt>名前(フリガナ)<span class="required">＊必須</span></dt>
+            <dd><input type = "text" name = "name2"></dd>
+            <dt>メールアドレス<span class="required">＊必須</span></dt>
+            <dd><input type = "text" name = "address"></dd>
+            <dt>パスワード<span class="required">＊必須</span></dt>
+            <dd><input type = "text" name = "password"></dd>
+        </dl>
+
+        <p><button type="submit">確認画面へ</button></p>
+
         <a href="#" onclick="history.back(-1);return false;">戻る</a>
+       
+    </div>
     </form>
+
+
 
     
 
