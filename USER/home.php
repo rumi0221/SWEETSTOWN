@@ -10,7 +10,10 @@
 <body>
     <div class="Header">
         SWEETSTOWN
-    </div>
-    
+    </div><br>
+    <div>
+        <br><a href="seasonlist.php"><img src="img/season.jpg"></a><br>
+    </div><br>
+
 </body>
 </html>

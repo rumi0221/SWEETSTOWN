@@ -11,7 +11,7 @@
     <h1>登録が完了しました</1><br>
 
     <p><img alt="img" src="img/check.png"></p>
-    <button type="submit">ログイン画面へ</button>
+    <a href="login.php">ログイン画面へ</a>
   </form>
 </body>
 </html>
