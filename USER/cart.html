@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カート画面</title>
+</head>
+<body>
+    <div class="Header">
+        <link rel="stylesheet" href="css/header.css">
+        SWEETSTOWN
+    </div>
+
+        <link rel="stylesheet" href="css/cart.css">
+        <br><br>
+
+        <h1>カート</h1>
+        <p>カートに入っている商品：？点</p>
+
+        <section>
+            <lavel>商品画像</lavel><br>
+            <lavel>商品名</lavel><br>
+            <lavel>ショップ名</lavel><br>
+            <lavel>￥</lavel><br><br>
+
+            <div>
+                <button @click="increment">ー</button><button type = "submit"><lavel>？</lavel></button><button @click="decrement">＋</button><br>
+                <a href="delete-product">削除する</a><br><br>
+            </div>
+
+            商品合計　￥<br>
+            <button type = "submit">レジへ進む</button>
+        </section>
+
+</body>
+</html>
