@@ -11,7 +11,7 @@
 <hr>
 
 <div class="content">
-    <form action = "home.html" method = "post">
+    <form action = "home.php" method = "post">
         
     <dl>
         <dt>メールアドレス</dt>
