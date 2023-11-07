@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>パスワード再設定画面</title>
-    <link rel="stylesheet" href="css/passwordagain.css">
+    <title>Document</title>
 </head>
 <body>
-    <h2>パスワード再設定</h2>
-    <form action="passwordagain-ok.html" method="post">
+<h4>パスワード再設定</h4>
+    <form action="passwordagain-ok.php" method="post">
 
         <div class="content">
             <dl>
                 <dt>メールアドレス</dt>
-                <dd><input type="text" name="address"></dd>
+                <dd><input type="text" name="mall"></dd>
                 <dt>新しいパスワード</dt>
-                <dd><input type="text" name="newpassword"></dd>
+                <dd><input type="password" name="newpass"></dd>
                 <dt>新しいパスワード(確認)</dt>
-                <dd><input type="text" name="newpassword2"></dd>
+                <dd><input type="password" name="newpass2"></dd>
             </dl>
 
             <p><button type="submit">登録</button></p>
