@@ -15,22 +15,25 @@
         <br><br>
 
         <h1>カート</h1>
-        <p>カートに入っている商品：？点</p>
+        <p>カートに入っている商品：？点</p><br>
 
-        <section>
-            <lavel>商品画像</lavel><br>
-            <lavel>商品名</lavel><br>
-            <lavel>ショップ名</lavel><br>
-            <lavel>￥</lavel><br><br>
+            <a class="image"><href src="#">商品画像</href></a>
+
+            <section>
+            <p class="description"></p>
+                商品名<br>
+                ショップ名<br>
+                ￥
+        </p><br><br>
+        </section>
 
             <div>
                 <button @click="increment">ー</button><button type = "submit"><lavel>？</lavel></button><button @click="decrement">＋</button><br>
-                <a href="delete-product">削除する</a><br><br>
+                <a href="delete-product">削除する</a><br><br><br>
             </div>
 
-            商品合計　￥<br>
-            <button type = "submit">レジへ進む</button>
-        </section>
+            <p>商品合計　￥</p><br><br>
+            <button class="button2" onclick="location.href='order-information.html'">レジへ進む</button>
 
 </body>
 </html>
