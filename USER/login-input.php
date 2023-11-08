@@ -7,11 +7,11 @@
     <title>ログイン画面</title>
 </head>
 <body>
-<h1>ログイン</h1>
+<h2>ログイン</h2>
 <hr>
 
 <div class="content">
-    <form action = "home.html" method = "post">
+    <form action = "home.php" method = "post">
         
     <dl>
         <dt>メールアドレス</dt>
@@ -24,8 +24,8 @@
 
     <p><button type = "submit">ログイン</button></p>
 <p>
-    <a href="passwordagain.html">パスワードを忘れた方</a><br>
-    <a href="passwordagain.html">新規登録</a>
+    <a href="passwordagain.php">パスワードを忘れた方</a><br>
+    <a href="signup.php">新規登録</a>
 </p>
 </div>
 
