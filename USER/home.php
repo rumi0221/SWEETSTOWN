@@ -7,7 +7,7 @@
     $sql->execute([$_POST['mail'],$_POST['pass']]);
     $count = $sql -> rowCount();
     if($count == 0){
-        header('http://aso2301331.noor.jp/Githab/ejima/SWEETSTOWN/USER/login-input.php');
+        header("Location: login-input.php");
         exit;
     }else{
         echo '<!DOCTYPE html>';
