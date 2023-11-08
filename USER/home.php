@@ -7,7 +7,7 @@
     $sql->execute([$_POST['mail'],$_POST['pass']]);
     $count = $sql -> rowCount();
     if($count == 0){
-        header("Location: login-input.php");
+        header("Location: login.html");
         exit;
     }else{
         echo '<!DOCTYPE html>';
