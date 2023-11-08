@@ -16,3 +16,7 @@ p {
     width: fit-content;
     margin: 0 auto;
 }
+
+span.required {
+    color:red;
+}
