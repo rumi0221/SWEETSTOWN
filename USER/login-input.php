@@ -24,8 +24,8 @@
 
     <p><button type = "submit">ログイン</button></p>
 <p>
-    <a href="passwordagain.html">パスワードを忘れた方</a><br>
-    <a href="passwordagain.html">新規登録</a>
+    <a href="passwordagain.php">パスワードを忘れた方</a><br>
+    <a href="signup.php">新規登録</a>
 </p>
 </div>
 
