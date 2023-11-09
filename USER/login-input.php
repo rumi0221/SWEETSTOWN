@@ -17,7 +17,7 @@
         <dt>メールアドレス</dt>
         <dd><input type = "text" name = "mail" size="25"></dd>
         <dt>パスワード</dt>
-        <dd><input type = "text" name = "pass" size="25"></dd>
+        <dd><input type = "password" name = "pass" size="25"></dd>
     </dl>
     <p><input type = "checkbox" name = "login">
     ログイン状態を保持する</p>
