@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/signup-ok.css">
 </head>
 <body>
   <?php
@@ -13,11 +14,12 @@
   $sql=$pdo->prepare('insert into member values(null,?,?,?,?)');
   $sql->execute([$_POST['name1'],$_POST['name2'],$_POST['address'],$_POST['password']]);
   ?>
-  <form action="login.php" method="post">
-    <h1>登録が完了しました</1><br>
-
+    <p>登録が完了しました</p><br>
     <p><img alt="img" src="img/check.png"></p>
+    <div id="app">
+    <span class="checkmark002"><br><br>
     <a href="login-input.php">ログイン画面へ</a>
-  </form>
+    <br><br>
+    </div>
 </body>
 </html>
