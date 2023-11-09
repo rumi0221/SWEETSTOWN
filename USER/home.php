@@ -19,6 +19,10 @@
         echo '<body>';
         echo '<div class="Header">SWEETSTOWN</div><br>';
         echo '<div><br><a href="seasonlist.php"><img src="img/season.jpg"></a><br></div><br>';
+        echo '<br>';
+        echo '<form action="cart.php" method="post">';
+        echo '<button type="submit">カートない商品一覧</button>';
+        echo '</form>';
         echo '</body>';
         echo '</html>';
     }
