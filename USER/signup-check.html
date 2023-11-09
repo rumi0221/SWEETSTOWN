@@ -3,29 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/signup-check.css">
+    <link rel="stylesheet" href="css/signup.css">
     <title>登録確認画面</title>
 </head>
 <body>
-    
-    <div style="text-align: center">
-    <form action="signup-ok.html" method="post">
     <h2>登録確認</h2>
     <hr size="1">
-    <dl>
-    <dt>名前</dt>
-    <dd></dd>
-    <dt>名前(フリガナ)</dt>
-    <dd></dd>
-    <dt>メースアドレス</dt>
-    <dd></dd>
-    <dt>パスワード</dt>
-    <dd></dd>
-    </dl>
+    <div class="content">
+    <form action="signup-check.html" method="post">
+        <dl>
+            <dt>名前</dt>
+            <dd></dd>
+            <dt>名前(フリガナ)</dt>
+            <dd></dd>
+            <dt>メールアドレス</dt>
+            <dd></dd>
+            <dt>パスワード</dt>
+            <dd></dd>
+        </dl>
     <p>記入情報にお間違いないですか？<br>
         よろしければ、登録ボタンを押下してください。</p>
     <p><button type="submit">登録</button></p>
-<a href="login.html">戻る</a>
+    <a href="#" onclick="history.back(-1);return false;">戻る</a>
 </from>
 </div>
 </body>

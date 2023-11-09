@@ -24,6 +24,10 @@
         echo '<dd>',$_POST['password'],'</dd>';
         echo '</dl>';
     ?>
+    <input type="hidden" name="name1"  value="<?= $_POST['name1'] ?>">
+    <input type="hidden" name="name2" value="<?= $_POST['name2'] ?>">
+    <input type="hidden" name="address" value="<?= $_POST['address'] ?>">
+    <input type="hidden" name="password" value="<?= $_POST['password'] ?>">
     <p>記入情報にお間違いないですか？<br>
         よろしければ、登録ボタンを押下してください。</p>
     <p><button type="submit">登録</button></p>
