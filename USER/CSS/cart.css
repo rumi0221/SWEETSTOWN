@@ -4,7 +4,7 @@ h1 {
 
 p {
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .image {
@@ -12,23 +12,27 @@ p {
 }
 
 .description {
-    font-size: 20px;
+    float: left;
 }
 
 section {
+    font-size: 19px; 
     float: left;
 }
 
 div {
     text-align: right;
-    font-size: 19px; 
+    font-size: 18px; 
 }
 
 button {
     font-size: 19px; 
 }
 
-.button2 {
+.button2 { 
+    /* ブロック要素にして中央寄せにした */
+    display: block;
+    margin: auto;
     width: 10em;
     height:3em;
     font-size: 19px;
