@@ -13,15 +13,13 @@
         echo '<!DOCTYPE html>';
         echo '<html lang="ja">';
         echo '<head>';
-        echo '<link rel="stylesheet" href="css/header.css">';
-
+        echo '<link rel="stylesheet" href="CSS/header.css">';
         echo '<title>ホーム画面</title>';
         echo '</head>';
         echo '<body>';
-
-        echo '</body>';
-        echo '</html>';
         echo '<div class="Header">SWEETSTOWN</div><br>';
         echo '<div><br><a href="seasonlist.php"><img src="img/season.jpg"></a><br></div><br>';
+        echo '</body>';
+        echo '</html>';
     }
 ?>
