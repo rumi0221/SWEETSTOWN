@@ -1,8 +1,8 @@
-span.required {
+span.required{
     color:red;
 }
 
-h2 {
+h2{
     text-align: center;
 }
 
@@ -17,11 +17,11 @@ button{
     height: 3em;
    
 }
-p {
+p{
     text-align: center;
 }
 
-div {
+div{
     text-align: center;
 }
 
