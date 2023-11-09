@@ -38,3 +38,11 @@ button {
     font-size: 19px;
 }
 
+.radio {
+    font-size: 16px;
+    text-align: left;
+}
+
+input {
+    margin: 0.2rem;
+  }
