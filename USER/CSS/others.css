@@ -1,0 +1,22 @@
+div{
+    position: absolute;
+    top: 10%;
+}
+
+
+
+.etc {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    margin:0 auto;
+    padding: .9em 2em;
+    border-radius: 5px;
+    color: #0f0f0f;
+    font-size: 1em;
+}
+
+.etc::after {
+    content: '';
+}
+
