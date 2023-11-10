@@ -1,0 +1,30 @@
+body {
+    background-color: #fff8e8;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+th {
+    background-color: #884513;
+    color: #ffffff;
+    border: solid 1px; /* 枠線指定 */
+    padding: 5px; /* 余白指定 */
+}
+
+td {
+    background-color: #ffffff;
+    border: solid 1px; /* 枠線指定 */
+    padding: 5px; /* 余白指定 */
+}
+
+table {
+    border-collapse: collapse; /* セルの線を重ねる */
+    margin: auto;
+}
+

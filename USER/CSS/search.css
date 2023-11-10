@@ -1,6 +1,16 @@
+div{
+    position: absolute;
+    top: 7%;
+    text-align: center;
+    
+}
+
+.text{
+    height: 35px;
+    width: 200px;
+}
+
 .search {
-    position : absolute;
-    top : 50px;
     display: flex;
     justify-content: center;
     align-items: center;

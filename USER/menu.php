@@ -1,6 +1,6 @@
 <hr>
-<a href="home.php">ホーム</a>
-<a href="favorite-sweet.php">お気に入り</a>
-<a href="search.php">検索</a>
-<a href="ranking.php">ランキング</a>
-<a href="others.php">その他</a>
+<a href="home.php"><img src="img/home.png"></a>
+<a href="favorite-sweet.php"><img src="img/favorite.png"></a>
+<a href="search.php"><img src="img/search.png"></a>
+<a href="ranking.php"><img src="img/rank.png"></a>
+<a href="others.php"><img src="img/else.png"></a>
