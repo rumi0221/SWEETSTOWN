@@ -33,9 +33,10 @@ button {
     /* ブロック要素にして中央寄せにした */
     display: block;
     margin: auto;
-    width: 10em;
+    width: 12em;
     height:3em;
     font-size: 19px;
+    border-radius:13px;
 }
 
 .radio {
@@ -45,4 +46,10 @@ button {
 
 input {
     margin: 0.2rem;
+  }
+
+  .place {
+    font-size: 16px;
+    text-align: left;
+    overflow-wrap: normal;
   }
