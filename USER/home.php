@@ -7,7 +7,7 @@
     $sql->execute([$_POST['mail'],$_POST['pass']]);
     $count = $sql -> rowCount();
     if($count == 0 && !isset($_SESSION['member']['id'])){
-        header("Location: login.php");
+        header("Location: login-input.php");
         exit;
     }else{
         if(!isset($_SESSION['member'])){

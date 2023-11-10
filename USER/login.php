@@ -16,7 +16,7 @@ foreach ($sql as $row){
         setcookie('login_me_cookie', $cookie_value, time() + (86400 * 30), "/"); // 30日間のクッキーを設定
     }
 
-    header("Location: home.php");
+    header("Location: home.html");
     exit();
 }
 
