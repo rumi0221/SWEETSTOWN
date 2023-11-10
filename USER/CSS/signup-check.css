@@ -1,5 +1,20 @@
-button{
-    width: 12em;
-    height: 3em;
-   
+h1 {
+    text-align: center;
+}
+
+
+button {
+    top: -2px;
+    padding: 8px 25px;
+    font-size: 17px;
+}
+
+p {
+    text-align: center;
+    
+}
+
+.content{
+    width: fit-content;
+    margin: 0 auto;
 }
