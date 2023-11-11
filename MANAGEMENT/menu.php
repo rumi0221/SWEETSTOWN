@@ -1,4 +1,3 @@
-<hr>
 <a href="customerlist.php">顧客管理</a>
 <a href="productlist.php">商品登録</a>
 <a href="overall-sales.php">売上管理</a>
