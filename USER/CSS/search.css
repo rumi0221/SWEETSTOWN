@@ -1,7 +1,7 @@
-div{
-    padding: 20px;
+.search{
+    vertical-align:center;
+    margin: 4% auto;
     text-align: center;
-    height: 350px;
 }
 
 .text{
@@ -9,7 +9,7 @@ div{
     width: 200px;
 }
 
-.search {
+.searchbutton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@ div{
     font-size: 1em;
 }
 
-.search::after {
+.searchbutton::after {
     transform: rotate(45deg);
     width: 5px;
     height: 5px;
