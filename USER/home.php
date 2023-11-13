@@ -39,14 +39,16 @@
         $sql=$pdo->query('select * from product');
         $count=0;
         echo '<table>';
+        echo '<tr><th></th><th></th><th></th></tr>';
         foreach($sql as $row){
             $count++;
             echo '<div class = "product_item">';
-            echo '<tr>';
+            if($count == 0){
+                echo '<tr>';
+            }
             echo '<td>';
             echo '<a href="detail.php"><img src="img/',$row['gazou'],'"></a>';
-            echo '<br>';
-            echo '<br>',$row['product_mei'],$row['tanka'],'';
+            echo '<br>',$row['product_mei'],'<br>',$row['tanka'];
             echo '</td>';
             if($count==3){
                 echo '</tr>';
@@ -55,7 +57,8 @@
             echo '</div>';
         }
         echo '</table>';
-        echo '</body>';
-        echo '</html>';
     }
-?>
+    ?>
+    <footer><?php require 'menu.php';?></footer>
+    </body>
+</html>
