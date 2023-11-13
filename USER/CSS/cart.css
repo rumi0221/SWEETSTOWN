@@ -51,5 +51,9 @@ input {
   .place {
     font-size: 16px;
     text-align: left;
-    overflow-wrap: normal;
+  }
+
+  textarea {
+    resize: none;
+    width: 70%
   }
