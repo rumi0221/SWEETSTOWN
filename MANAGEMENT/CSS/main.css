@@ -1,4 +1,32 @@
+.side { /*menu.php*/
+    background-color: #fff;
+    width: 150px;
+    height: 300px;
+    text-align: center;
+}
+
+.main {
+    width: 100%;
+    text-align: center;
+}
+
+.menu-btn {
+    display: inline-block;
+    padding: 10px 1em;
+    text-decoration: none;
+    color: #cb9854;
+    border: solid 2px #fff;
+    border-radius: 3px;
+    transition: .4s;
+}
+
+.menu-btn:hover {
+    background: #884513;
+    color: white;
+}
+
 body {
+    display: flex; /*サイドバーとメインコンテンツを横並びにする指定をした。*/
     background-color: #fff8e8;
 }
 
