@@ -1,0 +1,15 @@
+.review1{
+    position:relative;
+    border: solid 3px #333;
+    background-color: white;
+    top: 40px;
+}
+.hed{
+    position:relative;
+    text-align: center;
+    top: 30px;
+}
+.shohin{
+    position: relative;
+    text-align: center;
+}

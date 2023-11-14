@@ -65,6 +65,21 @@ input {
     font-size: 22px;
   }
 
+  .order {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .home {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .ranking {
+    display: block;
+    text-align:left;
+    font-size: 50px;
+  }
   .menu {
     position:sticky;
     bottom: 0;
