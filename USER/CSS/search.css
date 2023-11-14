@@ -1,15 +1,25 @@
-div{
-    padding: 20px;
+.search{
+    vertical-align:center;
+    margin: 4% auto;
     text-align: center;
-    height: 350px;
+    position: relative;
 }
 
 .text{
     height: 35px;
     width: 200px;
 }
+.Shohin{
+    text-align: center;
+    position: relative;
+    top: 100px;
+    display: flex;
+}
 
-.search {
+.shohin-setumei{
+    margin: auto;
+}
+.searchbutton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +31,7 @@ div{
     font-size: 1em;
 }
 
-.search::after {
+.searchbutton::after {
     transform: rotate(45deg);
     width: 5px;
     height: 5px;

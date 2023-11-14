@@ -1,13 +1,10 @@
-div{
-    position: absolute;
-    top: 10%;
+.others{
+    vertical-align:center;
+    margin: 4% auto;
 }
-
-
 
 .etc {
     display: flex;
-    align-items: center;
     width: 250px;
     margin:0 auto;
     padding: .9em 2em;
@@ -15,8 +12,3 @@ div{
     color: #0f0f0f;
     font-size: 1em;
 }
-
-.etc::after {
-    content: '';
-}
-
