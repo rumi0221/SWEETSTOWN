@@ -65,6 +65,12 @@ input {
     font-size: 22px;
   }
 
+  a {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+  }
+
   .menu {
     position:sticky;
     bottom: 0;
