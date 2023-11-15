@@ -7,12 +7,12 @@
     color:red;
     width:16em;
     font-size: 16px;
-    margin: 40px auto 50px;  /*上・左右・下*/
+    margin: 30px auto 50px;  /*上・左右・下*/
 }
 
 .withbutton{
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 h2{
