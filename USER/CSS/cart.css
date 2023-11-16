@@ -77,8 +77,12 @@ input {
 
   .ranking {
     display: block;
-    text-align:left;
+    text-align: left;
     font-size: 50px;
+  }
+
+  .ranking2 {
+    text-align: center;
   }
   .menu {
     position:sticky;

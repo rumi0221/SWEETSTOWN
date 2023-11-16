@@ -1,0 +1,17 @@
+.hed{
+    position: relative;
+    top: 40px;
+    text-align: center;
+}
+.shohin{
+    position: relative;
+    top: 60px;
+    display: flex;
+}
+.shohin-rireki{
+margin: auto;
+}
+.button{
+    position: relative;
+    top: 60px;
+}
