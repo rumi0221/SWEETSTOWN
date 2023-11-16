@@ -1,0 +1,26 @@
+h1 {
+    text-align: center;
+}
+
+button {
+    /* ブロック要素にして中央寄せにした */
+    display: block;
+    margin: auto;
+    width: 12em;
+    height:3em;
+    font-size: 23px;
+    border-radius:13px;
+    border: none;
+    background-color: #8B4513;
+    color: #FFFFFF;
+}
+
+.menu {
+    position:sticky;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    display: block;
+    text-align: center;
+    background-color: #fff8e8;
+  }

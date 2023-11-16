@@ -6,21 +6,14 @@ p {
     font-size: 18px;
 }
 
-.ranking {
+  .ranking {
     text-align: left;
-    font-size: 50px;
-  }
-
-  .ranking2 {
+    font-size: 20px;
     display:flex;
     width:12em;
     margin:0 auto;
   }
 
-  .section {
-    font-size: 19px; 
-    float: left;
-  }
   .menu {
     position:fixed;
     bottom: 0;
