@@ -49,11 +49,6 @@ table.table-color tr:nth-child(even){
     text-align: center;
 }
 
-.main {
-    width: 100%;
-    text-align: center;
-}
-
 .menu-btn {
     display: inline-block;
     padding: 10px 1em;
@@ -82,10 +77,25 @@ table.table-color tr:nth-child(even){
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
-    border: solid 3px #000;
 }
 
 .box1 p {
     margin: 0;
     padding: 0;
+    border: solid 3px #000;
+
+}
+
+/*商品登録ボタン*/
+button.registration { 
+    margin-left: 0;
+    padding: 10px;
+    background-color: #FFA8A8;
+    border-radius: 10px;
+} 
+
+
+.main {
+    width: 100%;
+    text-align: center;
 }
