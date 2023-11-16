@@ -40,6 +40,9 @@ table.table-color tr:nth-child(even){
     background-color: #fff;
 }
 
+table.product {
+    border: none;
+}
 
 /*classのcss*/
 .side { /*menu.php*/
