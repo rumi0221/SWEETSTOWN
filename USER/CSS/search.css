@@ -2,13 +2,23 @@
     vertical-align:center;
     margin: 4% auto;
     text-align: center;
+    position: relative;
 }
 
 .text{
     height: 35px;
     width: 200px;
 }
+.Shohin{
+    text-align: center;
+    position: relative;
+    top: 100px;
+    display: flex;
+}
 
+.shohin-setumei{
+    margin: auto;
+}
 .searchbutton {
     display: flex;
     justify-content: center;

@@ -1,4 +1,6 @@
+/*タブのcss*/
 body {
+    display: flex; /*サイドバーとメインコンテンツを横並びにする指定をした。*/
     background-color: #fff8e8;
 }
 
@@ -10,6 +12,11 @@ p {
     text-align: center;
 }
 
+table {
+    border-collapse: collapse; /* セルの線を重ねる */
+    margin: auto;
+}
+
 th {
     background-color: #884513;
     color: #ffffff;
@@ -18,13 +25,67 @@ th {
 }
 
 td {
-    background-color: #ffffff;
-    border: solid 1px; /* 枠線指定 */
+    border-color: #fff;
+    border: solid 1px #fff; /* 枠線指定 */
     padding: 5px; /* 余白指定 */
 }
 
-table {
-    border-collapse: collapse; /* セルの線を重ねる */
-    margin: auto;
+/*奇数行のスタイル*/
+table.table-color tr:nth-child(odd){
+    background-color: rgb(188, 158, 135)
 }
 
+/*偶数行のスタイル*/
+table.table-color tr:nth-child(even){
+    background-color: #fff;
+}
+
+
+/*classのcss*/
+.side { /*menu.php*/
+    background-color: #fff;
+    width: 150px;
+    height: 300px;
+    text-align: center;
+}
+
+.main {
+    width: 100%;
+    text-align: center;
+}
+
+.menu-btn {
+    display: inline-block;
+    padding: 10px 1em;
+    text-decoration: none;
+    color: #cb9854;
+    border: solid 2px #fff;
+    border-radius: 3px;
+    transition: .4s;
+}
+
+.menu-btn:hover {
+    background: #884513;
+    color: white;
+}
+
+.home {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.under {
+    text-decoration: underline;
+}
+
+.box1 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 3px #000;
+}
+
+.box1 p {
+    margin: 0;
+    padding: 0;
+}

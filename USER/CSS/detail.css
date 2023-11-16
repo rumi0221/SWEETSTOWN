@@ -1,0 +1,22 @@
+.gazou{
+    position: relative;
+    top: 100px;
+    text-align: center;
+}
+.shohin1{
+    position: relative;
+    top: 200px;
+}
+
+.shohin2{
+    position: relative;
+    top: 200px;
+    text-align: center;
+}
+
+h2{
+    position: relative;
+    top: 200px;
+    text-align: right;
+}
+

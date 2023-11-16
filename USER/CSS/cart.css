@@ -35,12 +35,15 @@ button {
     margin: auto;
     width: 12em;
     height:3em;
-    font-size: 19px;
+    font-size: 23px;
     border-radius:13px;
+    border: none;
+    background-color: #8B4513;
+    color: #FFFFFF;
 }
 
 .radio {
-    font-size: 16px;
+    font-size: 18px;
     text-align: left;
 }
 
@@ -49,7 +52,7 @@ input {
   }
 
   .place {
-    font-size: 16px;
+    font-size: 17px;
     text-align: left;
   }
 
@@ -58,11 +61,35 @@ input {
     width: 70%
   }
 
+  h4 {
+    font-size: 22px;
+  }
+
+  .order {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .home {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .ranking {
+    display: block;
+    text-align: left;
+    font-size: 50px;
+  }
+
+  .ranking2 {
+    text-align: center;
+  }
   .menu {
-    position: fixed;
+    position:sticky;
     bottom: 0;
     width: 100%;
     height: 80px;
     display: block;
     text-align: center;
+    background-color: #fff8e8;
   }
