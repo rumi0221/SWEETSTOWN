@@ -28,6 +28,16 @@ abbr {
     font-size: 18px;
 }
 
+p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.home {
+    text-align: center;
+    font-size: 20px;
+}
+
 .menu {
     position:fixed;
     bottom: 0;
