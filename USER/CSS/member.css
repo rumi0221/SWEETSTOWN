@@ -15,8 +15,17 @@ button {
     color: #FFFFFF;
 }
 
+abbr {
+    font-size: 20px;
+}
+
+div{
+    text-align: center;
+    height: 30px;
+}
+
 .menu {
-    position:sticky;
+    position:fixed;
     bottom: 0;
     width: 100%;
     height: 80px;
