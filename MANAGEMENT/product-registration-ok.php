@@ -10,7 +10,7 @@
 <body>
     <div class="main">
         <p>商品が登録されました</p>
-        <a href="productlist.html">商品一覧へ</a>
+        <a href="productlist.php">商品一覧へ</a>
     </div>
 </body>
 </html>

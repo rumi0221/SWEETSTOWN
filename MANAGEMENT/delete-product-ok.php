@@ -10,7 +10,7 @@
 <body>
     <div class="main">
         <p>商品の情報が削除されました</p>
-        <a href="productlist.html">商品一覧へ</a>
+        <a href="productlist.php">商品一覧へ</a>
     </div>
 </body>
 </html>

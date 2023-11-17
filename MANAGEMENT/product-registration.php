@@ -62,7 +62,7 @@
             <br>
             <button type="submit">登録確認</button>
         </form>
-            <a href="productlist.html">戻る</a>
+            <a href="productlist.php">戻る</a>
     </div>
 </body>
 </html>

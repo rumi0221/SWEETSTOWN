@@ -9,7 +9,8 @@
 </head>
 <body>
     <div class="main">
-     
+        <p>発送が完了しました</p>
+        <a href="administrato-home.php">ホームへ</a>
     </div>
 </body>
 </html>
