@@ -1,5 +1,3 @@
-/* 管理者ホーム画面と顧客者一覧画面、顧客者情報画面用のCSS */
-
 /*タブのcss*/
 body {
     display: flex; /*サイドバーとメインコンテンツを横並びにする指定をした。*/
@@ -7,10 +5,6 @@ body {
 }
 
 h1 {
-    text-align: center;
-}
-
-p {
     text-align: center;
 }
 
@@ -69,29 +63,16 @@ table.product {
     color: white;
 }
 
-.home {
-    margin: auto;
-    margin-top: 20px;
-}
 
-.under {
-    text-decoration: underline;
-}
-
-.box1 {
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-}
-
-.box1 p {
-    margin: 0;
-    padding: 0;
-    width: 100px;
-    border: solid 3px #000;
-
-}
-
+/*商品登録ボタン*/
+button.registration { 
+    margin-left: 0;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #FFA8A8;
+    border-radius: 10px;
+    border: none; 
+} 
 
 
 .main {
