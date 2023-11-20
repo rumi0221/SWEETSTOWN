@@ -11,6 +11,7 @@
 <body>
     <div class="main">
         <h1>顧客一覧</h1>
+        
         <input type="text" name="mid" placeholder="顧客番号">
         <br>
         <br>
@@ -21,14 +22,15 @@
 <?php
     $pdo=new PDO($connect,USER,PASS);
     $sql=$pdo->query('select * from member');
-    $count = 0;
+    echo '<form action="customer-infomation.php" method="POST">';
     foreach($sql as $row){
         echo '<tr>';
         /*顧客番号を押下することで、その番号の顧客情報が見れる*/
-        echo '<td>', $row['member_id'], '</td><td>';
-        echo $row['member_mei'], '</td><td>', $row['kana_mei'], '</td><td>', $row['mail'], '</td><td>', $row['pass'], '</td>';
+        echo '<td>', '<input type="submit" name="id" value="', $row['member_id'], '">', '</td>';
+        echo '<td>', $row['member_mei'], '</td><td>', $row['kana_mei'], '</td><td>', $row['mail'], '</td><td>', $row['pass'], '</td>';
         echo '</tr>';
     }
+    echo '</form>';
 ?>
         </table>
     </div>

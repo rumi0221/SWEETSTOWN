@@ -11,7 +11,9 @@
 <body>
     <div class="main">
         <div class="box1">
-            <p>顧客番号：XXX1</p>
+            <?php
+                echo '<p>顧客番号：', $_POST['id'], '</p>';
+            ?>
         </div>
         <br>
         <div>
@@ -20,9 +22,21 @@
                 <tr>
                     <th>商品ID</th><th>商品名</th><th>ショップ名</th><th>価格</th><th>数量</th>
                 </tr>
-                <tr>
-                    <td></td><td></td><td></td><td></td><td></td>
-                </tr>
+                <?php
+                    $pdo=new PDO($connect,USER,PASS);
+                    $sql=$pdo->query('select * from cart where member_id = '. $_POST['id']);
+                    foreach($sql as $row){
+                        $id = $row['product_id'];
+                        $sql2 = $pdo->query('select * from product where product_id = '. $_POST['id']);
+                        echo '<tr>';
+                        echo '<td>', $sql2['product_id'], '</td>';
+                        echo '<td>', $sql2['product_mei'], '</td>';
+                        echo '<td>', $pdo->query('select * from shop where shop_code = '. $sql2['shop_code']), '</td>';
+                        echo '<td>', $sql2['tanka'], '</td>';
+                        echo '<td>', $row['su'], '</td>';
+                        echo '</tr>';
+                    }
+                ?>
             </table>
         </div>
         <br>
@@ -32,9 +46,19 @@
                 <tr>
                     <th>購入ID</th><th>商品ID</th><th>商品名</th><th>購入日時</th>
                 </tr>
-                <tr>
-                    <td></td><td></td><td></td><td></td>
-                </tr>
+                <?php
+                    $sql=$pdo->query('select * from purchase where member_id = '. $_POST['id']);
+                    foreach($sql as $row){
+                        $id = $row['kou_id'];
+                        $sql2 = $pdo->query('select * from purchase_history where kou_id = '. $id);
+                        echo '<tr>';
+                        echo '<td>', $sql2['kou_id'], '</td>';
+                        echo '<td>', $sql2['product_id'], '</td>';
+                        echo '<td>', $pdo->query('select product_mei from product where product_id = '. $sql2['product_id']), '</td>';
+                        echo '<td>', $row['datetime'], '</td>';
+                        echo '</tr>';
+                    }
+                ?>
             </table>
         </div>
         <a href="customerlist.php">戻る</a>
