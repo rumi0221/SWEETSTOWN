@@ -1,6 +1,7 @@
 .review1{
     position:relative;
-   text-align: center;
+    border: solid 3px #333;
+    background-color: white;
     top: 40px;
 }
 .hed{
