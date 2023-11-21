@@ -20,36 +20,31 @@ require 'db-connect.php';
     <br><br>
 
     <h1>会員情報</h1>
-    <hr width="90%" noshade><br>
+    <hr noshade><br>
 
     <?php
-    
     if (isset($_SESSION['member'])) {
         $member = $_SESSION['member'];
     ?>
         <div style="padding: 10px; margin-bottom: 10px; border: 1px; border-radius: 5px; background-color: #e7e7d6;">
             <br>
-            名前: <?php echo $member['member_mei']; ?><br><br>
-            <hr width="90%" noshade><br>
-            名前(フリガナ): <?php echo $member['kana_mei']; ?><br><br>
-            <hr width="90%" noshade><br>
-            メールアドレス: <?php echo $member['mail']; ?><br><br>
-            <hr width="90%" noshade><br>
-            パスワード: <?php echo $member['pass']; ?> 
-            <hr width="90%" noshade><br>
-    
+            名前<br> <?php echo $member['member_mei']; ?><br>
+            <hr  noshade><br>
+            名前(フリガナ)<br> <?php echo $member['kana_mei']; ?><br>
+            <hr  noshade><br>
+            メールアドレス<br> <?php echo $member['mail']; ?><br>
+            <hr  noshade><br>
+            パスワード<br> <?php echo '******'; ?> 
+            <hr  noshade><br>
         </div><br><br>
     
-        <button class="button" onclick="location.href='member-change.html'">会員情報を変更する</button>
-        <?php
+        <button class="button" onclick="location.href='member-change.php'">会員情報を変更する</button>
+    <?php
     } else {
-        
         echo "ログインしていません。";
     }
     ?>
     
-    
-
     <br><br><br><br><br>
     <div class="menu">
         <hr>
@@ -61,3 +56,4 @@ require 'db-connect.php';
     </div>
 </body>
 </html>
+
