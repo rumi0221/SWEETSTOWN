@@ -10,11 +10,26 @@
     margin: 30px auto 50px;  /*上・左右・下*/
 }
 
+.withbutton input:first-of-type{
+    margin-right: 20px;
+}
+
 .withbutton{
     text-align: center;
-    font-size: 40px;
+    margin-bottom:20px;
 }
 
 h2{
     text-align: center;
+    border-bottom:1px solid;
+    padding-bottom: 5px;
+    width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+.with{
+    background: rgba(0, 132, 255, 0.978);
 }

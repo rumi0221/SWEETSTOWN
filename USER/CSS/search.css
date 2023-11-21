@@ -41,3 +41,11 @@
     content: '';
 }
 
+.center {
+    text-align: center;
+  }
+
+  .center img {
+    margin: 0 auto;
+    display: block;
+  }

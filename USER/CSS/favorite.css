@@ -1,0 +1,28 @@
+.favorite{
+    margin: 4% auto;
+    text-align: center;
+}
+
+.favoritebutton input:first-of-type{
+    margin-right: 20px;
+}
+
+.favoritebutton{
+    text-align: center;
+    margin-bottom:20px;
+}
+
+h2{
+    text-align: center;
+    border-bottom:1px solid;
+    padding-bottom: 5px;
+}
+
+.sweetbutton{
+    background: rgba(255, 132, 0, 0.978);
+}
+
+p{
+    margin: 0px auto 30px;
+}
+

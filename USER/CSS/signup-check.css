@@ -2,16 +2,19 @@ h1 {
     text-align: center;
 }
 
-
 button {
     top: -2px;
-    padding: 8px 25px;
+    padding: 8px 16px;
     font-size: 17px;
 }
 
-p {
+.checkp{
+    width:16em;
+    margin: 20px auto 10px;
+}
+
+.checkbutton{
     text-align: center;
-    
 }
 
 .content{
