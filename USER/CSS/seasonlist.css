@@ -2,17 +2,26 @@ h1 {
     text-align: center;
 }
 
-p {
-    font-size: 18px;
+.image {
+    float: left;
 }
 
-.ranking {
+.description {
+    float: left;
+}
+
+section {
+    font-size: 19px; 
+    float: left;
+}
+
+.seasonlist {
     text-align: left;
     font-size: 20px;
     display:flex;
-    width:12em;
+    width:10em;
     margin:0 auto;
-}
+  }
 
 .menu {
     position:fixed;
@@ -22,4 +31,4 @@ p {
     display: block;
     text-align: center;
     background-color: #fff8e8;
-}
+  }
