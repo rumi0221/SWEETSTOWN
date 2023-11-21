@@ -42,9 +42,7 @@
                 }
             ?>
         </div>
-    <div class="button">
-        <button class="button" onclick="location.href='review.html'">レビューを書く</button>
+        <footer><?php require 'menu.php';?></footer>
     </div>
-</div>
 </body>
 </html>
