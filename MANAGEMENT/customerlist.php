@@ -26,7 +26,7 @@
     foreach($sql as $row){
         echo '<tr>';
         /*顧客番号を押下することで、その番号の顧客情報が見れる*/
-        echo '<td>', '<input type="submit" name="id" value="', $row['member_id'], '">', '</td>';
+        echo '<td>', '<input class="btn" type="submit" name="id" value="', $row['member_id'], '">', '</td>';
         echo '<td>', $row['member_mei'], '</td><td>', $row['kana_mei'], '</td><td>', $row['mail'], '</td><td>', $row['pass'], '</td>';
         echo '</tr>';
     }

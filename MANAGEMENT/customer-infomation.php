@@ -61,6 +61,7 @@
                 ?>
             </table>
         </div>
+        <br>
         <a href="customerlist.php">戻る</a>
     </div>
 </body>

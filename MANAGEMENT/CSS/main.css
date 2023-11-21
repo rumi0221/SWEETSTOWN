@@ -69,6 +69,25 @@ table.product {
     color: white;
 }
 
+.btn {
+    display: inline-block;
+	vertical-align: middle;
+	margin: 0 10px;
+	padding: 6px 25px;
+	color: #F15A24;
+	font-weight: bold;
+	letter-spacing: 0.5pt;
+	text-decoration: none;
+	background-color: none;
+	border: none;
+	cursor: pointer;
+	transition-duration:0.3s;
+    -webkit-transition-duration:0.3s;
+    -moz-transition-duration:0.3s;
+    -o-transition-duration:0.3s;
+    -ms-transition-duration:0.3s;
+}
+
 .home {
     margin: auto;
     margin-top: 20px;
