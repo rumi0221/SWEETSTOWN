@@ -13,7 +13,21 @@
     position: relative;
     text-align: center;
 }
-.review1{
-
+.title{
+    position: relative;
+    text-align: center;
+    top: 6px;
+}
+.honbun{
+    position: relative;
+    text-align: center;
+}
+.review3{
+    text-align: center;
+}
+button{
+    width: 12em;
+    height: 3em;
+   
 }
    
