@@ -15,14 +15,23 @@
     <h2>お届け日・お支払方法の選択</h2>
     <form action="order-check.php" method="post">
     <h5>お届け日指定</h5>
-    <input type="radio" value="nasi">指定なし　　　？月？日～？月？日発送予定<br>
-    <input type="radio" value="sitei">日時指定<br>
-    <input tupe="radio" value="soku">即日発送<br>
+    <input type="radio" name="delivery" value="指定なし">指定なし　　　？月？日～？月？日発送予定<br>
+    <input type="radio" name="delivery" value="日時指定">日時指定<br>
+    <input type="radio" name="delivery" value="即日発送">即日発送<br>
     <h5>お支払方法</h5>
-    <input type="radio" value="nasi"><br>
-    <input type="radio" value="sitei"><br>
-    <input tupe="radio" value="soku"><br>
-    <input tupe="radio" value="soku"><br>
+    <input type="radio" name="payment" value="ツケ払い">ツケ払い<br>
+    <input type="radio" name="payment" value="クレジットカード">クレジットカード<br>
+    <input type="radio" name="payment" value="代金引換">代金引換<br>
+    <input type="radio" name="payment" value="コンビニ払い">コンビニ払い<br>
+    <br>
+    <h5>お届け場所</h5>
+    郵便番号
+    <input type="text" name="place" size="9" value="〒"><br>
+    　住所　
+    <input type="text" name="live" size="30"><br>
+    <button type="submit">注文確認</button>
     </form>
+    <br>
+    <footer><?php require 'menu.php';?></footer>
 </body>
 </html>

@@ -1,0 +1,21 @@
+.menu-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    background-color: #FFF8E8;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .menu-bar a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .menu-bar img {
+    width: 30px; /* 画像のサイズを適宜調整 */
+    height: 30px;
+  }

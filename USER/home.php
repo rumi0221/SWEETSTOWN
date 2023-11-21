@@ -1,7 +1,6 @@
 <?php session_start();?>
 <?php require 'db-connect.php'; ?>
 <?php
-    unset($_SESSION['member']);
     $pdo=new PDO($connect,USER,PASS);
     $sql=$pdo->prepare('select * from member where mail=? and pass=?');
     $sql->execute([$_POST['mail'],$_POST['pass']]);
@@ -11,6 +10,7 @@
         exit;
     }else{
         if(!isset($_SESSION['member'])){
+            unset($_SESSION['member']);
             foreach ($sql as $row){
                 $_SESSION['member']=[
                     'member_id'=>$row['member_id'],'member_mei'=>$row['member_mei'],
@@ -26,6 +26,7 @@
         echo '<!DOCTYPE html>';
         echo '<html lang="ja">';
         echo '<head>';
+        echo '<link rel="stylesheet" href="CSS/menu.css">';
         echo '<link rel="stylesheet" href="CSS/header.css">';
         echo '<title>ホーム画面</title>';
         echo '</head>';
