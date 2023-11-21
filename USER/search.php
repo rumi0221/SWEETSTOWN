@@ -33,7 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button class="searchbutton" type="submit" name="shop" value="ショップ検索">ショップ検索</button>
             </form>
         </div>
-        <img src="img/search-keyword.png"><br>
+        <div class="center">
+            <img src="img/search-keyword.png"><br>
+        </div>
         <footer><?php require 'menu.php';?></footer>
     </body>
 </html>
