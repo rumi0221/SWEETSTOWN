@@ -62,7 +62,8 @@
             </table>
         </div>
         <br>
-        <a href="customerlist.php">戻る</a>
+        <br>
+        <a class="mdr" href="customerlist.php">戻る</a>
     </div>
 </body>
 </html>

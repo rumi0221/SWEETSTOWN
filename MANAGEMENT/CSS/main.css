@@ -78,7 +78,7 @@ table.product {
 	font-weight: bold;
 	letter-spacing: 0.5pt;
 	text-decoration: none;
-	background-color: none;
+	background-color: transparent;
 	border: none;
 	cursor: pointer;
 	transition-duration:0.3s;
@@ -111,6 +111,10 @@ table.product {
 
 }
 
+.mdr {
+    position: relative; /* 今の位置を基準 */
+    left: 150px;
+}
 
 
 .main {

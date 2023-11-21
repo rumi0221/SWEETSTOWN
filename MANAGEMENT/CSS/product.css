@@ -74,6 +74,11 @@ button.registration {
     border: none; 
 } 
 
+.mdr {
+    position: relative; /* 今の位置を基準 */
+    left: 150px;
+}
+
 
 .main {
     width: 100%;
