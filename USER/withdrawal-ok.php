@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>レビュー完了画面</title>
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/review.css">
+    <link rel="stylesheet" href="css/withdrawal-ok.css">
+    <title>退会完了画面</title>
 </head>
 <body>
     <div class="Header">
         SWEETSTOWN
+    </div>
+    <div class="withdrawal-ok">
+        <p>退会手続きが完了しました。</p>
+        <a href= "login-input.php" >ログイン画面へ</a>
     </div>
 </body>
 </html>
