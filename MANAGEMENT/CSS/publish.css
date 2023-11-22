@@ -1,10 +1,13 @@
-/*タブのcss*/
 body {
     display: flex; /*サイドバーとメインコンテンツを横並びにする指定をした。*/
     background-color: #fff8e8;
 }
 
 h1 {
+    text-align: center;
+}
+
+p {
     text-align: center;
 }
 
@@ -63,24 +66,17 @@ table.product {
     color: white;
 }
 
-
-/*商品登録ボタン*/
-button.registration { 
-    margin-left: 0;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #FFA8A8;
-    border-radius: 10px;
-    border: none; 
-} 
+.link {
+    margin-top: 100px;
+}
 
 .mdr {
     position: relative; /* 今の位置を基準 */
     left: 150px;
 }
 
-
 .main {
     width: 100%;
     text-align: center;
+    align-items: center;
 }

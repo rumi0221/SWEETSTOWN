@@ -27,7 +27,7 @@ $newPassword = isset($_SESSION['member']['pass']) ? $_SESSION['member']['pass'] 
     <h1>会員情報変更確認</h1>
     <hr noshade><br>
 
-    <div style="padding: 10px; margin-bottom: 10px; border: 1px; border-radius: 15px; background-color: #e7e7d6;">
+    <div  style="padding: 10px; margin-bottom: 10px; border: 1px; border-radius: 15px; background-color: #e7e7d6; margin:0 5%">
     <br>
         名前<br>
         <span><?php echo htmlspecialchars($newName); ?></span><br>
@@ -55,13 +55,7 @@ $newPassword = isset($_SESSION['member']['pass']) ? $_SESSION['member']['pass'] 
     <button class="button" onclick="location.href='member-change-ok.php'">変更</button>
 
     <br><br><br><br><br>
-    <div class="menu">
-        <hr>
-        <a href="home.php"><img src="img/home.png"></a>
-        <a href="favorite-sweet.php"><img src="img/favorite.png"></a>
-        <a href="search.php"><img src="img/search.png"></a>
-        <a href="ranking.php"><img src="img/rank.png"></a>
-        <a href="others.php"><img src="img/else.png"></a>
-    </div>
+    <hr>
+    <center><footer><?php require 'menu.php';?></footer></center>
 </body>
 </html>
