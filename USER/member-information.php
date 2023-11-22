@@ -26,7 +26,7 @@ require 'db-connect.php';
     if (isset($_SESSION['member'])) {
         $member = $_SESSION['member'];
     ?>
-        <div style="padding: 10px; margin-bottom: 10px; border: 1px; border-radius: 5px; background-color: #e7e7d6;">
+        <div style="padding: 10px; margin-bottom: 10px; border: 1px; border-radius: 5px; background-color: #e7e7d6; margin:0 5%;">
             <br>
             名前<br> <?php echo $member['member_mei']; ?><br>
             <hr  noshade><br>
@@ -46,14 +46,8 @@ require 'db-connect.php';
     ?>
     
     <br><br><br><br><br>
-    <div class="menu">
-        <hr>
-        <a href="home.php"><img src="img/home.png"></a>
-        <a href="favorite-sweet.php"><img src="img/favorite.png"></a>
-        <a href="search.php"><img src="img/search.png"></a>
-        <a href="ranking.php"><img src="img/rank.png"></a>
-        <a href="others.php"><img src="img/else.png"></a>
-    </div>
+    <hr>
+    <center><footer><?php require 'menu.php';?></footer></center>
 </body>
 </html>
 

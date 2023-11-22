@@ -4,12 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/publish.css">
     <title>季節商品掲載画面</title>
 </head>
 <body>
     <div class="main">
-     
+        <?php
+            $season = $_POST['season'];
+            echo '<h1>';
+            switch($season){
+                case 'spring':
+                    echo '春';
+                    break;
+                case 'summer':
+                    echo '夏';
+                    break;
+                case 'fall':
+                    echo '秋';
+                    break;
+                case 'winter':
+                    break;
+            }  
+            echo 'の季節商品</h1>';
+        ?>
+        <br>
+        <table>
+            <tr>
+                <th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>単価</th><th>商品説明</th><th>商品画像</th><th>総購入数</th><th>季節</th><th>在庫数</th><th>店舗名</th>
+            </tr>
+            <?php
+                $pdo=new PDO($connect,USER,PASS);
+                $sql=$pdo->query('select * from product');
+                foreach($sql as $row){
+                    echo '<tr>',
+                         '<td>', $row['product_id'], '</td>',
+                         '<td>', $row['product_mei'], '</td>',
+                         '<td>', $row['product_type'], '</td>',
+                         '<td>', $row['tanka'], '</td>',
+                         '<td>', $row['setumei'], '</td>',
+                         '<td>', $row['gazou'], '</td>',
+                         
+                         '</tr>';
+                }
+            ?>
+        </table>
+        <br>
+        <br>
+        <form action="season-publish-ok.php">
+            <input type="submit" value="掲載">
+        </form>
+        <br>
+        <a class="mdr" href="season-publish-choice.php">戻る</a>
     </div>
 </body>
 </html>

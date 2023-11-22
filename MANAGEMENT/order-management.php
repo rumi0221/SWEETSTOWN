@@ -1,3 +1,4 @@
+<?php require 'db-connect.php'; ?>
 <?php require 'menu.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -9,7 +10,37 @@
 </head>
 <body>
     <div class="main">
-     
+        <h1>受注管理</h1>
+        <table>
+            <tr>
+                <th>受注日</th><th>受注番号</th><th>顧客番号</th><th>購入額</th><th>お支払い方法</th><th>発送</th>
+            </tr>
+            <?php
+                $pdo=new PDO($connect,USER,PASS);
+                $sql=$pdo->query('select * from purchase_history');
+                echo '<form action="shipping-check.php" method="POST">';
+                foreach($sql as $row){
+                    $sql2=$pdo->query('select * from purchase where kou_id = '. $row['kou_id']);
+                    $row2 = $sql2->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
+                    echo '<tr>';
+                    echo '<td>', $row2['datetime'], '</td>';
+                    echo '<td>', $row['kou_id'], '</td>';
+                    echo '<td>', $row2['member_id'], '</td>';
+                    echo '<td>';
+
+                    echo '</td>';
+                    echo '<td>', $row2['pay'], '</td>';
+                    echo '<td>';
+                        if( $row['flg'] == 0 ){
+                            echo '未';
+                        }else{
+                            echo '済';
+                        }
+                    echo '</td>';
+                    echo '</tr>';
+                }
+            ?>
+        </table>
     </div>
 </body>
 </html>
