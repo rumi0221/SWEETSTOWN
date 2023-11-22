@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, margin:0 5%">
     <title>会員情報変更画面</title>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/member.css">
@@ -35,22 +35,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <br><br>
 
     <h1>会員情報変更</h1>
-    <hr width="90%" noshade><br>
-
+    <hr  noshade><br>
     <form action="member-change.php" method="post">
-    名前<span style="color:red;">　　※必須</span><br>
-        <input type="text" name="new_name" size="30" required="required"><br>
-        名前(フリガナ)<span style="color:red;">　　※必須</span><br>
-        <input type="text" name="new_kana_name" size="30" required="required"><br>
-        メールアドレス<span style="color:red;">　　※必須</span><br>
-        <input type="text" name="new_email" size="30" required="required"><br>
-        パスワード<span style="color:red;">　　※必須</span><br>
-        <input type="text" name="new_password" size="30" required="required"><br>
+    <div style="margin:0 30%;">
+        <abbr>名前<span style="color:red;">　　※必須</span><br>
+        <div class="div2"><input type="text" name="new_name" size="30" style="width: 350px; height: 28px;" required="required"></div></abbr><br>
+        <abbr>名前(フリガナ)<span style="color:red;">　　※必須</span><br>
+        <div class="div2"><input type="text" name="new_kana_name" size="30" style="width: 350px; height: 28px;" required="required"></div></abbr><br>
+        <abbr>メールアドレス<span style="color:red;">　　※必須</span><br>
+        <div class="div2"><input type="text" name="new_email" size="30" style="width: 350px; height: 28px;" required="required"></div></abbr><br>
+        <abbr>パスワード<span style="color:red;">　　※必須</span><br>
+        <div class="div2"><input type="text" name="new_password" size="30" style="width: 350px; height: 28px;" required="required"></div></abbr><br>
 
+        <br><br>
         <button type="submit" class="button">確認画面へ</button>
     </form>
 
     <br><br><br><br><br>
-    <footer><?php require 'menu.php';?></footer>
+    <hr>
+    <center><footer><?php require 'menu.php';?></footer></center>
 </body>
 </html>
