@@ -15,21 +15,31 @@
 
     <link rel="stylesheet" href="seasonlist.css">
     <br><br>
-
     <h1>季節のスイーツ</h1>
     <hr width="90%" noshade><br>
 
-    <div class="seasonlist">
-    <a class="image"><image src="img/sweet.png"></href></a>
+    <?php
+        '<div class="seasonlist">'
+        <a class="image"><a href="detail.php" class="information"><image src="img/sweet.png"></href></a></a>
         <section>
-                　商品名<br>
-                　ショップ名<br>
-                　￥
+            <a href="detail.php" class="information">　商品名</a><br>
+            <a href="detail.php" class="information">　ショップ名</a><br>
+            <a href="detail.php" class="information">　￥</a>
             <br><br>
         </section></div>
 
+    ?>
+
     <br><br><br><br><br>
 
-    <footer><?php require 'menu.php';?></footer>
+    <div class="menu">
+        <hr>
+            <a href="home.php"><img src="img/home.png"></a>
+            <a href="favorite-sweet.php"><img src="img/favorite.png"></a>
+            <a href="search.php"><img src="img/search.png"></a>
+            <a href="ranking.php"><img src="img/rank.png"></a>
+            <a href="others.php"><img src="img/else.png"></a>
+    </div>
+
 </body>
 </html>
