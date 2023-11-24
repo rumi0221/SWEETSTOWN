@@ -49,7 +49,7 @@
                 echo '<tr>';
             }
             echo '<td>';
-            echo '<a href="detail.php"><img src="img/',$row['gazou'],'"></a>';
+            echo '<a href="detail.php?productid=',$tow['product_id'],'"><img src="img/',$row['gazou'],'"></a>';
             echo '<br>',$row['product_mei'],'<br>',$row['tanka'];
             echo '</td>';
             if($count==3){
