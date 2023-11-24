@@ -19,15 +19,7 @@
     <hr width="90%" noshade><br>
 
     <?php
-        echo '<div class="seasonlist">';
-        echo '<a class="image"><a href="detail.php" class="information"><image src="img/sweet.png"></href></a></a>';
-        echo '<section>';
-        echo '<a href="detail.php" class="information">　商品名</a><br>';
-        echo '<a href="detail.php" class="information">　ショップ名</a><br>';
-        echo '<a href="detail.php" class="information">　￥</a>';
-        echo '<br><br>';
-        echo '</section></div>';
-
+        echo '<br>';
         $pdo=new PDO($connect,USER,PASS);
         $sql=$pdo->query('select * from product');
         echo '<form action="customer-infomation.php" method="POST">';
@@ -37,7 +29,7 @@
             echo '<section>';
             echo '<a href="detail.php" class="information">', '　', $row['product_mei'], '</a>', '<br>';
             echo '<a href="detail.php" class="information">', '　', $row['shop_code'], '</a>', '<br>';
-            echo '<a href="detail.php" class="information">', '　', '￥', $row['tanka'], '</a>';
+            echo '<a href="detail.php" class="information">', '<font color="red">', '　', '￥', $row['tanka'], '</font>', '</a>';
             echo '<br><br>';
             echo '</section></div>';
         }
