@@ -19,15 +19,28 @@
     <hr width="90%" noshade><br>
 
     <?php
-        '<div class="seasonlist">'
-        <a class="image"><a href="detail.php" class="information"><image src="img/sweet.png"></href></a></a>
-        <section>
-            <a href="detail.php" class="information">　商品名</a><br>
-            <a href="detail.php" class="information">　ショップ名</a><br>
-            <a href="detail.php" class="information">　￥</a>
-            <br><br>
-        </section></div>
+        echo '<div class="seasonlist">';
+        echo '<a class="image"><a href="detail.php" class="information"><image src="img/sweet.png"></href></a></a>';
+        echo '<section>';
+        echo '<a href="detail.php" class="information">　商品名</a><br>';
+        echo '<a href="detail.php" class="information">　ショップ名</a><br>';
+        echo '<a href="detail.php" class="information">　￥</a>';
+        echo '<br><br>';
+        echo '</section></div>';
 
+        $pdo=new PDO($connect,USER,PASS);
+        $sql=$pdo->query('select * from product');
+        echo '<form action="customer-infomation.php" method="POST">';
+        foreach ($sql as $row) {
+            echo '<div class="seasonlist">';
+            echo '<a href="detail.php" class="information">', $row['gazou'], '</a>', '<br>';
+            echo '<section>';
+            echo '<a href="detail.php" class="information">', '　', $row['product_mei'], '</a>', '<br>';
+            echo '<a href="detail.php" class="information">', '　', $row['shop_code'], '</a>', '<br>';
+            echo '<a href="detail.php" class="information">', '　', '￥', $row['tanka'], '</a>';
+            echo '<br><br>';
+            echo '</section></div>';
+        }
     ?>
 
     <br><br><br><br><br>
