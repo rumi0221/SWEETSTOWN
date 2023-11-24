@@ -36,7 +36,8 @@
             echo '</form>';
             echo '<div class="shohin2">';
             echo '<button type="input-cart" oncc t7lick="location.href=cart.php">🛒 カートに入れる</button>';
-            echo ''
+            echo '<p>',$row['setumei'],'</p>';
+            
         }
       ?>
         <p>商品説明</p>
