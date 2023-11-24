@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/purchase-history.css">
     <link rel="stylesheet" href="CSS/menu.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <title>購入履歴画面</title>
 </head>
 <body>
-    <div class="Header">SWEETSTOWN</div>
+    <div class="Header">SWEETSTOWN</div><br>
     <div class="hed">
         <h1>購入履歴</h1>
     </div>
@@ -29,13 +28,9 @@
                         $sol=$pdo->prepare('select * from product where product_id = ?');
                         $sol->execute([$wow['product_id']]);
                         foreach($sol as $tow){
-                            echo '<div class="columns is-mobile">';
-                            echo '<div class="column is-narrow">';
-                            echo '<figure class="image is-128x128">';
-                            echo '<a href="detail.php"><img src="img/',$tow['gazou'],'"></a>';
-                            echo '</figure>';
-                            echo '</div>';
-                            echo '<div class="column"';
+                            echo '<div class="product-info">';
+                            echo '<a href="detail.php?productid=',$tow['product_id'],'"><img src="img/',$tow['gazou'],'"></a>';
+                            echo '<div>';
                             echo '<p>',$tow['product_mei'],'</p>';
                             echo '<p>購入日時：',$row['datetime'],'</p>';
                             if($wow['flg'] == 0){
@@ -43,8 +38,7 @@
                             }else{
                                 echo '<p>発送済み</p>';
                             }
-                            echo '<p><a href="review.php?id=',$tow['product_id'],'">レビューを書く</a></p>';
-                            echo '</div>';
+                            echo '<p><a href="review.php?id=',$tow['product_id'],'">レビューを書く</a></p></div>';
                             echo '</div>';
                         }
                     }
