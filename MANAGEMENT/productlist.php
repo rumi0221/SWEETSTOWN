@@ -1,3 +1,4 @@
+<?php require 'db-connect.php'; ?>
 <?php require 'menu.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -10,28 +11,41 @@
 <body>
     <div class="main">
         <h1>商品一覧</h1>
-        <button class="registration">商品登録</button>
-        <br>
+        <form action="product-registration">
+            <button class="registration">商品登録</button>
+        </form>
         <table class="table-color">
             <tr>
                 <th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>単価</th><th>商品説明</th><th>商品画像</th><th>総購入数</th><th>季節</th><th>在庫</th><th>店舗名</th><th></th>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <button name="update">更新</button>
-                    <button name="delete">削除</button>
-                </td>
-            <tr>
+            <?php
+                $pdo=new PDO($connect,USER,PASS);
+                $sql=$pdo->query('select * from product');
+                foreach($sql as $row){
+                    $sql2 = $pdo->query('select * from shop where shop_code = '. $row['shop_code']);
+                    $row2 = $sql2->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
+                    echo '<tr>';
+                    echo '<td>', $row['product_id'], '</td>';
+                    echo '<td>', $row['product_mei'], '</td>';
+                    echo '<td>', $row['product_type'], '</td>';
+                    echo '<td>', $row['tanka'], '</td>';
+                    echo '<td>', $row['setumei'], '</td>';
+                    echo '<td>', $row['gazou'],'</td>';
+                    echo '<td>', $row['total_su'],'</td>';
+                    echo '<td>', $row['season'], '</td>';
+                    echo '<td>', $row['zaiko'], '</td>';
+                    echo '<td>', $row2['shop_mei'], '</td>';
+                    echo '<td>';
+                    echo '<form action="product-update.php" method="POST">';
+                    echo '<button type="submit" name="update" value="', $row['product_id'], '">更新</button>';
+                    echo '</form>';
+                    echo '<form action="delete-prodect.php" method="POST">';
+                    echo '<button type="submit" name="delete" value="', $row['product_id'], '">削除</button>';
+                    echo '</form>';
+                    echo '</td>';
+                    echo '</tr>';
+                }
+            ?>
         </table>
     </div>
 </body>
