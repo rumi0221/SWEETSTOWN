@@ -17,18 +17,21 @@
             </tr>
             <?php
                 $pdo=new PDO($connect,USER,PASS);
-                $sql=$pdo->query('select * from purchase');
+                $sql=$pdo->query('select * from purchase_history');
                 echo '<form action="shipping-check.php" method="POST">';
-                forech($row as $sql){
-                    $sql2=$pdo->query('select * from purchase_history where kou_id '.$row['kou_id']);
+                foreach($sql as $row){
+                    $sql2=$pdo->query('select * from purchase where kou_id = '. $row['kou_id']);
+                    $row2 = $sql2->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
                     echo '<tr>';
-                    echo '<td>', $row['datetime'], '</td>';
+                    echo '<td>', $row2['datetime'], '</td>';
                     echo '<td>', $row['kou_id'], '</td>';
-                    echo '<td>', $row['member_id'], '</td>';
-                    echo '<td>', 
-                    echo '<td>', $row['pay'], '</td>';
+                    echo '<td>', $row2['member_id'], '</td>';
                     echo '<td>';
-                        if( $sql2['fig'] == 0 ){
+
+                    echo '</td>';
+                    echo '<td>', $row2['pay'], '</td>';
+                    echo '<td>';
+                        if( $row['flg'] == 0 ){
                             echo '未';
                         }else{
                             echo '済';

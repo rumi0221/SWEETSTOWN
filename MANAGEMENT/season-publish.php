@@ -32,9 +32,21 @@
             <tr>
                 <th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>単価</th><th>商品説明</th><th>商品画像</th><th>総購入数</th><th>季節</th><th>在庫数</th><th>店舗名</th>
             </tr>
-            <tr>
-
-            </tr>
+            <?php
+                $pdo=new PDO($connect,USER,PASS);
+                $sql=$pdo->query('select * from product');
+                foreach($sql as $row){
+                    echo '<tr>',
+                         '<td>', $row['product_id'], '</td>',
+                         '<td>', $row['product_mei'], '</td>',
+                         '<td>', $row['product_type'], '</td>',
+                         '<td>', $row['tanka'], '</td>',
+                         '<td>', $row['setumei'], '</td>',
+                         '<td>', $row['gazou'], '</td>',
+                         
+                         '</tr>';
+                }
+            ?>
         </table>
         <br>
         <br>
