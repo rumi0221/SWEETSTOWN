@@ -15,7 +15,7 @@
             <form action="product-registration-check.php" method="POST">
                 <tr>
                     <th>商品名</th>
-                    <td><input type="text" name="productname"></td>
+                    <td><input type="text" name="product_name"/></td>
                 </tr>
                 <tr>
                     <th>カテゴリ</th>
@@ -35,7 +35,7 @@
                 </tr>
                 <tr>
                     <th>商品説明</th>
-                    <td></td>
+                    <td><input type="text" name="explanation"></td>
                 </tr>
                 <tr>
                     <th>季節</th>
@@ -51,7 +51,7 @@
                 <tr>
                     <th>店舗名</th>
                     <td>
-                        <select name="">
+                        <select name="shop_name">
                             <option></option>
                         </select>
                     </td>
