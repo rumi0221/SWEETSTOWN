@@ -21,7 +21,7 @@ if (isset($_POST['mail']) && isset($_POST['pass'])) {
 
         if (isset($_POST['login'])) {
             $cookie_value = base64_encode(serialize($_SESSION['member']));
-            setcookie('login_me_cookie', $cookie_value, time() + (86400 * 30), "/", "", false, true); // HTTP-only cookie
+            setcookie('login_me_cookie', $cookie_value, time() + (86400 * 30), "/", "", false, true); 
         }
 
         header("Location: home.php");
@@ -35,7 +35,7 @@ if (isset($_POST['mail']) && isset($_POST['pass'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="CSS/login.css">
     <title>ログイン画面</title>
 </head>
 <body>
