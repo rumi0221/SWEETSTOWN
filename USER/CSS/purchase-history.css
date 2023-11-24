@@ -15,3 +15,13 @@ margin: auto;
     position: relative;
     top: 60px;
 }
+.product-info{
+    display: flex;
+    align-items: center;
+}
+
+.product-info img{
+    width: 100px;
+    height: auto;
+    margin-right: 20px
+}

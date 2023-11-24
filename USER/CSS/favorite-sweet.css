@@ -1,6 +1,5 @@
 .favorite{
     margin: 4% auto;
-    text-align: center;
 }
 
 .favoritebutton input:first-of-type{
@@ -30,7 +29,7 @@ p{
 }
 
 .item{
-    margin: 0px auto 30px;
+    margin: auto auto 50px;
     display: flex;
 }
 
@@ -38,6 +37,20 @@ p{
     margin-left: 30px;
 }
 
+.item_name{
+    margin-bottom: 5%;
+    font-size: 30px;
+}
+
+.shop_name{
+    margin-bottom: 5%;
+    font-size: 20px;
+}
+
+.price{
+    color: red;
+}
+
 .content{
-    text-align: center;
+    margin: auto;
 }

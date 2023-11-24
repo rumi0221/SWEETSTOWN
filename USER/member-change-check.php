@@ -14,8 +14,8 @@ $newPassword = isset($_SESSION['member']['pass']) ? $_SESSION['member']['pass'] 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>会員情報変更確認画面</title>
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/member.css">
+    <link rel="stylesheet" href="CSS/header.CSS">
+    <link rel="stylesheet" href="CSS/member.CSS">
 </head>
 <body>
     <div class="Header">
