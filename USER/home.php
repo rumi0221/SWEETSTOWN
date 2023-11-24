@@ -1,6 +1,7 @@
 <?php session_start();?>
 <?php require 'db-connect.php'; ?>
 <?php
+    unset($_SESSION['member']);
     $pdo=new PDO($connect,USER,PASS);
     $sql=$pdo->prepare('select * from member where mail=? and pass=?');
     $sql->execute([$_POST['mail'],$_POST['pass']]);
