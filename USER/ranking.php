@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="Header">
-        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="header.css">
         SWEETSTOWN
     </div>
 
-    <link rel="stylesheet" href="css/ranking.css">
+    <link rel="stylesheet" href="ranking.css">
     <br><br>
 
     <h1>ランキング</h1>
@@ -22,23 +22,26 @@
         <?php
             echo '<br>';
             $pdo=new PDO($connect,USER,PASS);
-            $sql=$pdo->query('select * from product');
+            $sql=$pdo->query('select * from product where rank <= 10 && rank != 0');
             echo '<form action="customer-infomation.php" method="POST">';
-            foreach ($sql as $row) {
-                $result = $sql->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($result as $i => $value) {
-                echo '<div class="＊">';
-                echo '　　　', '<img src="image/ranking-number.png' . ($i + 1) . '.png" alt="　" width="50%" height="50%">';
-            
-                echo '<div class="ranking">';
-                echo '<a href="detail.php" class="information">', $row['gazou'], '</a>', '<br>';
-                echo '<section>';
-                echo '<a href="detail.php" class="information">', '　', $row['product_mei'], '</a>', '<br>';
-                echo '<a href="detail.php" class="information">', '　', $row['shop_code'], '</a>', '<br>';
-                echo '<a href="detail.php" class="information">', '<font color="red">', '　', '￥', $row['tanka'], '</font>', '</a>';
-                echo '<br><br>';
-                echo '</section></div></div>';
-            }
+            $i = 1;
+            while($i < 10){
+                foreach ($sql as $row) {
+                    if($row['rank'] == $i){
+                    echo '　　　', '<img src="image/ranking-number.png' . ($row['rank']) . '.png" alt="　" width="50%" height="50%">';
+
+                    echo '<div class="ranking">';
+                    echo '<a href="detail.php" class="information">', $row['gazou'], '</a>', '<br>';
+                    echo '<section>';
+                    echo '<a href="detail.php" class="information">', '　', $row['product_mei'], '</a>', '<br>';
+                    echo '<a href="detail.php" class="information">', '　', $row['shop_code'], '</a>', '<br>';
+                    echo '<a href="detail.php" class="information">', '<font color="red">', '　', '￥', $row['tanka'], '</font>', '</a>';
+                    echo '<br><br>';
+                    echo '</section></div></div>';
+                    }else{
+                        break;
+                    }
+                }
             }
         ?>
 
