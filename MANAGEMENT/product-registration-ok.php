@@ -9,8 +9,10 @@
 </head>
 <body>
     <div class="main">
-        <p>商品が登録されました</p>
-        <a href="productlist.php">商品一覧へ</a>
+        <div class="link">
+            <p>商品が登録されました</p>
+            <a href="productlist.php">商品一覧へ</a>
+        </div>
     </div>
 </body>
 </html>
