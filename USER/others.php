@@ -23,6 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </head>
     <body>
         <div class="Header">SWEETSTOWN</div>
+        <br>
+        <br>
         <div class="others">
             <form method="post">
                 <button class="etc" type="submit" name="button1" value="購入履歴">購入履歴</button>
