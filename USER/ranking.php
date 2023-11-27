@@ -22,12 +22,13 @@
         <?php
             echo '<br>';
             $pdo=new PDO($connect,USER,PASS);
-            $sql=$pdo->query('select * from product where rank <= 10 && rank != 0');
+            // $sql=$pdo->query('select * from product');
+            $sql=$pdo->query('select * from product where rank <= 10 && rank != 0 ORDER BY rank');
             echo '<form action="customer-infomation.php" method="POST">';
             $i = 1;
-            while($i < 10){
+            // while($i < 10){
                 foreach ($sql as $row) {
-                    if($row['rank'] == $i){
+                    // if($row['rank'] == $i){
                     echo '　　　', '<img src="image/ranking-number.png' . ($row['rank']) . '.png" alt="　" width="50%" height="50%">';
 
                     echo '<div class="ranking">';
@@ -38,11 +39,11 @@
                     echo '<a href="detail.php" class="information">', '<font color="red">', '　', '￥', $row['tanka'], '</font>', '</a>';
                     echo '<br><br>';
                     echo '</section></div></div>';
-                    }else{
-                        break;
+                    // }else{
+                    //     break;
                     }
-                }
-            }
+                // }
+            // }
         ?>
 
 
