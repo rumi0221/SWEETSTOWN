@@ -29,7 +29,7 @@
                         $sol->execute([$wow['product_id']]);
                         foreach($sol as $tow){
                             echo '<div class="product-info">';
-                            echo '<a href="detail.php?productid=',$tow['product_id'],'"><img src="img/',$tow['gazou'],'"></a>';
+                            echo '<a href="detail.php?product_id=',$tow['product_id'],'"><img src="img/',$tow['gazou'],'"></a>';
                             echo '<div>';
                             echo '<p>',$tow['product_mei'],'</p>';
                             echo '<p>購入日時：',$row['datetime'],'</p>';

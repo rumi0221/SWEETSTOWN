@@ -35,9 +35,14 @@
             echo '<button type="submit" name="favorite">',$i,'</button>';
             echo '</form>';
             echo '<div class="shohin2">';
-            echo '<button type="input-cart" oncc t7lick="location.href=cart.php">🛒 カートに入れる</button>';
+            echo '<button type="input-cart" onclick="location.href=cart.php">🛒 カートに入れる</button>';
             echo '<p>',$row['setumei'],'</p>';
-            
+            echo '<button type="review"onclick="location.href="review.html"">レビュー</button>';
+            $spl=$pdo->prepare('select * from product where product_id <> ? and product_type = ?');
+            $spl->execute([$row['product_id'],$row['product_type']]);
+            foreach($spl as $mow){
+              echo '<a href="detail.php?product_id=<img src="img/',$mow['gazou'],'"'
+            }
         }
       ?>
         <p>商品説明</p>
