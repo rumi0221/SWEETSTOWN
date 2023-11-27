@@ -65,7 +65,10 @@
           echo '<button type="submit" name="car">🛒 カートに入れる</button>';
           echo '</form>';
           echo '<p>',$row['setumei'],'</p>';
-          echo '<button type="review"onclick="location.href="review.php"">レビュー</button>';
+          echo '<form action="review.php" method="post">';
+          echo '<input type="hidden" name="pid"  value="',$set,'">';
+          echo '<button type="submit">レビュー</button>';
+          echo '</form>';
           $spl=$pdo->prepare('select * from product where product_id <> ? and product_type = ?');
           $spl->execute([$row['product_id'],$row['product_type']]);
           foreach($spl as $mow){
