@@ -51,19 +51,19 @@
               $fav->execute([$_SESSION['member']['member_id'],$set]);
               $i = '♡';
             }else{
-              echo "<hr>";
-              echo "削除します";
-              echo "<hr>";
               $favd=$pdo->prepare('delete from favorite where member_id=? and product_id=?');
               $favd->execute([$_SESSION['member']['member_id'],$set]);
               $i = '♥';
             }
           }
           echo '<div class="shohin2">';
-          echo '<form action="cart.php" method="post">';
-          echo '<input type="hidden" name="pid"  value="',$set,'">';
+          echo '<form method="post">';
           echo '<button type="submit" name="car">🛒 カートに入れる</button>';
           echo '</form>';
+          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['car'])) {
+            $ddd=$pdo->prepare('insert into cart values(default,?,?,1)');
+            $ddd->execute([$_SESSION['member'],$set]);
+          }
           echo '<p>',$row['setumei'],'</p>';
           echo '<form action="review.php" method="post">';
           echo '<input type="hidden" name="pid"  value="',$set,'">';
@@ -72,7 +72,7 @@
           $spl=$pdo->prepare('select * from product where product_id <> ? and product_type = ?');
           $spl->execute([$row['product_id'],$row['product_type']]);
           foreach($spl as $mow){
-            echo '<a href="detail.php?product_id=',$mow['product_id'],'><img src="img/',$mow['gazou'],'"></a>';
+            echo '<a href="detail.php?product_id=',$mow['product_id'],'"><img src="img/',$mow['gazou'],'"></a>';
           }
           echo '</div>';
         }
