@@ -1,5 +1,6 @@
 <?php session_start();?>
 <?php require 'db-connect.php'; ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,22 +10,29 @@
 </head>
 <body>
     <div class="Header">
-        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="header.css">
         SWEETSTOWN
     </div>
-        <link rel="stylesheet" href="css/cart.css">
+        <link rel="stylesheet" href="cart.css">
         <br><br>
     <h1>注文確認</h1>
     <hr width="90%" noshade><br>
-    <a class="image"><href src="#">商品画像</href></a>
-
-        <section>
-            <p class="description"></p>
-                商品名<br>
-                ショップ名<br>
-                ￥
-            <br><br>
-        </section>
+        <?php
+            echo '<br>';
+            $pdo=new PDO($connect,USER,PASS);
+            $sql=$pdo->query('select * from product');
+            echo '<form action="customer-infomation.php" method="POST">';
+            foreach ($sql as $row) {
+                echo '<a href="detail.php" class="information">', $row['gazou'], '</a>', '<br>';
+                echo '<section>';
+                echo '<p class="description"></p>';
+                echo $row['product_mei'], '<br>';
+                echo $row['shop_code'], '<br>';
+                echo '<font color="red">', '￥', $row['tanka'], '</font>','<br>';
+                echo '<br><br>';
+                echo '</section>';
+            }
+        ?>
 
         <div>
             <br>
