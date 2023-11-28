@@ -52,5 +52,6 @@
         echo '<p>商品合計　￥',$total,'</p>';
     ?>
     <button class="button2" onclick="location.href='order-infomation.php'">レジへ進む</button>
+    <center><footer><?php require 'menu.php';?></footer></center>
 </body>
 </html>
