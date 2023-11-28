@@ -1,3 +1,4 @@
+<?php require 'db-connect.php'; ?>
 <?php require 'menu.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -10,7 +11,6 @@
 <body>
     <div class="main">
         <h1>商品登録</h1>
-        <form action="product-registration-check.html" method="POST">
         <table class="table-color">
             <form action="product-registration-check.php" method="POST">
                 <tr>
@@ -19,11 +19,7 @@
                 </tr>
                 <tr>
                     <th>カテゴリ</th>
-                    <td>
-                        <select name="category">
-                            <option></option>
-                        </select>
-                    </td>
+                    <td><input type="text" name="category"></td>
                 </tr>
                 <tr>
                     <th>単価</th>
@@ -31,7 +27,7 @@
                 </tr>
                 <tr>
                     <th>商品画像</th>
-                    <td></td>
+                    <td><input type="file" name="image"></td>
                 </tr>
                 <tr>
                     <th>商品説明</th>
@@ -41,10 +37,10 @@
                     <th>季節</th>
                     <td>
                         <select name="season">
-                            <option value="spring">春</option>
-                            <option value="summer">夏</option>
-                            <option value="fall">秋</option>
-                            <option value="winter">冬</option>
+                            <option value="春">春</option>
+                            <option value="夏">夏</option>
+                            <option value="秋">秋</option>
+                            <option value="冬">冬</option>
                         </select>
                     </td>
                 </tr>
@@ -52,7 +48,13 @@
                     <th>店舗名</th>
                     <td>
                         <select name="shop_name">
-                            <option></option>
+                            <?php
+                                $pdo=new PDO($connect,USER,PASS);
+                                $sql=$pdo->query('select * from shop');
+                                foreach($sql as $row){
+                                    echo '<option>', $row['shop_mei'], '</option>';
+                                }
+                            ?>
                         </select>
                     </td>
                 </tr>
@@ -64,6 +66,8 @@
                 <br>
                 <button type="submit">登録確認</button>
             </form>
+            <br>
+            <br>
             <a href="productlist.php">戻る</a>
     </div>
 </body>

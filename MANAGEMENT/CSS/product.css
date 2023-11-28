@@ -40,6 +40,8 @@ table.product {
     border: none;
 }
 
+
+
 /*classのcss*/
 .side { /*menu.php*/
     background-color: #fff;
@@ -73,6 +75,11 @@ button.registration {
     border-radius: 10px;
     border: none; 
 } 
+
+.link {
+    margin-top: 100px;
+}
+
 
 .mdr {
     position: relative; /* 今の位置を基準 */
