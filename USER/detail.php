@@ -62,7 +62,7 @@
           echo '</form>';
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['car'])) {
             $ddd=$pdo->prepare('insert into cart values(default,?,?,1)');
-            $ddd->execute([$_SESSION['member'],$set]);
+            $ddd->execute([$_SESSION['member']['member_id'],$set]);
           }
           echo '<p>',$row['setumei'],'</p>';
           echo '<form action="review.php" method="post">';
