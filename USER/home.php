@@ -1,28 +1,30 @@
 <?php session_start();?>
 <?php require 'db-connect.php'; ?>
 <?php
-    unset($_SESSION['member']);
+    if(!isset($_SESSION['member'])){
+        $_SESSION['member']=['mail'=>$_POST['mail'],'pass'=>$_POST['pass']];
+    }
     $pdo=new PDO($connect,USER,PASS);
     $sql=$pdo->prepare('select * from member where mail=? and pass=?');
-    $sql->execute([$_POST['mail'],$_POST['pass']]);
+    $sql->execute([$_SESSION['member']['mail'],$_SESSION['member']['pass']]);
     $count = $sql -> rowCount();
     if($count == 0 && !isset($_SESSION['member']['id'])){
+        unset($_SESSION['member']);
         header("Location: login-input.php");
         exit;
     }else{
-        if(!isset($_SESSION['member'])){
-            unset($_SESSION['member']);
-            foreach ($sql as $row){
-                $_SESSION['member']=[
-                    'member_id'=>$row['member_id'],'member_mei'=>$row['member_mei'],
-                    'kana_mei'=>$row['kana_mei'],'mail'=>$row['mail'],
-                    'pass'=>$row['pass']
-                ];
-                if (isset($_POST['login'])) {
-                    $cookie_value = serialize($_SESSION['member']);
-                    setcookie('login_me_cookie', $cookie_value, time() + (86400 * 30), "/"); // 30日間のクッキーを設定
-                }
+        unset($_SESSION['member']);
+        foreach ($sql as $row){
+            $_SESSION['member']=[
+                'member_id'=>$row['member_id'],'member_mei'=>$row['member_mei'],
+                'kana_mei'=>$row['kana_mei'],'mail'=>$row['mail'],
+                'pass'=>$row['pass']
+            ];
+            if (isset($_POST['login'])) {
+                $cookie_value = serialize($_SESSION['member']);
+                setcookie('login_me_cookie', $cookie_value, time() + (86400 * 30), "/"); // 30日間のクッキーを設定
             }
+        
         }
         echo '<!DOCTYPE html>';
         echo '<html lang="ja">';
