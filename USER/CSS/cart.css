@@ -15,9 +15,12 @@ p {
     float: left;
 }
 
-section {
+.item {
     font-size: 19px; 
-    float: left;
+    text-align: left;
+    display:flex;
+    width:12em;
+    margin:0 auto;
 }
 
 div {

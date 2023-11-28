@@ -32,7 +32,9 @@
                     echo '<a href="detail.php" class="information">', $row['gazou'], '</a>', '<br>';
                     echo '<section>';
                     echo '<a href="detail.php" class="information">', '　', $row['product_mei'], '</a>', '<br>';
-                    echo '<a href="detail.php" class="information">', '　', $row['shop_code'], '</a>', '<br>';
+                    $sql2= $pdo->query('select * from shop where shop_code = '. $row['shop_code']);
+                    $row2 = $sql2-> fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
+                    echo '<a href="detail.php" class="information">', '　', $row2['shop_mei'], '</a>', '<br>';
                     echo '<a href="detail.php" class="information">', '<font color="red">', '　', '￥', $row['tanka'], '</font>', '</a>';
                     echo '<br><br>';
                     echo '</section></div></div>';
