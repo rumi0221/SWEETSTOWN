@@ -16,16 +16,15 @@ p {
 }
 
 .item {
-    font-size: 19px; 
-    text-align: left;
+    font-size: 19px;
     display:flex;
     width:12em;
     margin:0 auto;
 }
 
-div {
-    text-align: right;
-    font-size: 18px; 
+.pieces {
+  text-align: right;
+  font-size: 18px; 
 }
 
 button {

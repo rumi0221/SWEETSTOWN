@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>注文情報確認画面</title>
+    <title>注文情報確定画面</title>
 </head>
 <body>
     <div class="Header">
@@ -14,9 +14,7 @@
         SWEETSTOWN
     </div>
         <link rel="stylesheet" href="CSS/cart.css">
-        <br><br>
-    <h1>注文確認</h1>
-    <hr width="90%" noshade><br>
+        <br><br><br><br>
         <?php
             echo '<br>';
             $pdo=new PDO($connect,USER,PASS);
@@ -54,7 +52,11 @@
 
         <div style="padding: 10px; margin-bottom: 10px; width: 60%; background-color: #e7e7d6; margin: 0 0 0 auto;">
             <span>商品合計　￥</span>
-        </div>
+        </div><br><br>
+
+        <p>注文が確定されました</p><br>
+
+        <p><a href="home.php">ホームへ戻る</a></p>
 
         <br>
         <button class="button2" onclick="location.href='order-ok.html'">購入する</button>

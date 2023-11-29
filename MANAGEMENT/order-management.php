@@ -27,7 +27,13 @@
                     echo '<td>', $row['kou_id'], '</td>';
                     echo '<td>', $row2['member_id'], '</td>';
                     echo '<td>';
-
+                    $sum = 0;
+                    foreach($row2 as $r2){
+                        $sql3=$pdo->query('select tanka from product where product_id = '. $r2['product_id']);
+                        $row3 = $sql3->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
+                        $sum += $row['su'] * $row3['tanka'];   
+                    }
+                    echo $sum;
                     echo '</td>';
                     echo '<td>', $row2['pay'], '</td>';
                     echo '<td>';
