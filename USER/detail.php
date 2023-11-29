@@ -61,8 +61,16 @@
           echo '<button type="submit" name="car">🛒 カートに入れる</button>';
           echo '</form>';
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['car'])) {
-            $ddd=$pdo->prepare('insert into cart values(default,?,?,1)');
-            $ddd->execute([$_SESSION['member']['member_id'],$set]);
+            $col=$pdo->prepare('select * from cart where datetime="0000-00-00 00:00:00" and member_id=? and product_id=?');
+            $col->execute([$_SESSION['member']['member_id'],$set]);
+            $su = $col -> rowCount();
+            if($su >= 1){
+              echo '<div class="error">この商品はすでにカートに入っています</div>';
+            }else{
+              $ddd=$pdo->prepare('insert into cart values(default,?,?,1)');
+              $ddd->execute([$_SESSION['member']['member_id'],$set]);
+              echo '<div>商品を追加しました';
+            }
           }
           echo '<p>',$row['setumei'],'</p>';
           echo '<form action="review.php" method="post">';
