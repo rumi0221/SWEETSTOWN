@@ -15,16 +15,17 @@
     </div>
     <div class="favorite">
         <h2>お気に入り</h2>
-        <?php
         <div class="favoritebutton">
             <input type="button" value="スイーツ" style="width:80px;height:40px" class="sweetbutton">
             <input type="button" onclick="location.href='./favorite-shop.html'"  value="ショップ" style="width:80px;height:40px">
         </div>
+        <?php
+        <div class="content">
         $pdo=new PDO($connect,USER,PASS);
         $sql=$pdo->prepare(
-        'select * from favorite,product '.
-        'where customer_id=? and product_id=id');
-        $sql->execute([$_SESSION['customer']['id']]);
+        'select * from favorite,product,shop'.
+        'where member_id=? and product_id=id');
+        $sql->execute([$_SESSION['member']['id']]);
         foreach ($sql as $row){
             $id=$row['id'];
             echo '<tr>';
@@ -32,8 +33,6 @@
             echo '<td><a href="detail.php?id='.$id.'">',$row['name'],
                  '</a></td>';
             echo '<td>',$row['price'],'</td>';
-            echo '<td><a href="favorite-delete.php?id=',$id,
-                 '">削除</a></td>';
             echo '</tr>';
         }
         <div class="content">
