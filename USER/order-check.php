@@ -10,10 +10,10 @@
 </head>
 <body>
     <div class="Header">
-        <link rel="stylesheet" href="header.css">
+        <link rel="stylesheet" href="CSS/header.css">
         SWEETSTOWN
     </div>
-        <link rel="stylesheet" href="cart.css">
+        <link rel="stylesheet" href="CSS/cart.css">
         <br><br>
     <h1>注文確認</h1>
     <hr width="90%" noshade><br>
@@ -24,33 +24,37 @@
             echo '<form action="customer-infomation.php" method="POST">';
             foreach ($sql as $row) {
                 echo '<div class="item">';
-                echo '<a href="detail.php" class="information">', $row['gazou'], '</a>', '<br>';
+                echo '<a href="detail.php">', $row['gazou'], '</a>', '<br>';
                 echo '<section>';
-                // echo '<p class="description"></p>';
+                echo '<p class="description"></p>';
                 echo '　', $row['product_mei'], '<br>';
                 $sql2= $pdo->query('select * from shop where shop_code = '. $row['shop_code']);
                 $row2 = $sql2-> fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
                 echo '　', $row2['shop_mei'], '<br>';
                 echo '<font color="red">', '　', '￥', $row['tanka'], '</font>','<br>';
-                echo '<br><br>';
                 echo '</section></div></div>';
+                echo '<br><br>';
             }
             $count = $sql -> rowCount();
             $count = 0;
             $kakaku = 0;
         
-        echo '<div>';
-        echo '<br>';
-        echo '<h4>', '✕', $row['su'], '　　', '</h4>';
-        echo '</div>';
+            echo '<div class="pieces">';
+            echo '<br>';
+            echo '<h4>', '✕', $row['su'], '　　', '</h4>';
+            echo '</div>';
 
-        echo '<div style="padding: 10px; margin-bottom: 10px; width: 60%; background-color: #e7e7d6; margin: 0 0 0 auto;">';
-        echo '<span>商品合計　￥</span>';
-            $kakaku = $row['tanka'] * $row['su'];
-            $total = $total + $kakaku;
-        echo '</div>';
+        // echo '<div style="padding: 10px; margin-bottom: 10px; width: 60%; background-color: #e7e7d6; margin: 0 0 0 auto;">';
+        // echo '<span>商品合計　￥</span>';
+        //     // $kakaku = $row['tanka'] * $row['su'];
+        //     // $total = $total + $kakaku;
+        // echo '</div>';
 
         ?>
+
+        <div style="padding: 10px; margin-bottom: 10px; width: 60%; background-color: #e7e7d6; margin: 0 0 0 auto;">
+            <span>商品合計　￥</span>
+        </div>
 
         <br>
         <button class="button2" onclick="location.href='order-ok.html'">購入する</button>
