@@ -15,6 +15,7 @@
     <div class="Header">
         SWEETSTOWN
     </div>
+    <div style="margin-top:60px;">
     <h1>カート</h1>
     <?php
         $pdo=new PDO($connect,USER,PASS);
@@ -42,7 +43,7 @@
                 echo '</section>';
                 echo '<div>';
                 echo '<br>';
-                echo '<button @click="increment">ー</button><button type = "submit"><lavel>',$row['su'],'</lavel></button><button @click="decrement">＋</button><br>';
+                echo '<button onclick="increment">ー</button><button type = "submit"><lavel>',$row['su'],'</lavel></button><button onclick="decrement">＋</button><br>';
                 echo '<a href="delete-product">削除する</a><br><br>';
                 echo '</div>';
                 $kakaku = $pow['tanka'] * $row['su'];
@@ -52,6 +53,7 @@
         echo '<p>商品合計　￥',$total,'</p>';
     ?>
     <button class="button2" onclick="location.href='order-infomation.php'">レジへ進む</button>
+    </div>
     <center><footer><?php require 'menu.php';?></footer></center>
 </body>
 </html>
