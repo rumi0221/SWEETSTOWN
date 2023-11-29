@@ -54,3 +54,13 @@ p{
 .content{
     margin: auto;
 }
+
+.menu {
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    display: block;
+    text-align: center;
+    background-color: #fff8e8;
+}
