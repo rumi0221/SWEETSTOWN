@@ -31,7 +31,7 @@
             foreach($sss as $pow){
                 $ppa=$pdo->prepare('select * from shop where shop_code = ?');
                 $ppa->execute([$pow['shop_code']]);
-                echo '<a class="image" href src="detail.php?product_id=',$row['product_id'],'"><img src="img/',$pow['gazou'],'"></a>';
+                echo '<div class="image"><a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$pow['gazou'],'"></a></div>';
                 echo '<section>';
                 echo '<p class="description"></p>';
                 echo '商品名:',$pow['product_mei'],'<br>';
@@ -43,11 +43,18 @@
                 echo '</section>';
                 echo '<div>';
                 echo '<br>';
-                echo '<button onclick="increment">ー</button><button type = "submit"><lavel>',$row['su'],'</lavel></button><button onclick="decrement">＋</button><br>';
-                echo '<a href="delete-product">削除する</a><br><br>';
+                echo '<form method="post">';
+                echo '<input type="number" name="suryou" value=',$row['su'],'>';
+                echo '</form>';
+                echo '<form method="post">';
+                echo '<button type="submit" name="delete">削除する</button>';
                 echo '</div>';
                 $kakaku = $pow['tanka'] * $row['su'];
                 $total = $total + $kakaku;
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
+                    $conn=$pdo->prepare('delete from cart where datetime="0000-00-00 00:00:00" and member_id = ? and product_id = ?');
+                    $conn->execute([$_SESSION['member']['member_id'],$row['product_id']]);
+                }
             }
         }
         echo '<p>商品合計　￥',$total,'</p>';
