@@ -14,15 +14,15 @@
     <div class="Header">
         SWEETSTOWN
     </div>
-    <div class="search">
         <?php
             $pdo=new PDO($connect,USER,PASS);
             $sql=$pdo->query('select distinct product_type FROM product');
             foreach($sql as $row){
-                echo '<button onclick="location.href=\'searchlist.php?id=' . $row . '\'">'.$row.'</button>';
+                echo '<div class="search">';
+                echo '<button onclick="location.href=\'searchlist.php?id=' . $row['product_type'] . '\'">'.$row['product_type'].'</button><br>';
+                echo '</div>';
             }
         ?>
-    </div>
     <footer><?php require 'menu.php';?></footer>
 </body>
 </html>
