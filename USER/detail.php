@@ -61,18 +61,26 @@
           echo '<button type="submit" name="car">🛒 カートに入れる</button>';
           echo '</form>';
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['car'])) {
-            $ddd=$pdo->prepare('insert into cart values(default,?,?,1)');
-            $ddd->execute([$_SESSION['member']['member_id'],$set]);
+            $col=$pdo->prepare('select * from cart where datetime="0000-00-00 00:00:00" and member_id=? and product_id=?');
+            $col->execute([$_SESSION['member']['member_id'],$set]);
+            $su = $col -> rowCount();
+            if($su >= 1){
+              echo '<div class="error">この商品はすでにカートに入っています</div>';
+            }else{
+              $ddd=$pdo->prepare('insert into cart values(default,?,?,1)');
+              $ddd->execute([$_SESSION['member']['member_id'],$set]);
+              echo '<div>商品を追加しました';
+            }
           }
           echo '<p>',$row['setumei'],'</p>';
           echo '<form action="review.php" method="post">';
           echo '<input type="hidden" name="pid"  value="',$set,'">';
           echo '<button type="submit">レビュー</button>';
-          echo '</form>';
+          echo '</form><br>';
           $spl=$pdo->prepare('select * from product where product_id <> ? and product_type = ?');
           $spl->execute([$row['product_id'],$row['product_type']]);
           foreach($spl as $mow){
-            echo '<a href="detail.php?product_id=',$mow['product_id'],'"><img src="img/',$mow['gazou'],'"></a>';
+            echo '<a href="detail.php?product_id=',$mow['product_id'],'"><img src="img/',$mow['gazou'],'"></a>　';
           }
           echo '</div>';
         }

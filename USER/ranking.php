@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="Header">
-        <link rel="stylesheet" href="header.css">
+        <link rel="stylesheet" href="CSS/header.css">
         SWEETSTOWN
     </div>
 
-    <link rel="stylesheet" href="ranking.css">
+    <link rel="stylesheet" href="CSS/ranking.css">
     <br><br>
 
     <h1>ランキング</h1>
