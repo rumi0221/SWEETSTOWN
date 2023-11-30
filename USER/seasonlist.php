@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="Header">
-        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="CSS/header.css">
         SWEETSTOWN
     </div>
 
-    <link rel="stylesheet" href="css/seasonlist.css">
+    <link rel="stylesheet" href="CSS/seasonlist.css">
     <br><br>
     <h1>季節のスイーツ</h1>
     <hr width="90%" noshade><br>
