@@ -45,7 +45,6 @@ session_destroy();
                 </form>
                 <form action="withdrawal-ok.php" method="post">
                 <input type="submit" name="withdraw" value="退会する" style="width:80px;height:40px" class="with">
-                <?php unset($_SESSION['member']);?>
                 </form>
             </div>
     </div>

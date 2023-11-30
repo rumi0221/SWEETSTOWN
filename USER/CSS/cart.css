@@ -86,3 +86,11 @@ input {
     text-align: center;
     background-color: #fff8e8;
   }
+
+  .dele{
+    border: none;
+    background-color: transparent;
+    color:rgb(8, 123, 255);
+    cursor: pointer;
+    text-decoration: none;
+  }
