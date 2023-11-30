@@ -43,23 +43,17 @@
                 echo '</section>';
                 echo '<div>';
                 echo '<br>';
-                echo '<form method="post">';
-                echo '<input type="number" name="suryou" value=',$row['su'],'>';
-                echo '</form>';
-                echo '<form method="post">';
-                echo '<button type="submit" name="delete">削除する</button>';
-                echo '</div>';
+                echo $row['su'],'<br>';
+                echo '<a href="#">削除する</a><br>';
                 $kakaku = $pow['tanka'] * $row['su'];
                 $total = $total + $kakaku;
-                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
-                    $conn=$pdo->prepare('delete from cart where datetime="0000-00-00 00:00:00" and member_id = ? and product_id = ?');
-                    $conn->execute([$_SESSION['member']['member_id'],$row['product_id']]);
-                }
             }
         }
         echo '<p>商品合計　￥',$total,'</p>';
     ?>
-    <button class="button2" onclick="location.href='order-infomation.php'">レジへ進む</button>
+    <form action="order-infomation.php" method="post">
+        <button class="button2" >レジへ進む</button>
+    </form>
     </div>
     <center><footer><?php require 'menu.php';?></footer></center>
 </body>
