@@ -6,7 +6,7 @@ $min_price = isset($_SESSION['min_price']) ? $_SESSION['min_price'] : 0;
 $max_price = isset($_SESSION['max_price']) ? $_SESSION['max_price'] : PHP_INT_MAX;
 $search_result = isset($_SESSION['search_result']) ? $_SESSION['search_result'] : [];
 
-
+$pdo=new PDO($connect,USER,PASS);
 $stmt = $pdo->prepare('select product_id, product_mei, shop_code, tanka, gazou 
                        from product 
                        where tanka BETWEEN :min_price AND :max_price');
