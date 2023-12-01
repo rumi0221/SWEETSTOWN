@@ -30,28 +30,24 @@
                 $row2 = $sql2-> fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
                 echo '　', $row2['shop_mei'], '<br>';
                 echo '<font color="red">', '　', '￥', $row['tanka'], '</font>','<br>';
-                echo '</section></div></div>';
+                echo '</section>';
+                echo '　　';
+                echo '<div class="pieces">';
+                echo '<br>';
+                echo '<h4>', '×', $row['su'], '　　', '</h4>';
+                echo '</div></div>';
                 echo '<br><br>';
             }
             $count = $sql -> rowCount();
-            $count = 0;
-            $kakaku = 0;
-        
-            echo '<div class="pieces">';
-            echo '<br>';
-            echo '<h4>', '✕', $row['su'], '　　', '</h4>';
-            echo '</div>';
+            $total = 0;
 
-        // echo '<div style="padding: 10px; margin-bottom: 10px; width: 60%; background-color: #e7e7d6; margin: 0 0 0 auto;">';
-        // echo '<span>商品合計　￥</span>';
-        //     // $kakaku = $row['tanka'] * $row['su'];
-        //     // $total = $total + $kakaku;
-        // echo '</div>';
+            echo '<div style="padding: 10px; margin-bottom: 10px; width: 60%; background-color: #e7e7d6; margin: 0 0 0 auto;">';
+            echo '<div style="font-size: 20px;">', '　商品合計　￥ ', $total, '</div>';
+            echo '</div>';
+    
 
         ?>
-
-        <div style="padding: 10px; margin-bottom: 10px; width: 60%; background-color: #e7e7d6; margin: 0 0 0 auto;">
-            <span>商品合計　￥</span>
+        
         </div><br><br>
 
         <p>注文が確定されました</p><br>
