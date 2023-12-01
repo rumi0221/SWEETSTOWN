@@ -19,16 +19,14 @@
             $sql=$pdo->query('select distinct product_type FROM product');
             $i = 0;
             foreach($sql as $row){
+                echo '<div class="search">';
                 if($i == 0){
-                    echo '<div class="search">';
                     echo '<button onclick="location.href=\'searchlist.php?id=' . $row['product_type'] . '\'" style="margin-top:50px;">'.$row['product_type'].'</button><br>';
-                    echo '</div>';
                     $i += 1;
                 }else{
-                    echo '<div class="search">';
                     echo '<button onclick="location.href=\'searchlist.php?id=' . $row['product_type'] . '\'">'.$row['product_type'].'</button><br>';
-                    echo '</div>';
                 }
+                echo '</div>';
             }
         ?>
     </div>
