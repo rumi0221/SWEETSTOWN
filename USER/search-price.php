@@ -65,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/search.css">
+    <link rel="stylesheet" href="CSS/menu.css">
     <title>検索画面</title>
 </head>
 <body>
@@ -81,5 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button class="searchbutton" name="price_range" value="2500-3000">￥2500 ～ 3000</button>
         </form>
     </div>
+    <footer><?php require 'menu.php';?></footer>
 </body>
 </html>
