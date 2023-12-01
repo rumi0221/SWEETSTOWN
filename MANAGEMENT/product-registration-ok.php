@@ -11,8 +11,8 @@
 <body>
     <?php
         $pdo=new PDO($connect, USER, PASS);
-        $sql=$pdo->prepare('insert into product(product_mei, product_type, tanka, gazou, setumei, season, shop_id, zaiko ) values(?, ?, ?, ?, ?, ?, ?, ?)');
-        $sql->execute([ $_POST['product_name'], $_POST['category'], $_POST['price'], $_POST['image'], $_POST['explanation'], $_POST['season'], $_POST['shop_name'], $_POST['stock'] ]);
+        $sql=$pdo->prepare('insert into product(product_mei, product_type, tanka, gazou, setumei, season, zaiko, shop_code) values(?, ?, ?, ?, ?, ?, ?, ?)');
+        $sql->execute([ $_POST['product_name'], $_POST['category'], $_POST['price'], $_POST['image'], $_POST['explanation'], $_POST['season'], $_POST['stock'] , $_POST['shop_id']]);
     ?>
     <div class="main">
         <div class="link">

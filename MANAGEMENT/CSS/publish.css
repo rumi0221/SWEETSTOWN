@@ -70,6 +70,19 @@ table.product {
     margin-top: 100px;
 }
 
+button.link2 {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 15px;
+    color: #0033cc;
+}
+
+button.link2:hover {
+    text-decoration: underline;
+    color: #002080;
+}
+
 .mdr {
     position: relative; /* 今の位置を基準 */
     left: 150px;
