@@ -43,9 +43,13 @@
 
 .center {
     text-align: center;
-  }
+}
 
-  .center img {
+.center img {
     margin: 0 auto;
     display: block;
+}
+
+.content {
+    margin-top: 50px; /* コンテンツの一番上から50px下に配置 */
   }
