@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="Header">
-        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="CSS/header.css">
         SWEETSTOWN
     </div>
 
-    <link rel="stylesheet" href="css/seasonlist.css">
+    <link rel="stylesheet" href="CSS/seasonlist.css">
     <br><br>
     <h1>季節のスイーツ</h1>
     <hr width="90%" noshade><br>
@@ -25,10 +25,12 @@
         echo '<form action="customer-infomation.php" method="POST">';
         foreach ($sql as $row) {
             echo '<div class="seasonlist">';
-            echo '<a href="detail.php" class="information">', $row['gazou'], '</a>', '<br>';
+            echo '<a href="detail.php?product_id=',$row['product_id'],'" class="information"><img src="img/', $row['gazou'], '"></a>', '<br>';
             echo '<section>';
             echo '<a href="detail.php" class="information">', '　', $row['product_mei'], '</a>', '<br>';
-            echo '<a href="detail.php" class="information">', '　', $row['shop_code'], '</a>', '<br>';
+            $sql2= $pdo->query('select * from shop where shop_code = '. $row['shop_code']);
+            $row2 = $sql2-> fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
+            echo '<a href="detail.php" class="information">', '　', $row2['shop_mei'], '</a>', '<br>';
             echo '<a href="detail.php" class="information">', '<font color="red">', '　', '￥', $row['tanka'], '</font>', '</a>';
             echo '<br><br>';
             echo '</section></div>';

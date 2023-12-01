@@ -1,6 +1,6 @@
 .search{
     vertical-align:center;
-    margin: 4% auto;
+    margin: 0% auto;
     text-align: center;
     position: relative;
 }
@@ -43,9 +43,9 @@
 
 .center {
     text-align: center;
-  }
+}
 
-  .center img {
+.center img {
     margin: 0 auto;
     display: block;
-  }
+}

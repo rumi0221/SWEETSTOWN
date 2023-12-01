@@ -76,6 +76,10 @@ button.registration {
     border: none; 
 } 
 
+.textw {
+    width: 500px;
+}
+
 .link {
     margin-top: 100px;
 }

@@ -30,13 +30,13 @@
         echo '<html lang="ja">';
         echo '<head>';
         echo '<link rel="stylesheet" href="CSS/menu.css">';
+        echo '<link rel="stylesheet" href="CSS/home.css">';
         echo '<link rel="stylesheet" href="CSS/header.css">';
         echo '<title>ホーム画面</title>';
         echo '</head>';
         echo '<body>';
         echo '<div class="Header">SWEETSTOWN</div><br>';
-        echo '<div><br><a href="seasonlist.php"><img src="img/season.jpg"></a><br></div><br>';
-        echo '<br>';
+        echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/season.jpg"></a><br>';
         echo '<form action="cart.php" method="post">';
         echo '<button type="submit">カート内商品一覧</button>';
         echo '</form><br>';
@@ -50,7 +50,7 @@
             if($count == 0){
                 echo '<tr>';
             }
-            echo '<td>';
+            echo '<td style="width:200px;">';
             echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$row['gazou'],'"></a>';
             echo '<br>',$row['product_mei'],'<br>',$row['tanka'];
             echo '</td>';
@@ -63,6 +63,7 @@
         echo '</table>';
     }
     ?>
+    </div>
     <footer><?php require 'menu.php';?></footer>
     </body>
 </html>

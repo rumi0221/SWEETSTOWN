@@ -11,6 +11,8 @@
     <div class="Header">
         SWEETSTOWN
     </div>
+    
+    <?php unset($_SESSION['member']);?>
     <div class="withdrawal-ok">
         <p>退会手続きが完了しました。</p>
         <a href= "login-input.php" >ログイン画面へ</a>

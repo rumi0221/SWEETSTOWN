@@ -15,23 +15,23 @@
             <form action="product-registration-check.php" method="POST">
                 <tr>
                     <th>商品名</th>
-                    <td><input type="text" name="product_name"/></td>
+                    <td><input type="text" class="textw" name="product_name" required></td>
                 </tr>
                 <tr>
                     <th>カテゴリ</th>
-                    <td><input type="text" name="category"></td>
+                    <td><input type="text" class="textx" name="category" required></td>
                 </tr>
                 <tr>
                     <th>単価</th>
-                    <td><input type="text" name="price"></td>
+                    <td><input type="text" name="price" required></td>
                 </tr>
                 <tr>
                     <th>商品画像</th>
-                    <td><input type="file" name="image"></td>
+                    <td><input type="file" name="image" required></td>
                 </tr>
                 <tr>
                     <th>商品説明</th>
-                    <td><input type="text" name="explanation"></td>
+                    <td><input type="text" name="explanation" required></td>
                 </tr>
                 <tr>
                     <th>季節</th>
@@ -60,7 +60,7 @@
                 </tr>
                 <tr>
                     <th>在庫数</th>
-                    <td><input type="text" name="stock"></td>
+                    <td><input type="text" name="stock" required></td>
                 </tr>
             </table>
                 <br>

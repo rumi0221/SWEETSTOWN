@@ -15,6 +15,7 @@
     <div class="Header">
         SWEETSTOWN
     </div>
+    <div style="margin-top:60px;">
     <h1>カート</h1>
     <?php
         $pdo=new PDO($connect,USER,PASS);
@@ -30,7 +31,7 @@
             foreach($sss as $pow){
                 $ppa=$pdo->prepare('select * from shop where shop_code = ?');
                 $ppa->execute([$pow['shop_code']]);
-                echo '<a class="image" href src="detail.php?product_id=',$row['product_id'],'"><img src="img/',$pow['gazou'],'"></a>';
+                echo '<div class="image"><a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$pow['gazou'],'"></a></div>';
                 echo '<section>';
                 echo '<p class="description"></p>';
                 echo '商品名:',$pow['product_mei'],'<br>';
@@ -42,16 +43,18 @@
                 echo '</section>';
                 echo '<div>';
                 echo '<br>';
-                echo '<button @click="increment">ー</button><button type = "submit"><lavel>',$row['su'],'</lavel></button><button @click="decrement">＋</button><br>';
-                echo '<a href="delete-product">削除する</a><br><br>';
-                echo '</div>';
+                echo $row['su'],'<br>';
+                echo '<a href="#">削除する</a><br>';
                 $kakaku = $pow['tanka'] * $row['su'];
                 $total = $total + $kakaku;
             }
         }
         echo '<p>商品合計　￥',$total,'</p>';
     ?>
-    <button class="button2" onclick="location.href='order-infomation.php'">レジへ進む</button>
+    <form action="order-infomation.php" method="post">
+        <button class="button2" >レジへ進む</button>
+    </form>
+    </div>
     <center><footer><?php require 'menu.php';?></footer></center>
 </body>
 </html>
