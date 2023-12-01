@@ -30,16 +30,16 @@
                 $row2 = $sql2-> fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
                 echo '　', $row2['shop_mei'], '<br>';
                 echo '<font color="red">', '　', '￥', $row['tanka'], '</font>','<br>';
-                echo '</section></div></div>';
+                echo '</section>';
+                echo '　　';
+                echo '<div class="pieces">';
+                echo '<br>';
+                echo '<h4>', '×', $row['su'], '　　', '</h4>';
+                echo '</div></div>';
                 echo '<br><br>';
             }
             $count = $sql -> rowCount();
             $total = 0;
-        
-            echo '<div class="pieces">';
-            echo '<br>';
-            echo '<h4>', '✕', $row['su'], '　　', '</h4>';
-            echo '</div>';
 
             echo '<div style="padding: 10px; margin-bottom: 10px; width: 60%; background-color: #e7e7d6; margin: 0 0 0 auto;">';
             echo '<div style="font-size: 20px;">', '　商品合計　￥ ', $total, '</div>';
