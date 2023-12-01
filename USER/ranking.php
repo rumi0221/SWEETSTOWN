@@ -18,7 +18,6 @@
 
     <h1>ランキング</h1>
     <hr width="90%" noshade><br>
-
         <?php
             echo '<br>';
             $pdo=new PDO($connect,USER,PASS);
@@ -26,7 +25,7 @@
             echo '<form action="customer-infomation.php" method="POST">';
             $i = 1;
                 foreach ($sql as $row) {
-                    echo '　　　', '<img src="image/ranking-number.png' . ($row['rank']) . '.png" alt="　" width="50%" height="50%">';
+                    echo '　　　', '<img src="img/ranking', $i ,'.png"' . ($row['rank']) . '.png" alt="　" width="12%" height="12%">';
 
                     echo '<div class="ranking">';
                     echo '<a href="detail.php" class="information">', $row['gazou'], '</a>', '<br>';
@@ -38,6 +37,7 @@
                     echo '<a href="detail.php" class="information">', '<font color="red">', '　', '￥', $row['tanka'], '</font>', '</a>';
                     echo '<br><br>';
                     echo '</section></div></div>';
+                    $i++;
                 }
         ?>
 
