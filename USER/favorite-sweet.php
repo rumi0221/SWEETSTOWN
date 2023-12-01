@@ -1,3 +1,7 @@
+<?php
+session_start();
+require 'db-connect.php'; 
+?>
 <!DOCTYPE html>
 <html lang="ja">
 

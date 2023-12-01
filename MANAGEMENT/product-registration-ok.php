@@ -11,7 +11,7 @@
 <body>
     <?php
         $pdo=new PDO($connect, USER, PASS);
-        $sql=$pdo->prepare('insert into product(product_mei, product_type, tanka, gazou, setumei, season, zaiko, shop_code) values(?, ?, ?, ?, ?, ?, ?, ?)');
+        $sql=$pdo->prepare('insert into product values(NULL, ?, ?, ?, ?, ?, DEFAULT, ?, ?, ?, DEFAULT, ?)');
         $sql->execute([ $_POST['product_name'], $_POST['category'], $_POST['price'], $_POST['image'], $_POST['explanation'], $_POST['season'], $_POST['stock'] , $_POST['shop_id']]);
     ?>
     <div class="main">
