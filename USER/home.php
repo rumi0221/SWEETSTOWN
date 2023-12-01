@@ -50,7 +50,7 @@
             if($count == 0){
                 echo '<tr>';
             }
-            echo '<td style="width:200px;">';
+            echo '<td style="width:100px;">';
             echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$row['gazou'],'"></a>';
             echo '<br>',$row['product_mei'],'<br>',$row['tanka'];
             echo '</td>';
