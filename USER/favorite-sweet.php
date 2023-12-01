@@ -1,3 +1,7 @@
+<?php
+session_start();
+require 'db-connect.php'; 
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -22,14 +26,19 @@
         <?php
         $pdo=new PDO($connect,USER,PASS);
         $sql=$pdo->prepare(
-        'select * from favorite,product,shop'.
-        'where member_id=? and product_id=id and shop_code=');
-        $sql->execute([$_SESSION['member']['id']]);
+            'select * from favorite,product,shop
+            where favorite.member_id=?
+            and favorite.product_id=product.product_id 
+            and product.shop_code=shop.shop_code
+            and shop.shop_code=?');
+        $sql->execute([$_SESSION['member']['id'],$_SESSION['shop']['code']]);
             foreach ($sql as $row) {
-                $id=$row['id'];
-                echo '<a href="detail.php?id='.$id.'">', $row['product_mei'],'</a>';
-                echo $row['shop_mei'];
-                echo $row['tanka'];
+//                $id=$row['id'];
+                echo $row['gazou'], " / ";
+                echo $row['product_mei'], " / ";
+                echo $row['shop_mei'], " / ";
+                echo $row['tanka'], " / ";
+                echo "<br>";
             }
         ?> 
     <div class="menu">
