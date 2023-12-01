@@ -21,10 +21,10 @@
             foreach($sql as $row){
                 echo '<div class="search">';
                 if($i == 0){
-                    echo '<button onclick="location.href=\'searchlist.php?id=' . $row['product_type'] . '\'" style="margin-top:50px;">'.$row['product_type'].'</button><br>';
+                    echo '<button onclick="location.href=\'searchlist.php?type=' . $row['product_type'] . '\'" style="margin-top:50px;">'.$row['product_type'].'</button><br>';
                     $i += 1;
                 }else{
-                    echo '<button onclick="location.href=\'searchlist.php?id=' . $row['product_type'] . '\'">'.$row['product_type'].'</button><br>';
+                    echo '<button onclick="location.href=\'searchlist.php?type=' . $row['product_type'] . '\'">'.$row['product_type'].'</button><br>';
                 }
                 echo '</div>';
             }
