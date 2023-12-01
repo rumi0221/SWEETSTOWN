@@ -19,24 +19,24 @@
                 </tr>
                 <tr>
                     <th>カテゴリ</th>
-                    <td><input type="text" class="textx" name="category" required></td>
+                    <td><input type="text" class="textw" name="category" required></td>
                 </tr>
                 <tr>
                     <th>単価</th>
-                    <td><input type="text" name="price" required></td>
+                    <td><input type="text" class="textw" name="price" required></td>
                 </tr>
                 <tr>
                     <th>商品画像</th>
-                    <td><input type="file" name="image" required></td>
+                    <td><input type="file" class="textw" name="image" required></td>
                 </tr>
                 <tr>
                     <th>商品説明</th>
-                    <td><input type="text" name="explanation" required></td>
+                    <td><input type="text" class="textw" name="explanation" required></td>
                 </tr>
                 <tr>
                     <th>季節</th>
                     <td>
-                        <select name="season">
+                        <select class="textw" name="season">
                             <option value="春">春</option>
                             <option value="夏">夏</option>
                             <option value="秋">秋</option>
@@ -47,7 +47,7 @@
                 <tr>
                     <th>店舗名</th>
                     <td>
-                        <select name="shop_name">
+                        <select class="textw" name="shop_name">
                             <?php
                                 $pdo=new PDO($connect,USER,PASS);
                                 $sql=$pdo->query('select * from shop');
@@ -60,7 +60,7 @@
                 </tr>
                 <tr>
                     <th>在庫数</th>
-                    <td><input type="text" name="stock" required></td>
+                    <td><input type="text" class="textw" name="stock" required></td>
                 </tr>
             </table>
                 <br>
