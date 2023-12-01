@@ -1,3 +1,4 @@
+<?php require 'db-connect.php'; ?>
 <?php require 'menu.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -28,7 +29,7 @@
             echo 'の季節商品</h1>';
         ?>
         <br>
-        <table>
+        <table class="table_color">
             <tr>
                 <th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>単価</th><th>商品説明</th><th>商品画像</th><th>総購入数</th><th>季節</th><th>在庫数</th><th>店舗名</th>
             </tr>

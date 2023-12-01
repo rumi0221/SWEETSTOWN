@@ -49,22 +49,23 @@
                     <th>店舗名</th>
                     <td>
                         <?php echo $_POST['shop_name']; ?>
-                        <input type="hidden" name="shop_name" value="
+                        <input type="hidden" name="shop_id" value="
                             <?php
                                 $pdo=new PDO($connect,USER,PASS);
-                                $sql=$pdo->query('select * from shop where shop_mei = '. $_POST['shop_name']);
-                                echo $sql['shop_id']; 
+                                // $sql=$pdo->query('select * from shop where shop_mei like '. $_POST['shop_name']);
+                                $sql=$pdo->query('select * from shop where shop_mei like "'. $_POST['shop_name']. '"');
+                                $row = $sql->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
+                                echo $row['shop_code'];
                             ?>
                         ">
+                            
                     </td>
                 </tr>
                 <tr>
                     <th>在庫数</th>
                     <td>
                         <?php echo $_POST['stock']; ?>
-                        <input type="hidden" name="stock" value="
-                            <?php echo $_POST['stock']; ?>
-                        ">
+                        <input type="hidden" name="stock" value="<?php echo $_POST['stock']; ?>">
                     </td>   
                 </tr>
             </table>

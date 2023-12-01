@@ -15,11 +15,11 @@
             <form action="product-registration-check.php" method="POST">
                 <tr>
                     <th>商品名</th>
-                    <td><input type="text" name="product_name" required></td>
+                    <td><input type="text" class="textw" name="product_name" required></td>
                 </tr>
                 <tr>
                     <th>カテゴリ</th>
-                    <td><input type="text" name="category" required></td>
+                    <td><input type="text" class="textx" name="category" required></td>
                 </tr>
                 <tr>
                     <th>単価</th>
