@@ -3,6 +3,8 @@
     margin: 4% auto;
     text-align: center;
     position: relative;
+    width: 150px; /* 幅を150pxに設定 */
+      height: 50px; /* 高さを50pxに設定 */
 }
 
 .text{
@@ -49,7 +51,3 @@
     margin: 0 auto;
     display: block;
 }
-
-.content {
-    margin-top: 50px; /* コンテンツの一番上から50px下に配置 */
-  }
