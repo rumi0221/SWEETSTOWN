@@ -12,16 +12,11 @@
     $productId = 1;
 
     //レビューテーブルのデータをすべて出力
-    foreach($pdo->query('select * from review')as $row){
-        echo '<p>';
-        echo $row['member_id'],':';
-        echo $row['product_id'],':';
-        echo $row['hoshi'],':';
-        echo $row['title'],':';
-        echo $row['view'];
-        echo '</p>';
+   $sql=$pdo->prepare('select * from review,product 
+   where review.product_id = ? 
+   and review.product_id = product.product_id');
+    $sql->execute([$productId]);
 
-    }
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -33,13 +28,34 @@
     <link rel="stylesheet" href="CSS/review.css">
 </head>
 <body>
-     <div class="Header">
+<div class="Header">
         SWEETSTOWN
       </div>
-      <div class="hed">
+    <div class="hed">
         <h1>レビュー</h1>
     </div>
     <div class="shohin">
     <hr size="1">
+    <p>商品名</p>
+</div>
+
+<?php
+    foreach($sql as $row){
+        // echo '<p>';
+        // echo $row['member_id'],':';
+        // echo $row['product_id'],':';
+        // echo $row['hoshi'],':';
+        // echo $row['title'],':';
+        // echo $row['view'];
+        echo '</p>';
+        echo '<div class="review1">';
+        echo '<p>☆☆☆☆☆</p>';
+        echo '<p>',$row['title'],'</p>';
+        echo '<p>',$row['view'],'</p>';
+        echo '</div>';
+
+
+    }
+?>
 </body>
 </html>
