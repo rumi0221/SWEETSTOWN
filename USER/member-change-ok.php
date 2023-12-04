@@ -20,6 +20,6 @@
     </div>
     <br><br><br><br><br><br>
     <hr> 
-    <center><footer><?php require 'menu.php';?></footer></center>
+    <footer><?php require 'menu.php';?></footer>
 </body>
 </html>
