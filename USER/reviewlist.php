@@ -16,6 +16,8 @@
    where review.product_id = ? 
    and review.product_id = product.product_id');
     $sql->execute([$productId]);
+    $row = $sql->fetch(PDO::FETCH_ASSOC);
+    echo $row['product_mei'];
 
 ?>
 <!DOCTYPE html>
