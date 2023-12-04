@@ -1,3 +1,7 @@
+<?php
+session_start();
+require 'db-connect.php'; 
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -27,6 +31,7 @@
             and favorite.product_id=product.product_id 
             and product.shop_code=shop.shop_code
             and shop.shop_code=?');
+        var_dump($_SESSION);
         $sql->execute([$_SESSION['member']['id'],$_SESSION['shop']['code']]);
             foreach ($sql as $row) {
 //                $id=$row['id'];
