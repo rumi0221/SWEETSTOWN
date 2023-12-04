@@ -49,7 +49,9 @@
         // echo $row['view'];
         echo '</p>';
         echo '<div class="review1">';
-        echo '<p>☆☆☆☆☆</p>';
+        for($i=0;$i<$row['hoshi'];$i++){
+            echo '☆';
+        }
         echo '<p>',$row['title'],'</p>';
         echo '<p>',$row['view'],'</p>';
         echo '</div>';
