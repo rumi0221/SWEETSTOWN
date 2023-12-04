@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>会員情報変更画面</title>
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/member.css">
+    <link rel="stylesheet" href="CSS/menu.css">
 </head>
 <body>
     <div class="Header">
