@@ -4,7 +4,7 @@
     //DB接続
     echo '<br>';
         $pdo=new PDO($connect,USER,PASS);
-        $sql=$pdo->query('select * from product');
+        $sql=$pdo->query('select * from review');
     //選択された商品IDを取得
     // $productId = $_POST['id']; こんなかんじ
     
@@ -12,7 +12,7 @@
     $productId = 1;
 
     //レビューテーブルのデータをすべて出力
-    foreach($pdo->query('select * from product')as $row){
+    foreach($pdo->query('select * from review')as $row){
         echo '<p>';
         echo $row['member_id'],':';
         echo $row['product_id'],':';
@@ -22,7 +22,8 @@
         echo '</p>';
 
     }
-?>
+?>」
+\
 <!DOCTYPE html>
 <html lang="ja">
 <head>
