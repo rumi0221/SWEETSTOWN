@@ -10,7 +10,7 @@
     $count = $sql -> rowCount();
     if($count == 0 && !isset($_SESSION['member']['id'])){
         unset($_SESSION['member']);
-        header("Location: login-input.php");
+        header("Location: login.php");
         exit;
     }else{
         unset($_SESSION['member']);
