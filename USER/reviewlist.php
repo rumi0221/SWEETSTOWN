@@ -39,7 +39,7 @@
     <div class="shohin">
     <hr size="1">
     <?php
-     echo '<p>',$row['product_mei']'</p>';
+     echo '<p>',$row['product_mei'],'</p>';
     ?>
 </div>
 
