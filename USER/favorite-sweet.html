@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/favorite-sweet.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/favorite-sweet.css">
     <title>お気に入り画面(スイーツ)</title>
 </head>
 
@@ -15,12 +15,9 @@
     </div>
     <div class="favorite">
         <h2>お気に入り</h2>
-        <div class="favoritebutton">
-            <input type="button" value="スイーツ" style="width:80px;height:40px" class="sweetbutton">
-            <input type="button" onclick="location.href='./favorite-shop.html'"  value="ショップ" style="width:80px;height:40px">
-        </div>
         <div class="content">
-            <div class="item">
+            <?php
+            echo '<div class="item">';
                 <img src="img/a.jpg" alt="ショップ名" width="250" height="150" class="sweet_img">
                 <div class="item_detail">
                     <p class="item_name">商品名</p>
@@ -28,6 +25,7 @@
                     <p class="price">価格</p>
                 </div>
             </div>
+            ?>
             <div class="item">
                 <img src="img/a.jpg" alt="ショップ名" width="250" height="150" class="sweet_img">
                 <div class="item_detail">
