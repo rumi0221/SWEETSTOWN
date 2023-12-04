@@ -25,7 +25,7 @@
             echo '<form action="customer-infomation.php" method="POST">';
             $i = 1;
                 foreach ($sql as $row) {
-                    echo '　　　', '<img src="img/ranking', $i ,'.png"' . ($row['rank']) . '.png" alt="　" width="12%" height="12%">';
+                    echo '　　　', '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/ranking', $i ,'.png"' . ($row['rank']) . '.png" alt="　" width="12%" height="12%">';
 
                     echo '<div class="ranking">';
                     echo '<a href="detail.php" class="information">', $row['gazou'], '</a>', '<br>';
