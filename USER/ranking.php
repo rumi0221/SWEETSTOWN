@@ -25,10 +25,10 @@
             echo '<form action="customer-infomation.php" method="POST">';
             $i = 1;
                 foreach ($sql as $row) {
-                    echo '　　　', '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/ranking', $i ,'.png"' . ($row['rank']) . '.png" alt="　" width="12%" height="12%">';
+                    echo '　　　', '<img src="img/ranking', $i ,'.png"' . ($row['rank']) . '.png" alt="　" width="12%" height="12%">';
 
                     echo '<div class="ranking">';
-                    echo '<a href="detail.php" class="information">', $row['gazou'], '</a>', '<br>';
+                    echo '<a href="detail.php?product_id=',$row['product_id'],'" class="information"><img src=img/', $row['gazou'], '></a>', '<br>';
                     echo '<section>';
                     echo '<a href="detail.php" class="information">', '　', $row['product_mei'], '</a>', '<br>';
                     $sql2= $pdo->query('select * from shop where shop_code = '. $row['shop_code']);
