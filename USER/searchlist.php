@@ -30,6 +30,8 @@ $search_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="Header">
       SWEETSTOWN
     </div>
+    <br>
+    <br>
     <div class="search">
         <form action="searchlist.php" method="post">
             <input type="text" name="search" placeholder="🔍 キーワード検索" />
