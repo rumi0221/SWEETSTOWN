@@ -39,8 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         try {
-            $stmt = $pdo->prepare('SELECT product_id, product_mei, shop_code, tanka, gazpu 
-                                   FROM product
+            $stmt = $pdo->prepare('SELECT * FROM product
                                    WHERE tanka BETWEEN :min_price AND :max_price');
             $stmt->execute(['min_price' => $min_price, 'max_price' => $max_price]);
             $search_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
