@@ -17,7 +17,7 @@
    and review.product_id = product.product_id');
     $sql->execute([$productId]);
     $row = $sql->fetch(PDO::FETCH_ASSOC);
-    echo $row['product_mei'];
+    // echo $row['product_mei'];
 
 ?>
 <!DOCTYPE html>
@@ -38,7 +38,9 @@
     </div>
     <div class="shohin">
     <hr size="1">
-    <p>商品名</p>
+    <?php
+     echo '<p>',$row['product_mei']'</p>';
+    ?>
 </div>
 
 <?php
