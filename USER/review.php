@@ -25,7 +25,7 @@
     <p>商品名</p>
     <p>ショップ名</p>
 
-    <form action="review-ok.php" method="post">
+    <form action="review-check.php" method="post">
     <div class="title">
         <textarea rows="1" cols="40">タイトル</textarea>
     </div>
