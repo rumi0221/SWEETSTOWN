@@ -69,7 +69,32 @@ require 'db-connect.php';
                 } catch (PDOException $e) {
                     echo "エラーが発生しました";
                 }
-            }?>
+            }elseif (isset($_GET['type'])){
+                try {
+                    
+                    $sql = $pdo->prepare('select * from product where product_type = ?');
+                    $sql->execute([$_GET['type']]);
+                } catch (PDOException $e) {
+                    echo "エラーが発生しました";
+                }
+            }elseif (isset($_GET['shop'])){
+            try {
+                
+                $sql = $pdo->prepare('select * from product where shop_code = ?');
+                $sql->execute([$_GET['shop']]);
+            } catch (PDOException $e) {
+                echo "エラーが発生しました";
+            }
+        }elseif(isset($_POST['keyword'])){
+            try{
+                $sql = $pdo->prepare('select * from product where product_mei like ?');
+                $sql->execute(['%'.$_POST['keyword'].'%']);
+            }catch(PDOException $e){
+                echo "エラーが発生しました";
+            }
+        }
+    
+            ?>
         <div class="Shohin">
            <?php
             foreach($sql as $row){
