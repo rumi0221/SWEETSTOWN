@@ -40,7 +40,7 @@ require 'db-connect.php';
                     $max_price = 500;
                     break;
                 case '500-1000':
-                    $min_price = 500;
+                    $min_price = 501;
                     $max_price = 1000;
                     break;
                 case '1000-1500':
