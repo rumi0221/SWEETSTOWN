@@ -28,10 +28,10 @@
                     echo '<td>', $row2['member_id'], '</td>';
                     echo '<td>';
                     $sum = 0;
-                    foreach($row2 as $r2){
-                        $sql3=$pdo->query('select tanka from product where product_id = '. $r2['product_id']);
-                        $row3 = $sql3->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
-                        $sum += $row['su'] * $row3['tanka'];   
+                    $sql3=$pdo->query('select tanka from product where product_id = '. $row['product_id']);
+                    $row3 = $sql3->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
+                    foreach($row3 as $r3){
+                        $sum += (int)$row['su'] * (int)$r3['tanka'];   
                     }
                     echo $sum;
                     echo '</td>';
