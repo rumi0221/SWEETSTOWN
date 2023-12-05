@@ -33,11 +33,11 @@
             <?php
             for($i=0;$i<$_POST['rate'];$i++){
         echo '<input id="staryellow" type="radio" name="rate" value="5">
-            <label for="staryellow">★</label>';
+            <label id="staryellowlabel" for="staryellow">★</label>';
         }
         for($i=$_POST['rate'];$i<5;$i++){
-            echo '<input id="staryellow" type="radio" name="rate" value="5">
-                <label for="staryellow">★</label>';
+            echo '<input id="starwhite" type="radio" name="rate" value="5">
+                <label id="starwhitelabel" for="starwhite">★</label>';
             }
 ?>
 

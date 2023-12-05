@@ -83,15 +83,23 @@
 /* ? */
     display: none;
   }
-  .rate-form-kakunin label {
+  #staryellowlabel {
     position: relative;
     padding: 0 5px;
     color: #ffcc00;
-    /* color: #ccc; */
     cursor: pointer;
     font-size: 35px;
   }
-  .rate-form-kakunin input[type=radio]:checked ~ label {
-    /* ? */
+  #staryellow[type=radio]:checked ~ label {
     color: #ffcc00;
+  }
+  #starwhitelabel {
+    position: relative;
+    padding: 0 5px;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 35px;
+  }
+  #starwhite[type=radio]:checked ~ label {
+    color: #ccc;
   }
