@@ -63,5 +63,6 @@
 
     }
 ?>
+<footer><?php require 'menu.php';?></footer>
 </body>
 </html>
