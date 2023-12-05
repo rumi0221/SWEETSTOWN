@@ -19,6 +19,21 @@
     <h1>カート</h1>
     <?php
         $pdo=new PDO($connect,USER,PASS);
+        if(isset($_POST['add_to_cart'])) {
+            $productId = $_POST['product_id'];
+            $sil=$pdo->prepare('update cart set su = su + 1 where member_id = ? and product_id = ?');
+            $sil->execute([$_SESSION['member']['member_id'],$productId]);
+        }
+        if(isset($_POST['remove_from_cart'])) {
+            $productId = $_POST['product_id'];
+            $sil=$pdo->prepare('update cart set su = su - 1 where member_id = ? and product_id = ?');
+            $sil->execute([$_SESSION['member']['member_id'],$productId]);
+        }
+        if(isset($_POST['delete'])) {
+            $productId = $_POST['product_id'];
+            $sil=$pdo->prepare('delete from cart where member_id = ? and product_id = ?');
+            $sil->execute([$_SESSION['member']['member_id'],$productId]);
+        }
         $sql=$pdo->prepare('select * from cart where datetime = "0000-00-00 00:00:00" and member_id = ?');
         $sql->execute([$_SESSION['member']['member_id']]);
         $count = $sql -> rowCount();
@@ -42,9 +57,18 @@
                 echo '<br><br>';
                 echo '</section>';
                 echo '<div>';
-                echo '<br>';
-                echo $row['su'],'<br>';
-                echo '<a href="#">削除する</a><br>';
+                echo '<form method="post">';
+                echo '<input type="hidden" name="product_id" value="',$row['product_id'],'">';
+                echo '<button type="submit" name="add_to_cart">+1</button>';
+                echo '</form>',$row['su'];
+                echo '<form method="post">';
+                echo '<input type="hidden" name="product_id" value="',$row['product_id'],'">';
+                echo '<button type="submit" name="remove_from_cart">-1</button>';
+                echo '</form>';
+                echo '<form method="post">';
+                echo '<input type="hidden" name="product_id" value="',$row['product_id'],'">';
+                echo '<button type="submit" name="delete">削除する</button>';
+                echo '</form>';
                 $kakaku = $pow['tanka'] * $row['su'];
                 $total = $total + $kakaku;
             }
