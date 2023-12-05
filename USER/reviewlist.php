@@ -18,7 +18,8 @@
     $sql->execute([$productId]);
     $row = $sql->fetch(PDO::FETCH_ASSOC);
     // echo $row['product_mei'];
-
+$count = $sql->rowCount();
+echo $count ;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
