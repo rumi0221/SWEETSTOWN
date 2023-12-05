@@ -3,7 +3,7 @@ session_start();
 require 'db-connect.php'; 
 
 $min_price = isset($_SESSION['min_price']) ? $_SESSION['min_price'] : 0;
-$max_price = isset($_SESSION['max_price']) ? $_SESSION['max_price'] : PHP_INT_MAX;
+$max_price = isset($_SESSION['max_price']) ? $_SESSION['max_price'] : 50000;
 $search_result = isset($_SESSION['search_result']) ? $_SESSION['search_result'] : [];
 
 $pdo = new PDO($connect, USER, PASS);
@@ -15,7 +15,7 @@ $search_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
