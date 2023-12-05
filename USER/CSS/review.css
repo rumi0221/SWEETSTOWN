@@ -91,7 +91,7 @@
     cursor: pointer;
     font-size: 35px;
   }
-  .rate-form input[type=radio]:checked ~ label {
+  .rate-form-kakunin input[type=radio]:checked ~ label {
     /* ? */
     color: #ffcc00;
   }
