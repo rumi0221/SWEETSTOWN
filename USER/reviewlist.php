@@ -46,7 +46,6 @@
 
 <?php
     foreach($result as $row){
-        echo "<hr>test</hr>"
         // echo '<p>';
         // echo $row['member_id'],':';
         // echo $row['product_id'],':';
