@@ -36,7 +36,23 @@
         echo '</head>';
         echo '<body>';
         echo '<div class="Header">SWEETSTOWN</div><br>';
-        echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/season.jpg"></a><br>';
+        $spp=$pdo->query('select distinct season from product where season_flg <> 0');
+        $coun=$spp->rowCount();
+        foreach($spp as $owo){
+            if($coun >= 2){
+                echo 'エラーが発生しています';
+            }else if($owo['season'] == '春'){
+                echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/spring.png"></a><br>';
+            }else if($owo['season'] == '夏'){
+                echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/summer.jpg"></a><br>';
+            }else if($owo['season'] == '秋'){
+                echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/fall.jpg"></a><br>';
+            }else if($owo['season'] == '冬'){
+                echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/winter.jpg"></a><br>';
+            }else{
+                echo 'エラーが発生しました。';
+            }
+        }
         echo '<form action="cart.php" method="post">';
         echo '<button type="submit">カート内商品一覧</button>';
         echo '</form><br>';
