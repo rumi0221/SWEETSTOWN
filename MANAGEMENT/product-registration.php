@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
                     <th>商品説明</th>
-                    <td><input type="text" class="textw" name="explanation" required></td>
+                    <td><textarea class="textw" name="explanation" rows="4" required></textarea></td>
                 </tr>
                 <tr>
                     <th>季節</th>
