@@ -26,7 +26,6 @@
             }
         
         }
-<<<<<<< HEAD
 ?>
         <!DOCTYPE html>
         <html lang="ja">
@@ -40,7 +39,27 @@
         </head>
         <body>
         <div class="Header">SWEETSTOWN</div><br>
-        <div style="margin-top:20px;"><a href="seasonlist.php"><img class="img2" src="img/season.jpg"></a><br><br>
+        <div style="margin-top:20px;"><a href="seasonlist.php">
+            <?php
+                $spp=$pdo->query('select distinct season from product where season_flg <> 0');
+                $coun=$spp->rowCount();
+                foreach($spp as $owo){
+                    if($coun >= 2){
+                        echo 'エラーが発生しています';
+                    }else if($owo['season'] == '春'){
+                        echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/spring.png"></a><br>';
+                    }else if($owo['season'] == '夏'){
+                        echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/summer.jpg"></a><br>';
+                    }else if($owo['season'] == '秋'){
+                        echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/fall.jpg"></a><br>';
+                    }else if($owo['season'] == '冬'){
+                        echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/winter.jpg"></a><br>';
+                    }else{
+                        echo 'エラーが発生しました。';
+                    }
+                }
+            ?>
+        </a><br><br>
         <!-- <form action="cart.php" method="post"> -->
         <!-- <button type="submit">カート内商品一覧</button> -->
         <a href="cart.php" class="btn btn-tag"><i class="fas fa-shopping-cart"></i>カート内の商品</a>
@@ -56,57 +75,6 @@
         // echo '<div class = "product_item">';
         if($count == 0){
             echo '<tr>';
-=======
-        echo '<!DOCTYPE html>';
-        echo '<html lang="ja">';
-        echo '<head>';
-        echo '<link rel="stylesheet" href="CSS/menu.css">';
-        echo '<link rel="stylesheet" href="CSS/home.css">';
-        echo '<link rel="stylesheet" href="CSS/header.css">';
-        echo '<title>ホーム画面</title>';
-        echo '</head>';
-        echo '<body>';
-        echo '<div class="Header">SWEETSTOWN</div><br>';
-        $spp=$pdo->query('select distinct season from product where season_flg <> 0');
-        $coun=$spp->rowCount();
-        foreach($spp as $owo){
-            if($coun >= 2){
-                echo 'エラーが発生しています';
-            }else if($owo['season'] == '春'){
-                echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/spring.png"></a><br>';
-            }else if($owo['season'] == '夏'){
-                echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/summer.jpg"></a><br>';
-            }else if($owo['season'] == '秋'){
-                echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/fall.jpg"></a><br>';
-            }else if($owo['season'] == '冬'){
-                echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/winter.jpg"></a><br>';
-            }else{
-                echo 'エラーが発生しました。';
-            }
-        }
-        echo '<form action="cart.php" method="post">';
-        echo '<button type="submit">カート内商品一覧</button>';
-        echo '</form><br>';
-        $sql=$pdo->query('select * from product');
-        $count=0;
-        echo '<table>';
-        echo '<tr><th></th><th></th><th></th></tr>';
-        foreach($sql as $row){
-            $count++;
-            echo '<div class = "product_item">';
-            if($count == 0){
-                echo '<tr>';
-            }
-            echo '<td style="width:100px;">';
-            echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$row['gazou'],'"></a>';
-            echo '<br>',$row['product_mei'],'<br>',$row['tanka'];
-            echo '</td>';
-            if($count==3){
-                echo '</tr>';
-                $count=0;
-            }
-            echo '</div>';
->>>>>>> 1b4d56b504260d87dfa9f09c77c4bbe0d3219c37
         }
         echo '<td style="width:200px;">';
         echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$row['gazou'],'"></a>';
