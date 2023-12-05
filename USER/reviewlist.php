@@ -28,6 +28,7 @@
     <title>レビュー一覧画面</title>
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/review.css">
+    <link rel="stylesheet" href="CSS/menu.css">
 </head>
 <body>
 <div class="Header">
