@@ -2,7 +2,7 @@
 <?php require 'db-connect.php';?>
 <?php
  $pdo=new PDO($connect,USER,PASS);
- $sql=$pdo->query('select * from review');
+//  $sql=$pdo->query('select * from review');
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -27,10 +27,10 @@
 
     <form action="review-check.php" method="post">
     <div class="title">
-        <textarea rows="1" cols="40">タイトル</textarea>
+        <textarea rows="1" cols="40" name="title">タイトル</textarea>
     </div>
     <div calss="honbun">
-        <textarea rows="10" cols="40">レビュー本文</textarea>
+        <textarea rows="10" cols="40" name="review">レビュー本文</textarea>
     </div>
     
         <div class="rate-form">

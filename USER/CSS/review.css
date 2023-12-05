@@ -71,3 +71,27 @@
     top: 250px;
   }
    
+  .rate-form-kakunin {
+    
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .rate-form-kakunin input[type=radio] {
+/* ? */
+    display: none;
+  }
+  .rate-form-kakunin label {
+    position: relative;
+    padding: 0 5px;
+    color: #ffcc00;
+    /* color: #ccc; */
+    cursor: pointer;
+    font-size: 35px;
+  }
+  .rate-form-kakunin input[type=radio]:checked ~ label {
+    /* ? */
+    color: #ffcc00;
+  }

@@ -1,6 +1,3 @@
-<?php
-var_dump($_POST);
-?> 
 
 
 
@@ -26,24 +23,25 @@ var_dump($_POST);
     <p>商品名</p>
     <p>ショップ名</p>
     <div class="title">
-        <textarea rows="1" cols="40">タイトル</textarea>
+        <textarea readonly rows="1" cols="40"><?=$_POST['title']?></textarea>
     </div>
     <div calss="honbun">
-        <textarea rows="10" cols="40">レビュー本文</textarea>
+        <textarea readonly rows="10" cols="40"><?=$_POST['review']?></textarea>
     </div>
     
-        <div class="rate-form">
-            <input id="star5" type="radio" name="rate" value="5">
-            <label for="star5">★</label>
-            <input id="star4" type="radio" name="rate" value="4">
-            <label for="star4">★</label>
-            <input id="star3" type="radio" name="rate" value="3">
-            <label for="star3">★</label>
-            <input id="star2" type="radio" name="rate" value="2">
-            <label for="star2">★</label>
-            <input id="star1" type="radio" name="rate" value="1">
-            <label for="star1">★</label>
-          </div>
+        <div class="rate-form-kakunin">
+            <?php
+            for($i=0;$i<$_POST['rate'];$i++){
+        echo '<input id="staryellow" type="radio" name="rate" value="5">
+            <label for="staryellow">★</label>';
+        }
+        for($i=$_POST['rate'];$i<5;$i++){
+            echo '<input id="staryellow" type="radio" name="rate" value="5">
+                <label for="staryellow">★</label>';
+            }
+?>
+
+        </div>
         <button class="kakunin" onclick="location.href='review-ok.html'">投稿する</button>
     
 </div>
