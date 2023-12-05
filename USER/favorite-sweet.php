@@ -38,11 +38,11 @@ require 'db-connect.php';
         $sql->execute([$member_id,$shop_code]);
             foreach ($sql as $row) {
                 echo '<div class="item">';
-                echo '<img src="img/', $row['gazou'],'" alt="商品画像" width="250" height="150" class="sweet_img">';
+                echo '<img src="img/', $row['gazou'],'" alt="商品画像" width="200" height="130" class="sweet_img">';
                 echo '<div class="item_detail">';
                     echo '<p class="item_name">', $row['product_mei'],'</p>';
                     echo '<p class="shop_name">',$row['shop_mei'],'</p>';
-                    echo '<p class="price">',$row['tanka'],'</p>';
+                    echo '<p class="price">','￥',$row['tanka'],'</p>';
                 echo '</div>';
             }
             echo '</div>';
