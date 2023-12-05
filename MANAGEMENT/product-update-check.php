@@ -1,3 +1,4 @@
+<?php require 'db-connect.php'; ?>
 <?php require 'menu.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -11,7 +12,8 @@
     <div class="main">
         <h1>商品登録</h1>
         <table class="table-color">
-            <form action="product-registration-ok.php" method="POST">
+            <form action="product-update-ok.php" method="POST">
+            <input type="hidden" name="product_id" value="<?php echo $_POST['product_id']; ?>">
                 <tr>
                     <th>商品名</th>
                     <td><?php echo $_POST['product_name']; ?></td>
@@ -73,7 +75,7 @@
             </form>
             <br>
             <br>
-            <a href="product-registration.php">戻る</a>
+            <a href="product-update.php">戻る</a>
     </div>
 
 </body>

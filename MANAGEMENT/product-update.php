@@ -19,6 +19,7 @@
                 $sql->execute([$_POST['update']]);
                 $row = $sql->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
                 ?>
+                <input type="hidden" name="product_id" value="<?php echo $_POST['update']; ?>">
                 <tr>
                     <th>商品名</th>
                     <td><input type="text" class="textw" name="product_name" required value="<?php echo $row['product_mei'] ?>"></td>
@@ -44,7 +45,7 @@
                     <th>季節</th>
                     <td>
                         <select class="textw" name="season">
-                            <option value="<?php $row['season'] ?>"><?php echo $row['season'] ?></option>
+                            <option value="<?php echo $row['season'] ?>"><?php echo $row['season'] ?></option>
                             <option value="春">春</option>
                             <option value="夏">夏</option>
                             <option value="秋">秋</option>

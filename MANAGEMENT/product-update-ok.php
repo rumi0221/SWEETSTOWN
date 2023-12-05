@@ -1,3 +1,4 @@
+<?php require 'db-connect.php'; ?>
 <?php require 'menu.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -9,13 +10,15 @@
 </head>
 <body>
     <div class="main">
-    <?php
-        $pdo=new PDO($connect, USER, PASS);
-        $sql=$pdo->prepare('insert into product values(NULL, ?, ?, ?, ?, ?,DEFAULT, ?, DEFAULT, ?, DEFAULT, DEFAULT, ?)');
-        $sql->execute([ $_POST['product_name'], $_POST['category'], $_POST['price'], $_POST['explanation'], $_POST['image'], $_POST['season'], $_POST['stock'] , $_POST['shop_id']]);
-    ?>
-        <p>商品の情報が更新されました</p>
-        <a href="productlist.php">商品一覧へ</a>
+        <div class="link">
+            <?php
+                $pdo=new PDO($connect, USER, PASS);
+                $sql=$pdo->prepare('update product set product_mei=?, product_type=?, tanka=?, setumei=?, gazou=?, season=?, zaiko=?, shop_code=? where product_id='.(int)$_POST['product_id']);
+                $sql->execute([$_POST['product_name'], $_POST['category'], (int)$_POST['price'], $_POST['explanation'], $_POST['image'], $_POST['season'], (int)$_POST['stock'] , (int)$_POST['shop_id']]);
+            ?>
+            <p>商品の情報が更新されました</p>
+            <a href="productlist.php">商品一覧へ</a>
+        </div>
     </div>
 </body>
 </html>
