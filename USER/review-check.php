@@ -29,12 +29,16 @@
         <textarea readonly rows="10" cols="40"><?=$_POST['review']?></textarea>
     </div>
     
-        <div class="rate-form">
+        <div class="rate-form-kakunin">
             <?php
             for($i=0;$i<$_POST['rate'];$i++){
-        echo '<input id="star5" type="radio" name="rate" value="5">
-            <label for="star5">★</label>';
+        echo '<input id="staryellow" type="radio" name="rate" value="5">
+            <label for="staryellow">★</label>';
         }
+        for($i=$_POST['rate'];$i<5;$i++){
+            echo '<input id="staryellow" type="radio" name="rate" value="5">
+                <label for="staryellow">★</label>';
+            }
 ?>
 
         </div>
