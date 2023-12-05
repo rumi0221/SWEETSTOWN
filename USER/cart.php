@@ -57,19 +57,34 @@
                 }
                 echo '<font color="red">','　￥',$pow['tanka'],'</font>';
                 echo '</section>';
+                echo '<div class="su">';
+                echo '<br>';
+                // echo '<form method="post">';
+                // echo '<input type="hidden" name="product_id" value="',$row['product_id'],'">';
+                // echo '<button type="submit" name="add_to_cart">+1</button>';
+                // echo '</form>',$row['su'];
+                // echo '<form method="post">';
+                // echo '<input type="hidden" name="product_id" value="',$row['product_id'],'">';
+                // echo '<button type="submit" name="remove_from_cart">-1</button>';
+                // echo '</form>';
+
                 echo '<form method="post">';
+                echo '　';
                 echo '<input type="hidden" name="product_id" value="',$row['product_id'],'">';
-                echo '<button type="submit" name="add_to_cart">+1</button>';
-                echo '</form>',$row['su'];
-                echo '<form method="post">';
-                echo '<input type="hidden" name="product_id" value="',$row['product_id'],'">';
-                echo '<button type="submit" name="remove_from_cart">-1</button>';
+                echo '<button class="button3" type="submit" name="add_to_cart">+</button>';
+                echo '<div class="maru size_normal black1">';
+                echo '<div class="letter3">',$row['su'],'</div>';
+                echo '</div>';
+                echo '<button class="button3" type="submit" name="remove_from_cart">-</button>';
                 echo '</form>';
+
+
                 echo '<form method="post">';
                 echo '<input type="hidden" name="product_id" value="',$row['product_id'],'">';
-                echo '<button type="submit" name="delete">削除する</button>';
+                echo '　　','<button class="btndelete" type="submit" name="delete">削除する</button>';
                 echo '</form>';
-                echo '</div></div>';
+                echo '</div>';
+                echo '</div>';
                 echo '</div>';
                 echo '<br>';
                 $kakaku = $pow['tanka'] * $row['su'];

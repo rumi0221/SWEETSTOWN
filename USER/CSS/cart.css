@@ -31,6 +31,10 @@ p {
   margin: auto;
 }
 
+.su {
+  margin-right: auto;
+}
+
 button {
     font-size: 19px; 
 }
@@ -98,3 +102,37 @@ input {
     cursor: pointer;
     text-decoration: none;
   }
+
+  .btndelete {
+    margin-top: 10px;
+  }
+
+  .button3 {
+    font-size: 25px;
+    width:35px;
+    height:35px;
+    background:rgba(255, 202, 133, 0.989);
+    border-radius:20px;
+  }
+
+  .maru {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    flex-flow: column; 
+    vertical-align: top;
+  }
+  .size_normal{
+    width: 35px;
+    height: 35px;
+  }
+  .letter3 {
+    font-size: 25px;
+    line-height: 0em;
+  }
+  .black1 {
+    color: black;
+    border: 2px solid black;
+  }
+  
