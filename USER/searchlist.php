@@ -85,7 +85,15 @@ require 'db-connect.php';
             } catch (PDOException $e) {
                 echo "エラーが発生しました";
             }
+        }elseif(isset($_POST['keyword'])){
+            try{
+                $sql = $pdo->prepare('select * from product where product_mei like ?');
+                $sql->execute(['%'.$_POST['keyword'].'%']);
+            }catch(PDOException $e){
+                echo "エラーが発生しました";
+            }
         }
+    
             ?>
         <div class="Shohin">
            <?php
