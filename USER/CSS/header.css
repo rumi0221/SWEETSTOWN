@@ -10,8 +10,12 @@
     font-family: serif; /*フォント変更*/
     font-size: 20px;
     text-align: center;
+<<<<<<< HEAD
     /* display: flex;
      justify-content: space-between; */
+=======
+    z-index:9999;
+>>>>>>> 1b4d56b504260d87dfa9f09c77c4bbe0d3219c37
 }
 
 body{

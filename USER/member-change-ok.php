@@ -6,6 +6,7 @@
     <title>会員情報変更完了</title>
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/member.css">
+    <link rel="stylesheet" href="CSS/menu.css">
 </head>
 <body>
     <div class="Header">
@@ -20,6 +21,6 @@
     </div>
     <br><br><br><br><br><br>
     <hr> 
-    <center><footer><?php require 'menu.php';?></footer></center>
+    <footer><?php require 'menu.php';?></footer>
 </body>
 </html>

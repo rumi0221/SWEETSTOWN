@@ -39,8 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         try {
-            $stmt = $pdo->prepare('SELECT product_id, product_mei, shop_code, tanka, gazpu 
-                                   FROM product
+            $stmt = $pdo->prepare('SELECT * FROM product
                                    WHERE tanka BETWEEN :min_price AND :max_price');
             $stmt->execute(['min_price' => $min_price, 'max_price' => $max_price]);
             $search_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -72,6 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="Header">
         SWEETSTOWN
     </div>
+    <br>
+    <br>
     <div class="search">
         <form action="searchlist.php" method="post">
             <button class="searchbutton" name="price_range" value="100-500">￥100 ～ 500</button>
