@@ -1,17 +1,6 @@
 <?php
 session_start();
-require 'db-connect.php'; 
-
-$min_price = isset($_SESSION['min_price']) ? $_SESSION['min_price'] : 0;
-$max_price = isset($_SESSION['max_price']) ? $_SESSION['max_price'] : 50000;
-$search_result = isset($_SESSION['search_result']) ? $_SESSION['search_result'] : [];
-
-$pdo = new PDO($connect, USER, PASS);
-$stmt = $pdo->prepare('select * from product 
-                       where tanka BETWEEN :min_price AND :max_price');
-$stmt->execute(['min_price' => $min_price, 'max_price' => $max_price]);
-$search_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+require 'db-connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -39,20 +28,62 @@ $search_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </form>
     </div>
 
-    <?php foreach ($search_result as $product) : ?>
+    <?php
+        $pdo = new PDO($connect, USER, PASS);
+        if (isset($_POST['price_range'])) {
+            $min_price = 0;
+            $max_price = 0;
+
+            switch ($_POST['price_range']) {
+                case '100-500':
+                    $min_price = 100;
+                    $max_price = 500;
+                    break;
+                case '500-1000':
+                    $min_price = 500;
+                    $max_price = 1000;
+                    break;
+                case '1000-1500':
+                    $min_price = 1001;
+                    $max_price = 1500;
+                    break;
+                case '1500-2000':
+                    $min_price = 1501;
+                    $max_price = 2000;
+                    break;
+                case '2000-2500':
+                    $min_price = 2001;
+                    $max_price = 2500;
+                    break;
+                case '2500-3000':
+                    $min_price = 2501;
+                    $max_price = 3000;
+                    break;
+                default:  
+                    break;
+            }
+        
+                try {
+                    $sql = $pdo->prepare('select * from product where tanka BETWEEN ? and ?');
+                    $sql->execute([$min_price,$max_price]);
+                } catch (PDOException $e) {
+                    echo "エラーが発生しました";
+                }
+            }?>
         <div class="Shohin">
-           
-            <a href="detail.php?product_id=<?php echo $product['product_id']; ?>">
-                <img src="<?php echo $product['gazou']; ?>" alt="商品画像">
-            </a>
-            <div class="shohin-setumei">
-                <p><?php echo $product['product_mei']; ?></p>
-                <p><?php echo $product['shop_code']; ?></p>
-                ￥<?php echo $product['tanka']; ?>
-                <br>
-            </div>
+           <?php
+            foreach($sql as $row){
+                echo '<a href="detail.php?product_id=',$row['product_id'],'">';
+                echo '<img src="img/', $row['gazou'],'" alt="商品画像">';
+                echo '</a>';
+                echo '<div class="shohin-setumei">';
+                echo '<p>',$row['product_mei'],'</p>';
+                echo '<p>',$row['shop_code'],'</p>';
+                echo '￥',$row['tanka'];
+                echo '<br>';
+                echo '</div>';
+            }?>
         </div>
-    <?php endforeach; ?>
     <footer><?php require 'menu.php';?></footer>
 </body>
 </html>

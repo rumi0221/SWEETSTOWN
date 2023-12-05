@@ -1,58 +1,6 @@
 <?php
 session_start();
 require 'db-connect.php';
-
-    if (isset($_POST['price_range'])) {
-    $min_price = 0;
-    $max_price = 0;
-
-    
-        switch ($_POST['price_range']) {
-            case '100-500':
-                $min_price = 100;
-                $max_price = 500;
-                break;
-            case '500-1000':
-                $min_price = 500;
-                $max_price = 1000;
-                break;
-            case '1000-1500':
-                $min_price = 1000;
-                $max_price = 1500;
-                break;
-            case '1500-2000':
-                $min_price = 1500;
-                $max_price = 2000;
-                break;
-            case '2000-2500':
-                $min_price = 2000;
-                $max_price = 2500;
-                break;
-            case '2500-3000':
-                $min_price = 2500;
-                $max_price = 3000;
-                break;
-            default:
-               
-                break;
-        }
-
-        try {
-            $stmt = $pdo->prepare('SELECT * FROM product
-                                   WHERE tanka BETWEEN :min_price AND :max_price');
-            $stmt->execute(['min_price' => $min_price, 'max_price' => $max_price]);
-            $search_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
-            $_SESSION['min_price'] = $min_price;
-            $_SESSION['max_price'] = $max_price;
-            $_SESSION['search_result'] = $search_result;
-            header("Location: searchlist.php");
-            exit();
-        } catch (PDOException $e) {
-            echo "エラー：" . $e->getMessage();
-            exit();
-        }
-    }
 ?>
 
 <!DOCTYPE html>
