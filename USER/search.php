@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="Header">SWEETSTOWN</div>
         <div class="search">
             <form action="searchlist.php" method="post" style="margin-top:80px;">
-                <input type="text" name="keyword" placeholder="キーワード検索"><br>
+                <input type="text" name="keyword" placeholder="  🔍       キーワード検索"><br>
                 <input type="submit" name="search" value="検索"><br>
             </form>
             <form method="post">
