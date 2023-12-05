@@ -9,7 +9,7 @@ require 'db-connect.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/search.css">
+    <link rel="stylesheet" href="CSS/favorite-sweet.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/menu.css">
     <title>検索結果一覧画面</title>
@@ -94,19 +94,22 @@ require 'db-connect.php';
         }
     
             ?>
-        <div class="Shohin">
+        <div class="content">
            <?php
             foreach($sql as $row){
+                echo '<div class="item">';
                 echo '<a href="detail.php?product_id=',$row['product_id'],'">';
                 echo '<img src="img/', $row['gazou'],'" alt="商品画像">';
                 echo '</a>';
-                echo '<div class="shohin-setumei">';
-                echo '<p>',$row['product_mei'],'</p>';
-                echo '<p>',$row['shop_code'],'</p>';
-                echo '￥',$row['tanka'];
+                echo '<div class="item_detail">';
+                echo '<p class="item_name">',$row['product_mei'],'</p>';
+                echo '<p class="shop_name">',$row['shop_code'],'</p>';
+                echo '<p class="price">','￥',$row['tanka'],'</p>';
                 echo '<br>';
                 echo '</div>';
-            }?>
+                echo '</div>';
+            }
+            ?>
         </div>
     <footer><?php require 'menu.php';?></footer>
 </body>

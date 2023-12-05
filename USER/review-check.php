@@ -23,22 +23,27 @@
     <p>商品名</p>
     <p>ショップ名</p>
     <div class="title">
-        <textarea rows="1" cols="40"><?=$_POST['title']?></textarea>
+        <textarea readonly rows="1" cols="40"><?=$_POST['title']?></textarea>
     </div>
     <div calss="honbun">
-        <textarea rows="10" cols="40"><?=$_POST['review']?></textarea>
+        <textarea readonly rows="10" cols="40"><?=$_POST['review']?></textarea>
     </div>
     
-        <div class="rate-form">
+        <div class="rate-form-kakunin">
             <?php
             for($i=0;$i<$_POST['rate'];$i++){
-        echo '<input id="star5" type="radio" name="rate" value="5">
-            <label for="star5">★</label>';
+        echo '<input id="staryellow" type="radio" name="rate" value="5">
+            <label id="staryellowlabel" for="staryellow">★</label>';
         }
-
+        for($i=$_POST['rate'];$i<5;$i++){
+            echo '<input id="starwhite" type="radio" name="rate" value="5">
+                <label id="starlabel" for="starwhite">★</label>';
+            }
+?>
 
         </div>
-        <button class="kakunin" onclick="location.href='review-ok.html'">投稿する</button>
+        <input type="hidden" name="ratevalue" value="<?=$_POST['rate']?>">
+        <button class="kakunin" type="submit">投稿する</button>
     
 </div>
     

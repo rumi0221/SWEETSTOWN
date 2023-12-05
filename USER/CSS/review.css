@@ -71,3 +71,35 @@
     top: 250px;
   }
    
+  .rate-form-kakunin {
+    
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .rate-form-kakunin input[type=radio] {
+/* ? */
+    display: none;
+  }
+  #staryellowlabel {
+    position: relative;
+    padding: 0 5px;
+    color: #ffcc00;
+    cursor: pointer;
+    font-size: 35px;
+  }
+  #staryellow[type=radio]:checked ~ label {
+    color: #ffcc00;
+  }
+  #starwhitelabel {
+    position: relative;
+    padding: 0 5px;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 35px;
+  }
+  #starwhite[type=radio]:checked ~ label {
+    color: #ccc;
+  }
