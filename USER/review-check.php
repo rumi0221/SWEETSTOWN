@@ -37,12 +37,13 @@
         }
         for($i=$_POST['rate'];$i<5;$i++){
             echo '<input id="starwhite" type="radio" name="rate" value="5">
-                <label id="starwhitelabel" for="starwhite">★</label>';
+                <label id="starlabel" for="starwhite">★</label>';
             }
 ?>
 
         </div>
-        <button class="kakunin" onclick="location.href='review-ok.html'">投稿する</button>
+        <input type="hidden" name="ratevalue" value="<?=$_POST['rate']?>">
+        <button class="kakunin" type="submit">投稿する</button>
     
 </div>
     
