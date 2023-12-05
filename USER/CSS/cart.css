@@ -18,13 +18,17 @@ p {
 .item {
     font-size: 19px;
     display:flex;
-    width:12em;
+    /* width:12em; */
     margin:0 auto;
 }
 
 .pieces {
-  text-align: right;
-  font-size: 18px; 
+  margin-left: 20px;
+}
+
+.product {
+  display:flex;
+  margin: auto;
 }
 
 button {

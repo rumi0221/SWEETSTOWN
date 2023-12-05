@@ -1,23 +1,31 @@
+<?php session_start(); ?>
+<?php require 'db-connect.php';?>
+<?php
+ $pdo=new PDO($connect,USER,PASS);
+ $sql=$pdo->query('select * from review');
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>レビュー確認画面</title>
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/review.css">
+    <title>レビュー画面</title>
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/review.css">
 </head>
 <body>
     <div class="Header">
         SWEETSTOWN
     </div>
     <div class="hed">
-        <h1>レビュー確認</h1>
+        <h1>レビュー</h1>
 </div>
 <hr size="1">
 <div class="content">
     <p>商品名</p>
     <p>ショップ名</p>
+
+    <form action="review-check.php" method="post">
     <div class="title">
         <textarea rows="1" cols="40">タイトル</textarea>
     </div>
@@ -37,9 +45,14 @@
             <input id="star1" type="radio" name="rate" value="1">
             <label for="star1">★</label>
           </div>
-        <button class="kakunin" onclick="location.href='review-ok.html'">投稿する</button>
+        <button class="kakunin" type="submit">内容の確認をする</button>
     
+</form>
+
+
 </div>
+    
+
     
 </body>
 </html>
