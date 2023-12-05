@@ -45,7 +45,7 @@
             <input id="star1" type="radio" name="rate" value="1">
             <label for="star1">★</label>
           </div>
-        <button class="kakunin" onclick="location.href='review-check.html'">内容の確認をする</button>
+        <button class="kakunin" type="submit">内容の確認をする</button>
     
 </form>
 
