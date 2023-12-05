@@ -20,7 +20,7 @@
             </tr>
             <?php
                 $pdo=new PDO($connect,USER,PASS);
-                $sql=$pdo->query('select * from product');
+                $sql=$pdo->query('select * from product where delete_flg = 0');
                 foreach($sql as $row){
                     $sql2 = $pdo->query('select * from shop where shop_code = '. $row['shop_code']);
                     $row2 = $sql2->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
@@ -39,7 +39,7 @@
                     echo '<form action="product-update.php" method="POST">';
                     echo '<button type="submit" name="update" value="', $row['product_id'], '">更新</button>';
                     echo '</form>';
-                    echo '<form action="delete-prodect.php" method="POST">';
+                    echo '<form action="delete-product.php" method="POST">';
                     echo '<button type="submit" name="delete" value="', $row['product_id'], '">削除</button>';
                     echo '</form>';
                     echo '</td>';
