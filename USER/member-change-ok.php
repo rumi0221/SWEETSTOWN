@@ -6,6 +6,7 @@
     <title>会員情報変更完了</title>
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/member.css">
+    <link rel="stylesheet" href="CSS/menu.css">
 </head>
 <body>
     <div class="Header">
