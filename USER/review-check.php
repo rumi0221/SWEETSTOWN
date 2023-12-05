@@ -23,10 +23,10 @@
     <p>商品名</p>
     <p>ショップ名</p>
     <div class="title">
-        <textarea rows="1" cols="40"><?=$_POST['title']?></textarea>
+        <textarea readonly rows="1" cols="40"><?=$_POST['title']?></textarea>
     </div>
     <div calss="honbun">
-        <textarea rows="10" cols="40"><?=$_POST['review']?></textarea>
+        <textarea readonly rows="10" cols="40"><?=$_POST['review']?></textarea>
     </div>
     
         <div class="rate-form">
@@ -35,7 +35,7 @@
         echo '<input id="star5" type="radio" name="rate" value="5">
             <label for="star5">★</label>';
         }
-
+?>
 
         </div>
         <button class="kakunin" onclick="location.href='review-ok.html'">投稿する</button>
