@@ -12,35 +12,39 @@
     <div class="main">
         <h1>商品更新</h1>
         <table class="table-color">
-            <form action="product-registration-check.php" method="POST">
+            <form action="product-update-check.php" method="POST">
                 <?php
                 $pdo=new PDO($connect,USER,PASS);
-                $sql=$pdo->query('select * from product where product_id = '. $_POST['update']);
+                $sql=$pdo->prepare('select * from product where product_id=?');
+                $sql->execute([$_POST['update']]);
+                $row = $sql->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
                 ?>
                 <tr>
                     <th>商品名</th>
-                    <td><input type="text" name="product_name"/><?php $sql['product_mei'] ?></td>
+                    <td><input type="text" class="textw" name="product_name" required value="<?php echo $row['product_mei'] ?>"></td>
                 </tr>
                 <tr>
                     <th>カテゴリ</th>
-                    <td><input type="text" name="category"></td>
+                    <td><input type="text" class="textw" name="category" required value="<?php echo $row['product_type'] ?>"></td>
                 </tr>
                 <tr>
                     <th>単価</th>
-                    <td><input type="text" name="price"></td>
+                    <td><input type="text" class="textw" name="price" required value="<?php echo $row['tanka'] ?>"></td>
                 </tr>
                 <tr>
                     <th>商品画像</th>
-                    <td><input type="file" name="image"></td>
+                    <td>現在登録されている画像です：<?php echo $row['gazou']; ?><br>
+                        <input type="file" class="textw" name="image" required value="<?php echo $row['gazou'] ?>"></td>
                 </tr>
                 <tr>
                     <th>商品説明</th>
-                    <td><input type="text" name="explanation"></td>
+                    <td><textarea class="textw" type="text" name="explanation" rows="4" required><?php echo $row['setumei'] ?></textarea></td>
                 </tr>
                 <tr>
                     <th>季節</th>
                     <td>
-                        <select name="season">
+                        <select class="textw" name="season">
+                            <option value="<?php $row['season'] ?>"><?php echo $row['season'] ?></option>
                             <option value="春">春</option>
                             <option value="夏">夏</option>
                             <option value="秋">秋</option>
@@ -51,12 +55,15 @@
                 <tr>
                     <th>店舗名</th>
                     <td>
-                        <select name="shop_name">
+                        <select class="textw" name="shop_name">
                             <?php
                                 $pdo=new PDO($connect,USER,PASS);
-                                $sql=$pdo->query('select * from shop');
-                                foreach($sql as $row){
-                                    echo '<option>', $row['shop_mei'], '</option>';
+                                $sql2=$pdo->query('select * from shop where shop_code like "' . $row['shop_code']. '"');
+                                $row2 = $sql2->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
+                                echo '<option>', $row2['shop_mei'], '</option>';
+                                $sql3=$pdo->query('select * from shop');
+                                foreach($sql3 as $row3){
+                                    echo '<option>', $row3['shop_mei'], '</option>';
                                 }
                             ?>
                         </select>
@@ -64,11 +71,11 @@
                 </tr>
                 <tr>
                     <th>在庫数</th>
-                    <td><input type="text" name="stock"></td>
+                    <td><input type="text" class="textw" name="stock" required value="<?php echo $row['zaiko'] ?>"></td>
                 </tr>
             </table>
                 <br>
-                <button type="submit">登録確認</button>
+                <button type="submit">変更確認</button>
             </form>
             <br>
             <br>

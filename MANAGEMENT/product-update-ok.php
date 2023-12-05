@@ -9,6 +9,11 @@
 </head>
 <body>
     <div class="main">
+    <?php
+        $pdo=new PDO($connect, USER, PASS);
+        $sql=$pdo->prepare('insert into product values(NULL, ?, ?, ?, ?, ?,DEFAULT, ?, DEFAULT, ?, DEFAULT, DEFAULT, ?)');
+        $sql->execute([ $_POST['product_name'], $_POST['category'], $_POST['price'], $_POST['explanation'], $_POST['image'], $_POST['season'], $_POST['stock'] , $_POST['shop_id']]);
+    ?>
         <p>商品の情報が更新されました</p>
         <a href="productlist.php">商品一覧へ</a>
     </div>

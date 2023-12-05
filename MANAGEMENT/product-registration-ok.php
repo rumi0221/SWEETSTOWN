@@ -11,8 +11,10 @@
 <body>
     <?php
         $pdo=new PDO($connect, USER, PASS);
-        $sql=$pdo->prepare('insert into product values(NULL, ?, ?, ?, ?, ?, DEFAULT, ?, ?, ?, DEFAULT, ?)');
-        $sql->execute([ $_POST['product_name'], $_POST['category'], $_POST['price'], $_POST['image'], $_POST['explanation'], $_POST['season'], $_POST['stock'] , $_POST['shop_id']]);
+        $sql=$pdo->prepare('insert into product values(NULL, ?, ?, ?, ?, ?,DEFAULT, ?, DEFAULT, ?, DEFAULT, DEFAULT, ?)');
+        var_dump($sql);
+        $sql->execute([ $_POST['product_name'], $_POST['category'], $_POST['price'], $_POST['explanation'], $_POST['image'], $_POST['season'], $_POST['stock'] , $_POST['shop_id']]);
+        var_dump($sql);
     ?>
     <div class="main">
         <div class="link">
