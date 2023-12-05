@@ -26,9 +26,8 @@
     <p>ショップ名</p>
 
     <form action="review-check.php" method="post">
-        <input type="text" name="a">
     <div class="title">
-        <textarea rows="1" cols="40" name="titile">タイトル</textarea>
+        <textarea rows="1" cols="40" name="title">タイトル</textarea>
     </div>
     <div calss="honbun">
         <textarea rows="10" cols="40" name="review">レビュー本文</textarea>
