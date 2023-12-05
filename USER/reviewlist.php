@@ -2,7 +2,6 @@
 <?php require 'db-connect.php';?>
 <?php
     //DB接続
-    echo '<br>';
         $pdo=new PDO($connect,USER,PASS);
         $sql=$pdo->query('select * from review');
     //選択された商品IDを取得
@@ -16,10 +15,10 @@
    where review.product_id = ? 
    and review.product_id = product.product_id');
     $sql->execute([$productId]);
-    $row = $sql->fetch(PDO::FETCH_ASSOC);
+    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
     // echo $row['product_mei'];
-$count = $sql->rowCount();
-echo $count ;
+// $count = $sql->rowCount();
+// echo $count ;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -41,19 +40,20 @@ echo $count ;
     <div class="shohin">
     <hr size="1">
     <?php
-     echo '<p>',$row['product_mei'],'</p>';
+     echo '<p>',$result[0]['product_mei'],'</p>';
     ?>
 </div>
 
 <?php
-    foreach($sql as $row){
+    foreach($result as $row){
+        echo "<hr>test</hr>"
         // echo '<p>';
         // echo $row['member_id'],':';
         // echo $row['product_id'],':';
         // echo $row['hoshi'],':';
         // echo $row['title'],':';
         // echo $row['view'];
-        echo '</p>';
+        // echo '</p>';
         echo '<div class="review1">';
         for($i=0;$i<$row['hoshi'];$i++){
             echo '☆';
