@@ -2,7 +2,6 @@
 session_start();
 require 'db-connect.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['price_range'])) {
     $min_price = 0;
     $max_price = 0;
@@ -54,7 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
     }
-}
 ?>
 
 <!DOCTYPE html>
