@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['kakaku'])) {
+    if (isset($_POST['price_range'])) {
         header('Location: search-price.php'); 
         exit();
     } elseif (isset($_POST['kategori'])) {
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="submit" name="search" value="検索"><br>
             </form>
             <form method="post">
-                <button class="searchbutton" type="submit" name="kakaku" value="価格検索">価格検索</button>
+                <button class="searchbutton" type="submit" name="price_range" value="価格検索">価格検索</button>
                 <button class="searchbutton" type="submit" name="kategori" value="カテゴリ検索">カテゴリ検索</button>
                 <button class="searchbutton" type="submit" name="shop" value="ショップ検索">ショップ検索</button>
             </form>

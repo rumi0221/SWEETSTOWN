@@ -21,13 +21,6 @@ require 'db-connect.php';
     </div>
     <br>
     <br>
-    <div class="search">
-        <form action="searchlist.php" method="post">
-            <input type="text" name="search" placeholder="🔍 キーワード検索" />
-            <p><button type="submit">検索</button></p>
-        </form>
-    </div>
-
     <?php
         $pdo = new PDO($connect, USER, PASS);
         if (isset($_POST['price_range'])) {
@@ -87,6 +80,12 @@ require 'db-connect.php';
             }
         }elseif(isset($_POST['keyword'])){
             try{
+                echo '<div class="search">';
+                echo '<form method="post">';
+                echo '<input type="text" name="keyword" value="',$_POST['keyword'],'">';
+                echo '<p><button type="submit">検索</button></p>';
+                echo '</form>';
+                echo '</div>';
                 $sql = $pdo->prepare('select * from product where product_mei like ?');
                 $sql->execute(['%'.$_POST['keyword'].'%']);
             }catch(PDOException $e){
