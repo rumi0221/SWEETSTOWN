@@ -31,7 +31,7 @@ p{
 
 .item_name{
     margin-bottom: 5%;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .shop_name{
@@ -55,4 +55,11 @@ p{
     display: block;
     text-align: center;
     background-color: #fff8e8;
+}
+
+.search{
+    vertical-align:center;
+    margin: 0% auto;
+    text-align: center;
+    position: relative;
 }
