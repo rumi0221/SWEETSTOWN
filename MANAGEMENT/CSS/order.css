@@ -1,0 +1,121 @@
+/*タブのcss*/
+body {
+    display: flex; /*サイドバーとメインコンテンツを横並びにする指定をした。*/
+    background-color: #fff8e8;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse; /* セルの線を重ねる */
+    margin: auto;
+}
+
+th {
+    background-color: #884513;
+    color: #ffffff;
+    border: solid 1px; /* 枠線指定 */
+    padding: 5px; /* 余白指定 */
+}
+
+td {
+    border-color: #fff;
+    border: solid 1px #fff; /* 枠線指定 */
+    padding: 5px; /* 余白指定 */
+}
+
+/*奇数行のスタイル*/
+table.table-color tr:nth-child(odd){
+    background-color: rgb(188, 158, 135)
+}
+
+/*偶数行のスタイル*/
+table.table-color tr:nth-child(even){
+    background-color: #fff;
+}
+
+table.product {
+    border: none;
+}
+
+/*classのcss*/
+.side { /*menu.php*/
+    background-color: #fff;
+    width: 150px;
+    height: 300px;
+    text-align: center;
+}
+
+.menu-btn {
+    display: inline-block;
+    padding: 10px 1em;
+    text-decoration: none;
+    color: #cb9854;
+    border: solid 2px #fff;
+    border-radius: 3px;
+    transition: .4s;
+}
+
+.menu-btn:hover {
+    background: #884513;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+	vertical-align: middle;
+	margin: 0 10px;
+	padding: 6px 25px;
+	color: #F15A24;
+	font-weight: bold;
+	letter-spacing: 0.5pt;
+	text-decoration: none;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	transition-duration:0.3s;
+    -webkit-transition-duration:0.3s;
+    -moz-transition-duration:0.3s;
+    -o-transition-duration:0.3s;
+    -ms-transition-duration:0.3s;
+}
+
+.home {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.under {
+    text-decoration: underline;
+}
+
+.box1 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+}
+
+.box1 p {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    border: solid 3px #000;
+
+}
+
+.mdr {
+    position: relative; /* 今の位置を基準 */
+    left: 150px;
+}
+
+
+.main {
+    width: 100%;
+    text-align: center;
+}
