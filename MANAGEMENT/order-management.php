@@ -18,7 +18,6 @@
             <?php
                 $pdo=new PDO($connect,USER,PASS);
                 $sql=$pdo->query('select * from purchase_history');
-                echo '<form action="shipping-check.php" method="POST">';
                 foreach($sql as $row){
                     $sql2=$pdo->query('select * from purchase where kou_id = '. $row['kou_id']);
                     $row2 = $sql2->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
@@ -28,7 +27,9 @@
                     echo '<td>', $row2['member_id'], '</td>';
                     echo '<td>';
                         if( $row['flg'] == 0 ){
-                            echo '未';
+                            echo '<form action="shipping-check.php" method="POST">';
+                            echo '<button type="submit" name="still" value="', $row['kou_id'], '">発送する</button>';
+                            echo '</form>';
                         }else{
                             echo '済';
                         }
