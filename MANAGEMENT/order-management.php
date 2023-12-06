@@ -11,7 +11,7 @@
 <body>
     <div class="main">
         <h1>受注管理</h1>
-        <table>
+        <table class="table-color">
             <tr>
                 <th>受注日</th><th>受注番号</th><th>顧客番号</th><th>発送</th>
             </tr>
