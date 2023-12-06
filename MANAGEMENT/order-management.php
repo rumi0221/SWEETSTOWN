@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/order.css">
     <title>受注管理画面</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
         <h1>受注管理</h1>
         <table>
             <tr>
-                <th>受注日</th><th>受注番号</th><th>顧客番号</th><th>購入額</th><th>お支払い方法</th><th>発送</th>
+                <th>受注日</th><th>受注番号</th><th>顧客番号</th><th>発送</th>
             </tr>
             <?php
                 $pdo=new PDO($connect,USER,PASS);
@@ -26,16 +26,6 @@
                     echo '<td>', $row2['datetime'], '</td>';
                     echo '<td>', $row['kou_id'], '</td>';
                     echo '<td>', $row2['member_id'], '</td>';
-                    echo '<td>';
-                    $sum = 0;
-                    foreach($row2 as $r2){
-                        $sql3=$pdo->query('select tanka from product where product_id = '. $r2['product_id']);
-                        $row3 = $sql3->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
-                        $sum += $row['su'] * $row3['tanka'];   
-                    }
-                    echo $sum;
-                    echo '</td>';
-                    echo '<td>', $row2['pay'], '</td>';
                     echo '<td>';
                         if( $row['flg'] == 0 ){
                             echo '未';
