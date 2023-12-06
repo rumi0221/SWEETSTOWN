@@ -16,6 +16,7 @@ session_destroy();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/withdrawal.css">
+    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
     <style>
        
        .withbutton {
@@ -28,6 +29,7 @@ session_destroy();
 </head>
 <body>
     <div class="Header">
+    <a style="left: 0;top: 0;position: absolute;" onclick="history.back()"><i class="fas fa-angle-left fa-2x"></i></a>
         SWEETSTOWN
     </div>
     <br>

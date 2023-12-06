@@ -27,9 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/member.css">
     <link rel="stylesheet" href="CSS/menu.css">
+    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
 </head>
 <body>
     <div class="Header">
+    <a style="left: 0;top: 0;position: absolute;" onclick="history.back()"><i class="fas fa-angle-left fa-2x"></i></a>
         SWEETSTOWN
     </div>
 
@@ -54,6 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <br><br><br><br><br>
     <hr>
-    <center><footer><?php require 'menu.php';?></footer></center>
+    <footer><?php require 'menu.php';?></footer>
 </body>
 </html>
