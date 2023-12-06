@@ -19,6 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <link rel="stylesheet" href="CSS/header.css">
         <link rel="stylesheet" href="CSS/others.css">
         <link rel="stylesheet" href="CSS/menu.css">
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>その他画面</title>
     </head>
     <body>

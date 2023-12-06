@@ -16,10 +16,7 @@
 
     <h2>お届け日・お支払方法の選択</h2>
     <form action="order-check.php" method="post">
-    <h5>お届け日指定</h5>
-    <input type="radio" name="delivery" value="指定なし">指定なし　　　？月？日～？月？日発送予定<br>
-    <input type="radio" name="delivery" value="日時指定">日時指定<br>
-    <input type="radio" name="delivery" value="即日発送">即日発送<br><br>
+
     <h5>お支払方法</h5>
     <input type="radio" name="payment" value="ツケ払い">ツケ払い<br>
     <input type="radio" name="payment" value="クレジットカード">クレジットカード<br>
