@@ -53,9 +53,7 @@
 <script>
     
     // document.getElementById("star2").checked = true;
-    window.onload = function(){
         document.getElementById("star<?php $_POST['rate']?>").checked = true;
-    }
 
 </script>
     
