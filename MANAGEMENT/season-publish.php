@@ -44,7 +44,12 @@
                          '<td>', $row['tanka'], '</td>',
                          '<td>', $row['setumei'], '</td>',
                          '<td>', $row['gazou'], '</td>',
-                         
+                         '<td>', $row['total_su'], '</td>',
+                         '<td>', $row['season'], '</td>',
+                         '<td>', $row['zaiko'], '</td>';
+                    $sql2 = $pdo->query('select * from shop where shop_code = '. $row['shop_code']);
+                    $row2 = $sql2->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
+                    echo '<td>', $row['shop_mei'], '</td>'; 
                          '</tr>';
                 }
             ?>
