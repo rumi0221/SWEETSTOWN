@@ -10,6 +10,7 @@
 <body>
     <div class="Header">
         <link rel="stylesheet" href="CSS/header.css">
+        <link rel="stylesheet" href="CSS/menu.css">
         SWEETSTOWN
     </div>
 
