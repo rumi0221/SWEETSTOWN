@@ -50,9 +50,9 @@
         <button class="kakunin" type="submit">投稿する</button>
     
 </div>
-<script>
+<script type= "text/javascript">
     // document.getElementById("star2").checked = true;
-    let rate = "<?php $_POST['rate']?>";
+    let rate = "<?php echo $_POST['rate']?>";
     document.getElementById("star" + rate).checked = true;
 
 </script>
