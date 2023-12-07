@@ -5,8 +5,18 @@
  $pdo=new PDO($connect,USER,PASS);
 //  $sql=$pdo->query('select * from review');
 $sql=$pdo->prepare('select * from product where product_id=?');
-$productData = $sql->execute([$_GET['id']]);
+$sql->execute([$_GET['id']]);
+$productData = $sql->fetch();
 var_dump($productData);
+var_dump($productData['setumei']);
+
+// ショップ名取得 TODO:多分取れた
+$sql2=$sql2->prepare('select product.product_id, shop.shop_mei from product left JOIN shop ON product.shop_code = shop.shop_code where product.product_id = ?;')
+$sql2->execute([$_GET['id']]);
+$shopData = $sql2->fetch();
+var_dump($shopData);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -28,8 +38,9 @@ var_dump($productData);
 </div>
 <hr size="1">
 <div class="content">
-    <p>商品名</p>
-    <p>ショップ名</p>
+    <p>商品名：<?php echo $productData['product_mei']?>
+    </p>
+    <p>ショップ名：<?php echo $shopData['shop_mei']?></p>
 
     <form action="review-check.php" method="post">
     <div class="title">
