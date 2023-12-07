@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php require 'db-connect.php';?>
-<?
+<?php
 // 商品詳細情報取得
  $pdo=new PDO($connect,USER,PASS);
 //  $sql=$pdo->query('select * from review');
