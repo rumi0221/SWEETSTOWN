@@ -10,6 +10,7 @@ require 'db-connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/favorite-sweet.css">
+    <link rel="stylesheet" href="CSS/menu.css">
     <title>お気に入り画面(スイーツ)</title>
 </head>
 
