@@ -13,10 +13,8 @@
         <div class="link">
             <?php 
                 $pdo=new PDO($connect,USER,PASS);
-                $sql=$pdo->query('select * from purchase_history where kou_id = '. $_POST['kou_id']);
-                foreach($sql as $row){
-                    $row['flg'] = 1;
-                }
+                $sql=$pdo->query('update purchase_history set flg = 1 where kou_id = '. $_POST['kou_id']);
+
             ?>
             <p>発送が完了しました</p>
             <a href="administrato-home.php">ホームへ</a>

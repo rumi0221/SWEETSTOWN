@@ -1,3 +1,4 @@
+<?php require 'db-connect.php'; ?>
 <?php require 'menu.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -14,11 +15,17 @@
             <tr>
                 <th></th><th>商品名</th><th>売上件数</th>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            <?php
+                $pdo=new PDO($connect,USER,PASS);
+                $sql=$pdo->query('select product_mei, total_su, (select count(i2.total_su) from product i2 where i1.total_su < i2.total_su) + 1 as ranking from product i1 where ranking <= 10 order by ranking desc)');
+                foreach($sql as $row){
+                        echo '<tr>';
+                        echo '<td>', $row['ranking'], '</td>';
+                        echo '<td>', $row['product_mei'], '</td>';
+                        echo '<td>', $row['total_su'], '</td>';
+                        echo '</tr>';
+                }
+            ?>
         </table>
         <br>
         <br>
