@@ -34,22 +34,30 @@
     <?php var_dump($_POST['rate']);?>
     
         <div class="rate-form">
-            <?php
-            for($i=0;$i<$_POST['rate'];$i++){
-        echo '<input id="staryellow" type="radio" name="rate" value="5">
-            <label id="staryellowlabel" for="staryellow">★</label>';
-        }
-        for($i=$_POST['rate'];$i<5;$i++){
-            echo '<input id="starwhite" type="radio" name="rate" value="5">
-                <label id="starlabel" for="starwhite">★</label>';
-            }
-?>
-
+            <input id="star5" type="radio" name="rate" value="5">
+            <label for="star5">★</label>
+            <input id="star4" type="radio" name="rate" value="4">
+            <label for="star4">★</label>
+            <input id="star3" type="radio" name="rate" value="3">
+            <label for="star3">★</label>
+            <input id="star2" type="radio" name="rate" value="2">
+            <label for="star2">★</label>
+            <input id="star1" type="radio" name="rate" value="1">
+            <label for="star1">★</label>
         </div>
+
         <input type="hidden" name="ratevalue" value="<?=$_POST['rate']?>">
         <button class="kakunin" type="submit">投稿する</button>
     
 </div>
+<script>
+    
+    // document.getElementById("star2").checked = true;
+    window.onload = function(){
+        document.getElementById("star<?php $_POST['rate']?>").checked = true;
+    }
+
+</script>
     
 </body>
 </html>
