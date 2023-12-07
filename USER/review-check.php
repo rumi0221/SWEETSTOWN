@@ -31,7 +31,6 @@
         <textarea readonly rows="10" cols="40"><?=$_POST['review']?></textarea>
     </div>
 
-    <?php var_dump($_POST['rate']);?>
     
         <div class="rate-form">
             <input id="star5" type="radio" name="rate" value="5">
@@ -50,10 +49,10 @@
         <button class="kakunin" type="submit">投稿する</button>
     
 </div>
-<script>
-    
+<script type= "text/javascript">
     // document.getElementById("star2").checked = true;
-        document.getElementById("star<?php $_POST['rate']?>").checked = true;
+    let rate = "<?php echo $_POST['rate']?>";
+    document.getElementById("star" + rate).checked = true;
 
 </script>
     

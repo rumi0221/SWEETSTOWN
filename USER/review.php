@@ -1,8 +1,12 @@
 <?php session_start(); ?>
 <?php require 'db-connect.php';?>
-<?php
+<?
+// 商品詳細情報取得
  $pdo=new PDO($connect,USER,PASS);
 //  $sql=$pdo->query('select * from review');
+$sql=$pdo->prepare('select * from product where product_id=?');
+$sql->execute([$_GET['id']]);
+var_dump($sql);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
