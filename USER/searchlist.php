@@ -13,10 +13,12 @@ require 'db-connect.php';
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/menu.css">
     <title>検索結果一覧画面</title>
+    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="Header">
+    <a style="left: 0;top: 0;position: absolute;" onclick="history.back()"><i class="fas fa-angle-left fa-2x"></i></a>
       SWEETSTOWN
     </div>
     <br>
@@ -103,7 +105,11 @@ require 'db-connect.php';
                 echo '</a>';
                 echo '<div class="item_detail">';
                 echo '<p class="item_name">',$row['product_mei'],'</p>';
-                echo '<p class="shop_name">',$row['shop_code'],'</p>';
+                $shopmei=$pdo->prepare('select * from shop where shop_code = ?');
+                $shopmei->execute([$row['shop_code']]);
+                foreach($shopmei as $ewe){
+                    echo '<p class="shop_name">',$ewe['shop_mei'],'</p>';
+                }
                 echo '<p class="price">','￥',$row['tanka'],'</p>';
                 echo '<br>';
                 echo '</div>';

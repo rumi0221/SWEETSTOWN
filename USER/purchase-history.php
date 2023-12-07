@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/purchase-history.css">
     <link rel="stylesheet" href="CSS/menu.css">
+    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
     <title>購入履歴画面</title>
 </head>
 <body>
-    <div class="Header">SWEETSTOWN</div><br>
+    <div class="Header">
+    <a style="left: 0;top: 0;position: absolute;" onclick="history.back()"><i class="fas fa-angle-left fa-2x"></i></a>    
+    SWEETSTOWN</div><br>
     <div class="hed">
         <h1>購入履歴</h1>
     </div>

@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/header.css">
     <title>注文情報入力画面</title>
+    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
 </head>
 <body>
-    <div class="Header">SWEETSTOWN</div>
+    <div class="Header"><a style="left: 0;top: 0;position: absolute;" onclick="history.back()"><i class="fas fa-angle-left fa-2x"></i></a>SWEETSTOWN</div>
     <link rel="stylesheet" href="CSS/menu.css">
     <link rel="stylesheet" href="CSS/cart.css">
     <link rel="stylesheet" href="CSS/header.css">
@@ -16,10 +17,7 @@
 
     <h2>お届け日・お支払方法の選択</h2>
     <form action="order-check.php" method="post">
-    <h5>お届け日指定</h5>
-    <input type="radio" name="delivery" value="指定なし">指定なし　　　？月？日～？月？日発送予定<br>
-    <input type="radio" name="delivery" value="日時指定">日時指定<br>
-    <input type="radio" name="delivery" value="即日発送">即日発送<br><br>
+
     <h5>お支払方法</h5>
     <input type="radio" name="payment" value="ツケ払い">ツケ払い<br>
     <input type="radio" name="payment" value="クレジットカード">クレジットカード<br>

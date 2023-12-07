@@ -1,7 +1,7 @@
 <?php session_start();?>
 <?php require 'db-connect.php'; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/cart.css">
     <link rel="stylesheet" href="CSS/menu.css">
+    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
 </head>
 <body>
     <div class="Header">
+        <a style="left: 0;top: 0;position: absolute;" onclick="history.back()"><i class="fas fa-angle-left fa-2x"></i></a>
         SWEETSTOWN
     </div>
-    <div style="margin-top:60px;">
+    <div style="margin-top:70px;">
     <h1>カート</h1>
     <?php
         $pdo=new PDO($connect,USER,PASS);
@@ -71,17 +73,18 @@
                 echo '<form method="post">';
                 echo '　';
                 echo '<input type="hidden" name="product_id" value="',$row['product_id'],'">';
-                echo '<button class="button3" type="submit" name="add_to_cart">+</button>';
+                echo '<button class="button3" type="submit" name="remove_from_cart">-</button>';
                 echo '<div class="maru size_normal black1">';
                 echo '<div class="letter3">',$row['su'],'</div>';
                 echo '</div>';
-                echo '<button class="button3" type="submit" name="remove_from_cart">-</button>';
+                echo '<button class="button3" type="submit" name="add_to_cart">+</button>';
                 echo '</form>';
 
 
                 echo '<form method="post">';
                 echo '<input type="hidden" name="product_id" value="',$row['product_id'],'">';
-                echo '　　','<button class="btndelete" type="submit" name="delete">削除する</button>';
+                // echo '　　','<button class="btndelete" type="submit" name="delete">削除する</button>';
+                echo '　　　','<a href="detail.php" class="information">削除する</a>';
                 echo '</form>';
                 echo '</div>';
                 echo '</div>';
@@ -97,6 +100,6 @@
         <button class="button2" >レジへ進む</button>
     </form>
     </div>
-    <center><footer><?php require 'menu.php';?></footer></center>
+    <footer><?php require 'menu.php';?></footer>
 </body>
 </html>

@@ -18,7 +18,7 @@
         <br>
         <div>
             <p class="under">カート内商品</p>
-            <table>
+            <table class="table-color">
                 <tr>
                     <th>商品ID</th><th>商品名</th><th>ショップ名</th><th>価格</th><th>数量</th>
                 </tr>
@@ -28,11 +28,14 @@
                     foreach($sql as $row){
                         $id = $row['product_id'];
                         $sql2 = $pdo->query('select * from product where product_id = '. $_POST['id']);
+                        $row2 = $sql2->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
                         echo '<tr>';
-                        echo '<td>', $sql2['product_id'], '</td>';
-                        echo '<td>', $sql2['product_mei'], '</td>';
-                        echo '<td>', $pdo->query('select * from shop where shop_code = '. $sql2['shop_code']), '</td>';
-                        echo '<td>', $sql2['tanka'], '</td>';
+                        echo '<td>', $row['product_id'], '</td>';
+                        echo '<td>', $row2['product_mei'], '</td>';
+                        $sql3 = $pdo->query('select * from shop where shop_code = '. $row2['shop_code']);
+                        $row3 = $sql3->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
+                        echo '<td>', $row3['shop_mei'], '</td>';
+                        echo '<td>', $row2['tanka'], '</td>';
                         echo '<td>', $row['su'], '</td>';
                         echo '</tr>';
                     }
@@ -42,7 +45,7 @@
         <br>
         <div>
             <p><span class="under">購入履歴</span></p>
-            <table>
+            <table class="table-color">
                 <tr>
                     <th>購入ID</th><th>商品ID</th><th>商品名</th><th>購入日時</th>
                 </tr>
