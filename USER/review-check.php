@@ -31,7 +31,6 @@
         <textarea readonly rows="10" cols="40"><?=$_POST['review']?></textarea>
     </div>
 
-    <?php var_dump($_POST['rate']);?>
     
         <div class="rate-form">
             <input id="star5" type="radio" name="rate" value="5">
