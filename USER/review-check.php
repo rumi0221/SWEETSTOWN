@@ -33,7 +33,7 @@
 
     <?php var_dump($_POST['rate']);?>
     
-        <div class="rate-form-kakunin">
+        <div class="rate-form">
             <?php
             for($i=0;$i<$_POST['rate'];$i++){
         echo '<input id="staryellow" type="radio" name="rate" value="5">
