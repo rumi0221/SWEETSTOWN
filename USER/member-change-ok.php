@@ -1,3 +1,12 @@
+<?php
+session_start();
+require 'db-connect.php';
+
+$newName = isset($_SESSION['member']['member_mei']) ? $_SESSION['member']['member_mei'] : '';
+$newKanaName = isset($_SESSION['member']['kana_mei']) ? $_SESSION['member']['kana_mei'] : '';
+$newEmail = isset($_SESSION['member']['mail']) ? $_SESSION['member']['mail'] : '';
+$newPassword = isset($_SESSION['member']['pass']) ? $_SESSION['member']['pass'] : '';
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -14,6 +23,11 @@
     <a style="left: 0;top: 0;position: absolute;" onclick="history.back()"><i class="fas fa-angle-left fa-2x"></i></a>
         SWEETSTOWN
     </div>
+    <?php
+        $pdo=new PDO($connect,USER,PASS);
+        $sql=$pdo->prepare('update member set member_mei = ?,kana_mei = ?,mail = ?,pass = ? where member_id = ?');
+        $sql->execute([$newName,$newKanaName,$newEmail,$newPassword,$_SESSION['member']['member_id']]);
+    ?>
     <br><br><br><br><br>
 
     <p>会員情報が変更されました</p><br><br><br>

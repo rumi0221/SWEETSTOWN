@@ -39,7 +39,7 @@
         </head>
         <body>
         <div class="Header">SWEETSTOWN</div><br>
-        <div style="margin-top:20px;"><a href="seasonlist.php">
+        <div style="margin-bottom: 100px"><a href="seasonlist.php">
             <?php
                 $spp=$pdo->query('select distinct season from product where season_flg <> 0');
                 $coun=$spp->rowCount();
@@ -60,31 +60,30 @@
                 }
             ?>
         </a><br><br>
-        <!-- <form action="cart.php" method="post"> -->
-        <!-- <button type="submit">カート内商品一覧</button> -->
         <a href="cart.php" class="btn btn-tag"><i class="fas fa-shopping-cart"></i>カート内の商品</a>
-        <!-- </form>--><br><br><br>
+        <br><br><br>
 
 <?php
-    $sql=$pdo->query('select * from product');
+    echo '<h3 style="margin-bottom: 0">　商品一覧</h3>';
+    echo '<hr><br>';
+    $sql=$pdo->query('select * from product where delete_flg = 0');
     $count=0;
 
     echo '<table>';
     foreach($sql as $row){
         $count++;
-        // echo '<div class = "product_item">';
+
         if($count == 0){
             echo '<tr>';
         }
         echo '<td style="width:200px;">';
-        echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$row['gazou'],'"></a>';
+        echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$row['gazou'],'" height="50px"></a>';
         echo '<br>',$row['product_mei'],'<br>','<font color="red">','¥',$row['tanka'],'</font>';;
         echo '</td>';
         if($count==3){
             echo '</tr>';
             $count=0;
         }
-        // echo '</div>';
     }
         echo '</table>';
     }
