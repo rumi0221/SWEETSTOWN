@@ -51,9 +51,9 @@
     
 </div>
 <script>
-    
     // document.getElementById("star2").checked = true;
-        document.getElementById("star<?php $_POST['rate']?>").checked = true;
+    let rate = "<?php $_POST['rate']?>";
+    document.getElementById("star" + rate).checked = true;
 
 </script>
     
