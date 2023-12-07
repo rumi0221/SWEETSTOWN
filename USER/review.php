@@ -5,7 +5,8 @@
  $pdo=new PDO($connect,USER,PASS);
 //  $sql=$pdo->query('select * from review');
 $sql=$pdo->prepare('select * from product where product_id=?');
-$productData = $sql->execute([$_GET['id']]);
+$sql->execute([$_GET['id']]);
+$productData = $sql->fetch();
 var_dump($productData);
 ?>
 <!DOCTYPE html>
