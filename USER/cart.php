@@ -48,14 +48,17 @@
             foreach($sss as $pow){
                 $ppa=$pdo->prepare('select * from shop where shop_code = ?');
                 $ppa->execute([$pow['shop_code']]);
-                echo '<div class="product">';
                 echo '<div class="item">';
-                echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$pow['gazou'],'"></a>';
+                echo '　','<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$pow['gazou'],'"></a>';
                 echo '<section>';
                 echo '<p class="description"></p>';
+                echo '<div class="product">';
                 echo '　',$pow['product_mei'],'<br>';
+                echo '</div>';
                 foreach($ppa as $sas){
+                echo '<div class="shop">';
                     echo '　',$sas['shop_mei'],'<br>';
+                echo '</div>';
                 }
                 echo '<font color="red">','　￥',$pow['tanka'],'</font>';
                 echo '</section>';
@@ -86,7 +89,6 @@
                 // echo '　　','<button class="btndelete" type="submit" name="delete">削除する</button>';
                 echo '　　　','<a href="detail.php" class="information">削除する</a>';
                 echo '</form>';
-                echo '</div>';
                 echo '</div>';
                 echo '</div>';
                 echo '<br>';

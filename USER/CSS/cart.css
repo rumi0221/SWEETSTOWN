@@ -1,7 +1,3 @@
-body {
-  width: 200px;
-}
-
 h1 {
     text-align: center;
 }
@@ -22,17 +18,22 @@ p {
 .item {
     font-size: 19px;
     display:flex;
-    /* width:12em; */
-    margin:0 auto;
+}
+
+section {
+  width: 40%;
+}
+
+.shop {
+  font-size: 15px;
+}
+
+.product {
+  font-size: 22px;
 }
 
 .pieces {
   margin-left: 20px;
-}
-
-.product {
-  display:flex;
-  margin: auto;
 }
 
 .su {
