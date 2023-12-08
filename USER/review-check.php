@@ -40,9 +40,9 @@ $shopData = $sql2->fetch();
 </div>
 <hr size="1">
 <div class="content">
-    <p>商品名：<?php echo $productData['product_mei']?>
+    <p><?php echo $productData['product_mei']?>
     </p>
-    <p>ショップ名：<?php echo $shopData['shop_mei']?></p>
+    <p><?php echo $shopData['shop_mei']?></p>
     <div class="title">
         <textarea readonly rows="1" cols="40"><?=$_POST['title']?></textarea>
     </div>
