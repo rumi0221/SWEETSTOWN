@@ -25,7 +25,7 @@ var_dump($_POST);
     <div class="review-ok">
         <p>レビューが投稿されました</p>
 
-        <a href="purchase-history.html">購入履歴に戻る</a>
+        <a href="purchase-history.php">購入履歴に戻る</a>
     </div>
 
 </body>
