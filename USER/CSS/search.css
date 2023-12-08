@@ -51,7 +51,6 @@
 }
 
 .keyword {
-    width: 100%;
-    padding: 1em 0.5em;
-    line-height: 3;
+    width: 50%;
+    line-height: 2.5;
 }
