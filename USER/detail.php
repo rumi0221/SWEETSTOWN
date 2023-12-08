@@ -75,7 +75,7 @@
             }
           }
           echo '<p>',$row['setumei'],'</p>';
-          echo '<button class="searchbutton" onclick="location.href=\'review.php?id=' . $set . '\'">レビュー</button>';
+          echo '<button class="searchbutton" onclick="location.href=\'review.php?id=' . $set . '\'">レビュー</button><br>';
           $spl=$pdo->prepare('select * from product where product_id <> ? and product_type = ?');
           $spl->execute([$row['product_id'],$row['product_type']]);
           foreach($spl as $mow){
