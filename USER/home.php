@@ -49,11 +49,11 @@
                     }else if($owo['season'] == '春'){
                         echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/spring.png"></a><br>';
                     }else if($owo['season'] == '夏'){
-                        echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/summer.jpg"></a><br>';
+                        echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/summer.png"></a><br>';
                     }else if($owo['season'] == '秋'){
-                        echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/fall.jpg"></a><br>';
+                        echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/fall.png"></a><br>';
                     }else if($owo['season'] == '冬'){
-                        echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/winter.jpg"></a><br>';
+                        echo '<div style="margin-top:60px;"><a href="seasonlist.php"><img src="img/winter.png"></a><br>';
                     }else{
                         echo 'エラーが発生しました。';
                     }
