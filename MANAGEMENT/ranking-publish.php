@@ -13,12 +13,12 @@
         <h1>ランキング</h1>
         <table>
             <tr>
-                <th>ランキング</th><th>商品名</th><th>売上件数</th>
+                <th>順位</th><th>商品名</th><th>売上件数</th>
             </tr>
             <?php
                 $ranking=1;
                 $pdo=new PDO($connect,USER,PASS);
-                $sql=$pdo->query('select * from product where rank <> 0 ORDER BY total_su desc limit 10');
+                $sql=$pdo->query('select * from product ORDER BY total_su desc limit 10');
                 foreach($sql as $row){
                     echo '<tr>';
                     echo '<td>', $ranking, '</td>';
