@@ -18,13 +18,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <link rel="stylesheet" href="CSS/header.css">
         <link rel="stylesheet" href="CSS/search.css">
         <link rel="stylesheet" href="CSS/menu.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>検索画面</title>
     </head>
     <body>
         <div class="Header">SWEETSTOWN</div>
         <div class="search">
             <form action="searchlist.php" method="post" style="margin-top:80px;">
+            <div class="keyword">
                 <input type="text" name="keyword" placeholder="  🔍       キーワード検索"><br>
+            </div>
                 <input type="submit" name="search" value="検索"><br>
             </form>
             <form method="post">
