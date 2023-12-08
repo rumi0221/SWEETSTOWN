@@ -11,7 +11,7 @@
 <body>
     <?php
         $pdo=new PDO($connect, USER, PASS);
-        $sql=$pdo->prepare('insert into product values(NULL, ?, ?, ?, ?, ?,DEFAULT, ?, DEFAULT, ?, DEFAULT, DEFAULT, ?)');
+        $sql=$pdo->prepare('insert into product values(NULL, ?, ?, ?, ?, ?,DEFAULT, ?, DEFAULT, ?, DEFAULT, DEFAULT, ?, DEFAULT)');
         $sql->execute([ $_POST['product_name'], $_POST['category'], $_POST['price'], $_POST['explanation'], $_POST['image'], $_POST['season'], $_POST['stock'] , (int)$_POST['shop_id']]);
     ?>
     <div class="main">
