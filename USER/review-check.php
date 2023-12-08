@@ -5,13 +5,13 @@
  $pdo=new PDO($connect,USER,PASS);
 //  $sql=$pdo->query('select * from review');
 $sql=$pdo->prepare('select * from product where product_id=?');
-$sql->execute([$_POST['id']]);
+$sql->execute([$_GET['id']]);
 $productData = $sql->fetch();
 
 
 // ショップ名取得 TODO:多分取れた
 $sql2=$pdo->prepare('select product.product_id, shop.shop_mei from product left JOIN shop ON product.shop_code = shop.shop_code where product.product_id = ?;');
-$sql2->execute([$_POST['id']]);
+$sql2->execute([$_GET['id']]);
 $shopData = $sql2->fetch();
 
 
@@ -50,7 +50,8 @@ $shopData = $sql2->fetch();
         <textarea readonly rows="10" cols="40"><?=$_POST['review']?></textarea>
     </div>
 
-    
+    <form action="review-ok.php" method="post">
+
         <div class="rate-form">
             <input id="star5" type="radio" name="rate" value="5">
             <label for="star5">★</label>
@@ -66,7 +67,8 @@ $shopData = $sql2->fetch();
 
         <input type="hidden" name="ratevalue" value="<?=$_POST['rate']?>">
         <button class="kakunin" type="submit">投稿する</button>
-    
+
+    </form>
 </div>
 <script type= "text/javascript">
     // document.getElementById("star2").checked = true;

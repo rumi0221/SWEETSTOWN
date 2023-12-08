@@ -1,13 +1,4 @@
-<?php
-var_dump($_POST);
-?>   
-   
-   
-   
-
-
-
-
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -18,6 +9,9 @@ var_dump($_POST);
     <link rel="stylesheet" href="CSS/review.css">
 </head>
 <body>
+<?php echo var_dump($_POST)?>
+<?php echo var_dump($_SESSION['member'])?>
+<?php exit;?>
     <div class="Header">
         SWEETSTOWN
     </div>
