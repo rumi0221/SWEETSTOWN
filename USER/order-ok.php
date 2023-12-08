@@ -41,42 +41,46 @@
                 $sss=$pdo->prepare('select * from product where product_id = ?');
                 $sss->execute([$row['product_id']]);
                 foreach($sss as $pow){
-                    $ppa=$pdo->prepare('select * from shop where shop_code = ?');
-                    $ppa->execute([$pow['shop_code']]);
-                    echo '<div class="product">';
-                    echo '<div class="item">';
-                    echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$pow['gazou'],'"></a>';
-                    echo '<section>';
-                    echo '<p class="description"></p>';
-                    echo '　',$pow['product_mei'],'<br>';
-                    foreach($ppa as $sas){
-                        echo '　',$sas['shop_mei'],'<br>';
-                    }
-                    echo '<font color="red">','　￥',$pow['tanka'],'</font>';
-                    echo '</section>';
-                    echo '<div class="pieces">';
-                    echo '<h4>', '×', $row['su'], '　　', '</h4>';
-                    echo '</div></div>';
-                    echo '</div>';
-                    echo '<br>';
+                    if($pow['zaiko'] - $row['su'] >= 0){
+                        $yyx=$pdo->prepare('update product set zaiko = zaiko - ? where product_id = ?');
+                        $yyx->execute([$row['su'],$row['product_id']]);
+                        $ppa=$pdo->prepare('select * from shop where shop_code = ?');
+                        $ppa->execute([$pow['shop_code']]);
+                        echo '<div class="product">';
+                        echo '<div class="item">';
+                        echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$pow['gazou'],'"></a>';
+                        echo '<section>';
+                        echo '<p class="description"></p>';
+                        echo '　',$pow['product_mei'],'<br>';
+                        foreach($ppa as $sas){
+                            echo '　',$sas['shop_mei'],'<br>';
+                        }
+                        echo '<font color="red">','　￥',$pow['tanka'],'</font>';
+                        echo '</section>';
+                        echo '<div class="pieces">';
+                        echo '<h4>', '×', $row['su'], '　　', '</h4>';
+                        echo '</div></div>';
+                        echo '</div>';
+                        echo '<br>';
 
-                    $kakaku = $pow['tanka'] * $row['su'];
-                    $total = $total + $kakaku;
+                        $kakaku = $pow['tanka'] * $row['su'];
+                        $total = $total + $kakaku;
+                    }else{
+                        echo '<font color="red">在庫がありません</font>';
+                    }
                 }
             }
             $qaz=$pdo->prepare('update cart set datetime = ? where datetime = "0000-00-00 00:00:00" and member_id = ?');
             $qaz->execute([$currentDateTime,$_SESSION['member']['member_id']]);
-
             echo '<div style="padding: 10px; margin-bottom: 10px; width: 60%; background-color: #e7e7d6; margin: 0 0 0 auto;">';
             echo '<div style="font-size: 20px;">', '　商品合計　￥ ', $total, '</div>';
             echo '</div>';
         ?>
         
-        </div><br><br>
+            </div><br><br>
 
-        <p>注文が確定されました</p><br>
-
-        <p><a href="home.php">ホームへ戻る</a></p>
+            <p>注文が確定されました</p><br>
+            <p><a href="home.php">ホームへ戻る</a></p>
 
         <br>
         

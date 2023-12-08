@@ -17,18 +17,18 @@
             </tr>
             <?php
                 $pdo=new PDO($connect,USER,PASS);
-                $sql=$pdo->query('select * from purchase_history');
+                $sql=$pdo->query('select * from purchase');
                 foreach($sql as $row){
-                    $sql2=$pdo->query('select * from purchase where kou_id = '. $row['kou_id']);
+                    $sql2=$pdo->query('select * from purchase_history where kou_id = '. $row['kou_id']);
                     $row2 = $sql2->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
                     echo '<tr>';
-                    echo '<td>', $row2['datetime'], '</td>';
-                    echo '<td>', $row['kou_id'], '</td>';
-                    echo '<td>', $row2['member_id'], '</td>';
+                    echo '<td>', $row['datetime'], '</td>';
+                    echo '<td>', $row2['kou_id'], '</td>';
+                    echo '<td>', $row['member_id'], '</td>';
                     echo '<td>';
-                        if( $row['flg'] == 0 ){
+                        if( $row2['flg'] == 0 ){
                             echo '<form action="shipping-check.php" method="POST">';
-                            echo '<button type="submit" name="still" value="', $row['kou_id'], '">発送する</button>';
+                            echo '<button type="submit" name="still" value="', $row2['kou_id'], '">発送する</button>';
                             echo '</form>';
                         }else{
                             echo '済';
