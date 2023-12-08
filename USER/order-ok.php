@@ -30,6 +30,8 @@
             $pur->execute([$currentDateTime,$_SESSION['member']['member_id'],$_POST['payment'],$_POST['place'],$_POST['live']]);
 
             foreach ($sql as $row) {
+                $yyx=$pdo->prepare('update product set zaiko = zaiko - ? where product_id = ?');
+                $yyx->execute([$row['su'],$row['product_id']]);
                 $bow=$pdo->prepare('update product set total_su = total_su + ? where product_id = ?');
                 $bow->execute([$row['su'],$row['product_id']]);
                 $out=$pdo->prepare('select * from purchase where datetime = ? and member_id = ?');

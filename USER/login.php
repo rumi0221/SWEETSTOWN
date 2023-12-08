@@ -13,7 +13,7 @@ if (isset($_POST['mail']) && isset($_POST['pass'])) {
     if ($row && password_verify($_POST['pass'], $row['pass'])) {
         $_SESSION['member'] = [
             'member_id' => $row['member_id'],
-            'member_mei' => $row['mrmber_mei'],
+            'member_mei' => $row['member_mei'],
             'kana_mei' => $row['kana_mei'],
             'mail' => $row['mail'],
             'pass' => $row['pass']
