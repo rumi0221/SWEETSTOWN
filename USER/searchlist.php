@@ -23,6 +23,7 @@ require 'db-connect.php';
     </div>
     <br>
     <br>
+    <div class="favorite">
     <?php
         $pdo = new PDO($connect, USER, PASS);
         if (isset($_POST['price_range'])) {
@@ -116,6 +117,7 @@ require 'db-connect.php';
                 echo '</div>';
             }
             ?>
+        </div>
         </div>
     <footer><?php require 'menu.php';?></footer>
 </body>
