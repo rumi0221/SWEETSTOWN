@@ -11,7 +11,7 @@
 <body>
     <div class="main">
         <h1>ランキング</h1>
-        <table>
+        <table class="table-color">
             <tr>
                 <th>順位</th><th>商品名</th><th>売上件数</th>
             </tr>
