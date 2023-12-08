@@ -69,13 +69,16 @@
                         <input type="hidden" name="stock" value="<?php echo $_POST['stock']; ?>">
                     </td>   
                 </tr>
-            </table>
+        </table>
                 <br>
                 <button type="submit">更新</button>
             </form>
             <br>
             <br>
-            <a href="product-update.php">戻る</a>
+            <form action="product-update.php" method="POST">
+                <input type="hidden" class="link2" name="update" value="<?php echo $_POST['product_id']; ?>">
+                <button type="submit">戻る</button>
+            </form>
     </div>
 
 </body>
