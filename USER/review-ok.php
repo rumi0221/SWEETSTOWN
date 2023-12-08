@@ -19,6 +19,8 @@ var_dump($_POST);
 </head>
 <body>
 <?php echo var_dump($_POST)?>
+<?php echo var_dump($_SESSION['member'])?>
+<?php exit;?>
     <div class="Header">
         SWEETSTOWN
     </div>
