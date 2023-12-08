@@ -44,10 +44,10 @@ $shopData = $sql2->fetch();
     </p>
     <p><?php echo $shopData['shop_mei']?></p>
     <div class="title">
-        <textarea readonly rows="1" cols="40"><?=$_POST['title']?></textarea>
+        <textarea readonly rows="1" cols="40" name="title"><?=$_POST['title']?></textarea>
     </div>
     <div calss="honbun">
-        <textarea readonly rows="10" cols="40"><?=$_POST['review']?></textarea>
+        <textarea readonly rows="10" cols="40" name="review"><?=$_POST['review']?></textarea>
     </div>
 
     <form action="review-ok.php" method="post">
@@ -64,8 +64,8 @@ $shopData = $sql2->fetch();
             <input id="star1" type="radio" name="rate" value="1">
             <label for="star1">★</label>
         </div>
+        <input type="hidden" name="product_id" value="<?php echo $_GET['id']?>">
 
-        <input type="hidden" name="ratevalue" value="<?=$_POST['rate']?>">
         <button class="kakunin" type="submit">投稿する</button>
 
     </form>

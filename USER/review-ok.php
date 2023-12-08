@@ -11,6 +11,12 @@
 <body>
 <?php echo var_dump($_POST)?>
 <?php echo var_dump($_SESSION['member'])?>
+
+<?php 
+    $sql=$pdo->prepare('INSERT INTO review values(?,?,?,?,?)');
+    $sql->execute([$_SESSION['member']['member_id'],$_POST['rate'],$_POST['product_id'],$_POST['title'],$_POST['review']]);
+?>
+
 <?php exit;?>
     <div class="Header">
         SWEETSTOWN
