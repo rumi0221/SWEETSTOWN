@@ -43,14 +43,14 @@ $shopData = $sql2->fetch();
     <p><?php echo $productData['product_mei']?>
     </p>
     <p><?php echo $shopData['shop_mei']?></p>
-    <div class="title">
-        <textarea readonly rows="1" cols="40" name="title"><?=$_POST['title']?></textarea>
-    </div>
-    <div calss="honbun">
-        <textarea readonly rows="10" cols="40" name="review"><?=$_POST['review']?></textarea>
-    </div>
 
     <form action="review-ok.php" method="post">
+        <div class="title">
+            <textarea readonly rows="1" cols="40" name="title"><?=$_POST['title']?></textarea>
+        </div>
+        <div calss="honbun">
+            <textarea readonly rows="10" cols="40" name="review"><?=$_POST['review']?></textarea>
+        </div>
 
         <div class="rate-form">
             <input id="star5" type="radio" name="rate" value="5">
