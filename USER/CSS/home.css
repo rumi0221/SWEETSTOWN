@@ -20,6 +20,11 @@ td {
     font-size: 20px;
 }
 
+h3 {
+  font-size: 25px;
+  text-align: left;
+}
+
 /* *,
 *:before,
 *:after {
@@ -79,7 +84,7 @@ a.btn-tag:before {
 
 a.btn-tag:hover {
   color: #fff;
-  background: #fff8e8;
+  background: rgb(188,158,135);
 }
 
 a.btn-tag i {

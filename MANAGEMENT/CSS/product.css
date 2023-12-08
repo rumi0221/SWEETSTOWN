@@ -84,6 +84,12 @@ button.registration {
     margin-top: 100px;
 }
 
+button.link2 {
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #0033cc;
+}
 
 .mdr {
     position: relative; /* 今の位置を基準 */

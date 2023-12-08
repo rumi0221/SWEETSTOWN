@@ -1,3 +1,4 @@
+<?php require 'db-connect.php'; ?>
 <?php require 'menu.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -10,6 +11,11 @@
 <body>
     <div class="main">
         <div class="link">
+            <?php 
+                $pdo=new PDO($connect,USER,PASS);
+                $sql=$pdo->query('update purchase_history set flg = 1 where kou_id = '. $_POST['kou_id']);
+
+            ?>
             <p>発送が完了しました</p>
             <a href="administrato-home.php">ホームへ</a>
         </div>

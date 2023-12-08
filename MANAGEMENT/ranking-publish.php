@@ -1,3 +1,4 @@
+<?php require 'db-connect.php'; ?>
 <?php require 'menu.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -12,13 +13,21 @@
         <h1>ランキング</h1>
         <table>
             <tr>
-                <th></th><th>商品名</th><th>売上件数</th>
+                <th>ランキング</th><th>商品名</th><th>売上件数</th>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            <?php
+                $ranking=1;
+                $pdo=new PDO($connect,USER,PASS);
+                $sql=$pdo->query('select * from product where rank <> 0 ORDER BY total_su desc limit 10');
+                foreach($sql as $row){
+                    echo '<tr>';
+                    echo '<td>', $ranking, '</td>';
+                    echo '<td>', $row['product_mei'], '</td>';
+                    echo '<td>', $row['total_su'], '</td>';
+                    echo '</tr>';
+                    $ranking=$ranking+1;
+                }
+            ?>
         </table>
         <br>
         <br>

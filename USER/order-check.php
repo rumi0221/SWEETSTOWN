@@ -54,6 +54,7 @@
                     $kakaku = $pow['tanka'] * $row['su'];
                     $total = $total + $kakaku;
                 }
+                
             }
 
 
@@ -88,6 +89,9 @@
 
         <br>
         <form action="order-ok.php" method="post">
+            <input type="hidden" name="payment" value="<?php $_POST['payment']?>">
+            <input type="hidden" name="place" value="<?php $_POST['place']?>">
+            <input type="hidden" name="live" value="<?php $_POST['live']?>">
             <button class="button2" type="submit" name="button">購入する</button>
         </form>
         <br>
