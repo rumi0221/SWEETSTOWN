@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/review.css">
 </head>
-<body>
 <?php 
     $pdo=new PDO($connect,USER,PASS);
     $sql=$pdo->prepare('INSERT INTO review values(?,?,?,?,?)');
     $sql->execute([$_SESSION['member']['member_id'],$_POST['rate'],$_POST['product_id'],$_POST['title'],$_POST['review']]);
 ?>
+<body>
+
     <div class="Header">
         SWEETSTOWN
     </div>
