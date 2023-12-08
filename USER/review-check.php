@@ -5,13 +5,13 @@
  $pdo=new PDO($connect,USER,PASS);
 //  $sql=$pdo->query('select * from review');
 $sql=$pdo->prepare('select * from product where product_id=?');
-$sql->execute([$_POST['id']]);
+$sql->execute([$_GET['id']]);
 $productData = $sql->fetch();
 
 
 // ショップ名取得 TODO:多分取れた
 $sql2=$pdo->prepare('select product.product_id, shop.shop_mei from product left JOIN shop ON product.shop_code = shop.shop_code where product.product_id = ?;');
-$sql2->execute([$_POST['id']]);
+$sql2->execute([$_GET['id']]);
 $shopData = $sql2->fetch();
 
 
