@@ -71,16 +71,26 @@ table.product {
     color: white;
 }
 
+/*「発送する」を上下中央ぞろえにしたい*/
+/* .f-btn {
+    padding: auto;
+} */
+
 .mdr {
     position: relative; /* 今の位置を基準 */
     left: 150px;
 }
 
 .total {
-    margin: auto 0;
-    background-color: #b7b7b7;
+    margin: auto;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 200px;
+    background-color: rgb(200, 200, 200);
 }
-
 
 .main {
     width: 100%;

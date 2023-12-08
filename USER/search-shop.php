@@ -16,6 +16,7 @@
         <a style="left: 0;top: 0;position: absolute;" onclick="history.back()"><i class="fas fa-angle-left fa-2x"></i></a>
         <span>SWEETSTOWN</span>
     </div>
+    <div style="margin-top:70px;">
     <div class="search">
         <?php
             $pdo=new PDO($connect,USER,PASS);

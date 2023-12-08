@@ -63,14 +63,14 @@
             
         </table>
         <br>
-        <div class="total">商品合計　￥<?php echo $sum; ?></div>
+        <div class="total">
+            商品合計　￥<?php echo $sum; ?>
+        </div>
         <br>
         <form action="shipping-ok.php" method="POST">
             <button name="kou_id" value="<?php echo $row['kou_id']; ?>">発送</button>
         </form>
-        <br>
-        <br>
-        <a href="productlist.php">戻る</a>
+        <a class="mdr" href="productlist.php">戻る</a>
 
     </div>
 </body>
