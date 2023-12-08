@@ -10,7 +10,7 @@ $productData = $sql->fetch();
 
 
 // ショップ名取得 TODO:多分取れた
-$sql2=$sql2->prepare('select product.product_id, shop.shop_mei from product left JOIN shop ON product.shop_code = shop.shop_code where product.product_id = ?;');
+$sql2=$pdo->prepare('select product.product_id, shop.shop_mei from product left JOIN shop ON product.shop_code = shop.shop_code where product.product_id = ?;');
 $sql2->execute([$_GET['id']]);
 $shopData = $sql2->fetch();
 
