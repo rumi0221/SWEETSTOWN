@@ -25,8 +25,19 @@
             $count = $sql -> rowCount();
             $total = 0;
             $kakaku = 0;
+            $currentDateTime = date('Y-m-d H:i:s');
+            $pur=$pdo->prepare('insert into purchase values(null,?,?,?,?,?)');
+            $pur->execute([$currentDateTime,$_SESSION['member']['member_id'],$_POST['payment'],$_POST['place'],$_POST['live']]);
 
             foreach ($sql as $row) {
+                $bow=$pdo->prepare('update product set total_su = total_su + ? where product_id = ?');
+                $bow->execute([$row['su'],$row['product_id']]);
+                $out=$pdo->prepare('select * from purchase where datetime = ? and member_id = ?');
+                $out->execute([$currentDateTime,$_SESSION['member']['member_id']]);
+                foreach($out as $ywy){
+                    $tui=$pdo->prepare('insert into purchase_history values(?,?,?,default)');
+                    $tui->execute([$ywy['kou_id'],$row['product_id'],$row['su']]);
+                }
                 $sss=$pdo->prepare('select * from product where product_id = ?');
                 $sss->execute([$row['product_id']]);
                 foreach($sss as $pow){
@@ -53,6 +64,8 @@
                     $total = $total + $kakaku;
                 }
             }
+            $qaz=$pdo->prepare('update cart set datetime = ? where datetime = "0000-00-00 00:00:00" and member_id = ?');
+            $qaz->execute([$currentDateTime,$_SESSION['member']['member_id']]);
 
             echo '<div style="padding: 10px; margin-bottom: 10px; width: 60%; background-color: #e7e7d6; margin: 0 0 0 auto;">';
             echo '<div style="font-size: 20px;">', '　商品合計　￥ ', $total, '</div>';
