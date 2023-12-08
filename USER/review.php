@@ -41,7 +41,9 @@ $shopData = $sql2->fetch();
     </p>
     <p><?php echo $shopData['shop_mei']?></p>
 
-    <form action="review-check.php?id=".<?php echo $_GET['id']?> method="post">
+    <?php echo var_dump();?>
+    <form action="review-check.php?id='<?php echo $_GET['id']?>'" method="post">
+    
     <div class="title">
         <textarea rows="1" cols="40" name="title">タイトル</textarea>
     </div>
