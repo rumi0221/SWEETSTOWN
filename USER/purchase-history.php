@@ -17,6 +17,7 @@
     SWEETSTOWN</div><br>
     <div class="hed">
         <h1>購入履歴</h1>
+        <hr width="90%" noshade><br>
     </div>
     <div class="shohin">
         <div class="shohin-rireki">

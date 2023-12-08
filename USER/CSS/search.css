@@ -5,6 +5,11 @@
     position: relative;
 }
 
+.search2{
+    width: 5em;
+    height:3em;
+}
+
 .text{
     height: 35px;
     width: 200px;
@@ -51,6 +56,6 @@
 }
 
 .keyword {
-    width: 50%;
-    line-height: 2.5;
+    width: 80%;
+    line-height: 3;
 }
