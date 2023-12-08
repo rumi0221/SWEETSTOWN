@@ -18,6 +18,7 @@ var_dump($_POST);
     <link rel="stylesheet" href="CSS/review.css">
 </head>
 <body>
+<?php echo var_dump($_POST)?>
     <div class="Header">
         SWEETSTOWN
     </div>

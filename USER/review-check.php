@@ -50,7 +50,8 @@ $shopData = $sql2->fetch();
         <textarea readonly rows="10" cols="40"><?=$_POST['review']?></textarea>
     </div>
 
-    
+    <form action="review-ok.php" method="post">
+
         <div class="rate-form">
             <input id="star5" type="radio" name="rate" value="5">
             <label for="star5">★</label>
@@ -66,7 +67,8 @@ $shopData = $sql2->fetch();
 
         <input type="hidden" name="ratevalue" value="<?=$_POST['rate']?>">
         <button class="kakunin" type="submit">投稿する</button>
-    
+
+    </form>
 </div>
 <script type= "text/javascript">
     // document.getElementById("star2").checked = true;
