@@ -12,9 +12,12 @@
     <div class="main">
         <h1>全体売上</h1>
         <table class="table-color">
-            <tr>
-                <th>商品ID</th><th>商品名</th><th>ショップ名</th><th>価格</th><th>数量</th><th>購入ID</th><th>購入日時</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>商品ID</th><th>商品名</th><th>ショップ名</th><th>価格</th><th>数量</th><th>購入ID</th><th>購入日時</th>
+                </tr>
+            </thead>
+            <tbody>
             <?php
                 $pdo=new PDO($connect,USER,PASS);
                 $sql=$pdo->query('select * from purchase_history');
@@ -36,6 +39,7 @@
                     echo '</tr>';
                 }
             ?>
+            </tbody>
         </table>
     </div>
 </body>

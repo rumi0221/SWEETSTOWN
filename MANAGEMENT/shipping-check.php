@@ -43,9 +43,12 @@
         </table>
         <br>
         <table class="table-color">
-            <tr>
-                <th>商品ID</th><th>単価</th><th>購入数</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>商品ID</th><th>単価</th><th>購入数</th>
+                </tr>
+            </thead>
+            <tbody>
             <?php 
                 $sql2=$pdo->query('select * from purchase_history where kou_id = '. $_POST['still']);
                 $sum = 0;
@@ -60,7 +63,7 @@
                     echo '</tr>';
                 }
             ?>
-            
+            </tbody>
         </table>
         <br>
         <div class="total">
