@@ -10,6 +10,7 @@ require 'db-connect.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/favorite-sweet.css">
+    <link rel="stylesheet" href="CSS/search.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/menu.css">
     <title>検索結果一覧画面</title>
@@ -85,8 +86,8 @@ require 'db-connect.php';
             try{
                 echo '<div class="search">';
                 echo '<form method="post">';
-                echo '<input type="text" name="keyword" value="',$_POST['keyword'],'">';
-                echo '<p><button type="submit">検索</button></p>';
+                echo '<input class="keyword" type="text" name="keyword" value="',$_POST['keyword'],'">';
+                echo '<p><button class="search2" type="submit">検索</button></p>';
                 echo '</form>';
                 echo '</div>';
                 $sql = $pdo->prepare('select * from product where product_mei like ?');
