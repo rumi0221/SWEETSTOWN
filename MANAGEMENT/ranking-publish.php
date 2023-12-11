@@ -12,9 +12,12 @@
     <div class="main">
         <h1>ランキング</h1>
         <table class="table-color">
-            <tr>
-                <th>順位</th><th>商品名</th><th>売上件数</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>順位</th><th>商品名</th><th>売上件数</th>
+                </tr>
+            </thead>
+            <tbody>
             <?php
                 $ranking=0;
                 $pdo=new PDO($connect,USER,PASS);
@@ -32,6 +35,7 @@
                     echo '</tr>';
                 }
             ?>
+            </tbody>
         </table>
         <br>
         <br>

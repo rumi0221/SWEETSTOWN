@@ -15,9 +15,12 @@
             <button class="registration">商品登録</button>
         </form>
         <table class="table-color">
-            <tr>
-                <th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>単価</th><th>商品説明</th><th>商品画像</th><th>総購入数</th><th>季節</th><th>在庫</th><th>店舗名</th><th></th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>単価</th><th>商品説明</th><th>商品画像</th><th>総購入数</th><th>季節</th><th>在庫</th><th>店舗名</th><th></th>
+                </tr>
+            </thead>
+            <tbody>
             <?php
                 $pdo=new PDO($connect,USER,PASS);
                 $sql=$pdo->query('select * from product where delete_flg = 0');
@@ -46,6 +49,7 @@
                     echo '</tr>';
                 }
             ?>
+            </tbody>
         </table>
     </div>
 </body>
