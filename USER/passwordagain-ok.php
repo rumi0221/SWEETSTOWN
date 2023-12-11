@@ -21,7 +21,7 @@
             $sql->execute([$_POST['newpass'],$_POST['mall']]);
             echo '<div class="content">';
             echo '<h3>新しいパスワードが設定されました</h3>';
-            echo '<form action="login-input.php" method="post">';
+            echo '<form action="login.php" method="post">';
             echo '<button type="submit">ログイン画面へ</button>';
             echo '</form>';
         }else if($count == 0){

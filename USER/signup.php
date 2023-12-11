@@ -14,13 +14,13 @@
     <form action="signup-check.php" method="post">
         <dl>
             <dt>名前<span class="required">＊必須</span></dt>
-            <dd><input type = "text" name = "name1" required="required"></dd>
+            <dd><input type = "text" name = "name1"></dd>
             <dt>名前(フリガナ)<span class="required">＊必須</span></dt>
-            <dd><input type = "text" name = "name2" required="required"></dd>
+            <dd><input type = "text" name = "name2"></dd>
             <dt>メールアドレス<span class="required">＊必須</span></dt>
-            <dd><input type = "text" name = "address" required="required"></dd>
+            <dd><input type = "text" name = "address"></dd>
             <dt>パスワード<span class="required">＊必須</span></dt>
-            <dd><input type = "password" name = "password" required="required"></dd>
+            <dd><input type = "password" name = "password"></dd>
         </dl>
 
         <p><button type="submit">確認画面へ</button></p>

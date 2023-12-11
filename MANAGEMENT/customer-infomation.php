@@ -19,9 +19,12 @@
         <div>
             <p class="under">カート内商品</p>
             <table class="table-color">
-                <tr>
-                    <th>商品ID</th><th>商品名</th><th>ショップ名</th><th>価格</th><th>数量</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>商品ID</th><th>商品名</th><th>ショップ名</th><th>価格</th><th>数量</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <?php
                     $pdo=new PDO($connect,USER,PASS);
                     $sql=$pdo->query('select * from cart where member_id = '. $_POST['id']);
@@ -40,15 +43,19 @@
                         echo '</tr>';
                     }
                 ?>
+                </tbody>
             </table>
         </div>
         <br>
         <div>
             <p><span class="under">購入履歴</span></p>
             <table class="table-color">
-                <tr>
-                    <th>購入ID</th><th>商品ID</th><th>商品名</th><th>購入日時</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>購入ID</th><th>商品ID</th><th>商品名</th><th>購入日時</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <?php
                     $sql=$pdo->query('select * from purchase where member_id = '. $_POST['id']);
                     foreach($sql as $row){
@@ -65,6 +72,7 @@
                         echo '</tr>';
                     }
                 ?>
+                <tbody>
             </table>
         </div>
         <br>

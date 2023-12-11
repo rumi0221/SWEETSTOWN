@@ -16,9 +16,12 @@
             <button type="submit">検索</button>
         </form>
         <table class="table-color">
-            <tr>
-                <th>顧客番号</th><th>顧客者名</th><th>顧客者（フリガナ）</th><th>メールアドレス</th><th>パスワード</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>顧客番号</th><th>顧客者名</th><th>顧客者（フリガナ）</th><th>メールアドレス</th><th>パスワード</th>
+                </tr>
+            </thead>
+            <tbody>
 <?php
     $pdo=new PDO($connect,USER,PASS);
     //検索キーワードが入力されているか
@@ -40,6 +43,7 @@
     }
     echo '</form>';
 ?>
+            </tbody>
         </table>
     </div>
 </body>
