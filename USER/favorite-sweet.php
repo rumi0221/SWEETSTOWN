@@ -18,8 +18,10 @@ require 'db-connect.php';
     <div class="Header">
         SWEETSTOWN
     </div>
+<br><br>
     <div class="favorite">
-        <h2>お気に入り</h2>
+        <h1>お気に入り</h1>
+        <hr width="90%" noshade><br>
         <div class="content">
         <?php
         $pdo=new PDO($connect,USER,PASS);

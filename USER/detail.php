@@ -37,7 +37,7 @@
           echo '</div>';
           echo '<div class="shohin1">';
           echo '<h3>',$row['product_mei'],'</h3>';
-          echo '<p>',$row['tanka'],'</p>';
+          echo '<font color="red">','<p>','￥',$row['tanka'],'</p>','</font>';
           $ssl=$pdo->prepare('select * from shop where shop_code=?');
           $ssl->execute([$row['shop_code']]);
           foreach($ssl as $eow){
