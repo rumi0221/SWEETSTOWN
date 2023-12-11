@@ -22,6 +22,13 @@
         
         $sql=$pdo->prepare('INSERT INTO review values(?,?,?,?,?)');
         $sql->execute([$_SESSION['member']['member_id'],$_POST['rate'],$_POST['product_id'],$_POST['title'],$_POST['review']]);
+        var_dump($_SESSION['member']['member_id']);
+        var_dump($_POST['rate']);
+        var_dump($_POST['product_id']);
+        var_dump($_POST['title']);
+        var_dump($_POST['review']);
+        exit;
+
 
     }
 
