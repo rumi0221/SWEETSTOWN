@@ -29,16 +29,13 @@ require 'db-connect.php';
             'select * from favorite,product,shop
             where favorite.member_id=?
             and favorite.product_id=product.product_id 
-            and product.shop_code=shop.shop_code
-            and shop.shop_code=?');
-        //var_dump($_SESSION);
+            and product.shop_code=shop.shop_code');
 
-        $member_id = $_SESSION['member']['id'];
-         $shop_code = $_SESSION['shop']['code'];
+        $member_id = $_SESSION['member']['member_id'];
         //$member_id = 1;
         //$shop_code = 10;
 
-        $sql->execute([$member_id,$shop_code]);
+        $sql->execute([$member_id]);
             foreach ($sql as $row) {
                 echo '<div class="item">';
                 echo '<img src="img/', $row['gazou'],'" alt="商品画像" width="200" height="130" class="sweet_img">';
