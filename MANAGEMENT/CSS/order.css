@@ -72,6 +72,26 @@ table.product {
     color: white;
 }
 
+.table-center {
+    text-align: center;
+}
+
+.table-right {
+    text-align: right;
+}
+
+.table-a {
+    width: 100px;
+}
+
+.table-b {
+    width: 200px;
+}
+
+.table-c {
+    width: 300px;
+}
+
 /*「発送する」を上下中央ぞろえにしたい*/
 /* .f-btn {
     padding: auto;
