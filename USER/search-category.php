@@ -16,7 +16,6 @@
         <a style="left: 0;top: 0;position: absolute;" onclick="history.back()"><i class="fas fa-angle-left fa-2x"></i></a>
         SWEETSTOWN
     </div>
-    <div style="margin-top:70px;">
         <?php
             $pdo=new PDO($connect,USER,PASS);
             $sql=$pdo->query('select distinct product_type FROM product');
@@ -24,10 +23,10 @@
             foreach($sql as $row){
                 echo '<div class="search">';
                 if($i == 0){
-                    echo '<button class="searchbutton" onclick="location.href=\'searchlist.php?type=' . $row['product_type'] . '\'" style="margin-top:50px;">'.$row['product_type'].'</button><br>';
+                    echo '<button onclick="location.href=\'searchlist.php?type=' . $row['product_type'] . '\'" style="margin-top:50px;">'.$row['product_type'].'</button><br>';
                     $i += 1;
                 }else{
-                    echo '<button class="searchbutton" onclick="location.href=\'searchlist.php?type=' . $row['product_type'] . '\'">'.$row['product_type'].'</button><br>';
+                    echo '<button onclick="location.href=\'searchlist.php?type=' . $row['product_type'] . '\'">'.$row['product_type'].'</button><br>';
                 }
                 echo '</div>';
             }
