@@ -19,6 +19,7 @@
     </div>
     <div style="margin-top:70px;">
     <h1>カート</h1>
+    <hr width="90%" noshade><br>
     <?php
         $pdo=new PDO($connect,USER,PASS);
         if(isset($_POST['add_to_cart'])) {
@@ -86,8 +87,8 @@
 
                 echo '<form method="post">';
                 echo '<input type="hidden" name="product_id" value="',$row['product_id'],'">';
-                // echo '　　','<button class="btndelete" type="submit" name="delete">削除する</button>';
-                echo '　　　','<a href="detail.php" class="information">削除する</a>';
+                echo '　　','<button class="btndelete" type="submit" name="delete">削除する</button>';
+                //echo '　　　','<a href="detail.php" class="information">削除する</a>';
                 echo '</form>';
                 echo '</div>';
                 echo '</div>';

@@ -7,14 +7,13 @@
 $sql=$pdo->prepare('select * from product where product_id=?');
 $sql->execute([$_GET['id']]);
 $productData = $sql->fetch();
-var_dump($productData);
-var_dump($productData['setumei']);
+
 
 // ショップ名取得 TODO:多分取れた
-$sql2=$sql2->prepare('select product.product_id, shop.shop_mei from product left JOIN shop ON product.shop_code = shop.shop_code where product.product_id = ?;')
+$sql2=$pdo->prepare('select product.product_id, shop.shop_mei from product left JOIN shop ON product.shop_code = shop.shop_code where product.product_id = ?;');
 $sql2->execute([$_GET['id']]);
 $shopData = $sql2->fetch();
-var_dump($shopData);
+
 
 
 ?>
@@ -38,11 +37,12 @@ var_dump($shopData);
 </div>
 <hr size="1">
 <div class="content">
-    <p>商品名：<?php echo $productData['product_mei']?>
+    <p><?php echo $productData['product_mei']?>
     </p>
-    <p>ショップ名：<?php echo $shopData['shop_mei']?></p>
+    <p><?php echo $shopData['shop_mei']?></p>
 
-    <form action="review-check.php" method="post">
+    <form action="review-check.php?id=<?php echo $_GET['id']?>" method="post">
+    
     <div class="title">
         <textarea rows="1" cols="40" name="title">タイトル</textarea>
     </div>
@@ -62,6 +62,7 @@ var_dump($shopData);
         <input id="star1" type="radio" name="rate" value="1">
         <label for="star1">★</label>
     </div>
+        
         <button class="kakunin" type="submit">内容の確認をする</button>
     
 </form>

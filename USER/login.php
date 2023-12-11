@@ -13,7 +13,7 @@ if (isset($_POST['mail']) && isset($_POST['pass'])) {
     if ($row && password_verify($_POST['pass'], $row['pass'])) {
         $_SESSION['member'] = [
             'member_id' => $row['member_id'],
-            'member_mei' => $row['mrmber_mei'],
+            'member_mei' => $row['member_mei'],
             'kana_mei' => $row['kana_mei'],
             'mail' => $row['mail'],
             'pass' => $row['pass']
@@ -47,9 +47,9 @@ if (isset($_POST['mail']) && isset($_POST['pass'])) {
         
     <dl>
         <dt>メールアドレス</dt>
-        <dd><input type = "text" name = "mail" size="25"></dd>
+        <dd><input type = "text" name = "mail" size="25" required="required"></dd>
         <dt>パスワード</dt>
-        <dd><input type = "password" name = "pass" size="25"></dd>
+        <dd><input type = "password" name = "pass" size="25" required="required"></dd>
     </dl>
     <p><input type = "checkbox" name = "login">
     ログイン状態を保持する</p>

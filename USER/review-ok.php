@@ -1,13 +1,5 @@
-<?php
-var_dump($_POST);
-?>   
-   
-   
-   
-
-
-
-
+<?php session_start();?>
+<?php require 'db-connect.php';?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -17,7 +9,13 @@ var_dump($_POST);
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/review.css">
 </head>
+<?php 
+    $pdo=new PDO($connect,USER,PASS);
+    $sql=$pdo->prepare('INSERT INTO review values(?,?,?,?,?)');
+    $sql->execute([$_SESSION['member']['member_id'],$_POST['rate'],$_POST['product_id'],$_POST['title'],$_POST['review']]);
+?>
 <body>
+
     <div class="Header">
         SWEETSTOWN
     </div>
@@ -25,7 +23,7 @@ var_dump($_POST);
     <div class="review-ok">
         <p>レビューが投稿されました</p>
 
-        <a href="purchase-history.html">購入履歴に戻る</a>
+        <a href="purchase-history.php">購入履歴に戻る</a>
     </div>
 
 </body>

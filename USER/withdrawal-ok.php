@@ -1,3 +1,11 @@
+<?php
+
+if (isset($_SESSION['member'])) {
+    unset($_SESSION['member']);
+}
+session_unset();
+session_destroy(); 
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
