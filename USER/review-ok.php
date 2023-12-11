@@ -17,6 +17,7 @@
     $sql2->execute([$_SESSION['member']['member_id']]);
     $count = $sql2->fetchClolumn();
     var_dump($count);
+    echo $count;
     exit;
 
 
