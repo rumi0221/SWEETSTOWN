@@ -13,8 +13,8 @@
     $pdo=new PDO($connect,USER,PASS);
 // レビューテーブルに自分のデータがあるかないか？
 
-    $sql2=$pdo->prepare('select count(*) from review where member_id = ?');
-    $sql2->execute([$_SESSION['member']['member_id']]);
+    $sql2=$pdo->prepare('select count(*) from review where member_id = ? and product_id = ?');
+    $sql2->execute([$_SESSION['member']['member_id'],$_POST['product_id']]);
     $count = $sql2->fetchColumn();
 
     // データベースにレビューがない場合：登録処理
