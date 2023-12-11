@@ -17,7 +17,7 @@
     $sql2->execute([$_SESSION['member']['member_id']]);
     $sql2->fetch();
     var_dump($sql2->fetch());
-    exit;
+    // exit;
 
 
     $sql=$pdo->prepare('INSERT INTO review values(?,?,?,?,?)');
