@@ -15,7 +15,7 @@
 
     $sql2=$pdo->prepare('select * from review where member_id = ?');
     $sql2->execute([$_SESSION['member']['member_id']]);
-    var_dump($sql2);
+    var_dump($sql2->execute([$_SESSION['member']['member_id']]));
     exit;
 
 
