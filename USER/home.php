@@ -64,7 +64,7 @@
         <br><br><br>
 
 <?php
-    echo '<h3 style="margin-bottom: 0">　商品一覧</h3>';
+    echo '<h3 style="margin-bottom: 0/">　商品一覧</h3>';
     echo '<hr><br>';
     $sql=$pdo->query('select * from product where delete_flg = 0');
     $count=0;
