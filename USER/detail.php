@@ -33,7 +33,7 @@
           $fav=$pdo->prepare('select * from favorite where member_id = ? and product_id = ?');
           $fav->execute([$_SESSION['member']['member_id'],$row['product_id']]);
           echo '<div class="gazou">';
-          echo '<img src="img/',$row['gazou'],'" alt="商品画像">';
+          echo '<img src="img/',$row['gazou'],'" alt="商品画像" width="350" height="200">';
           echo '</div>';
           echo '<div class="shohin1">';
           echo '<h3>',$row['product_mei'],'</h3>';
@@ -75,10 +75,7 @@
             }
           }
           echo '<p>',$row['setumei'],'</p>';
-          echo '<form action="review.php" method="post">';
-          echo '<input type="hidden" name="pid"  value="',$set,'">';
-          echo '<button type="submit">レビュー</button>';
-          echo '</form><br>';
+          echo '<button class="searchbutton" onclick="location.href=\'review.php?id=' . $set . '\'">レビュー</button><br>';
           $spl=$pdo->prepare('select * from product where product_id <> ? and product_type = ?');
           $spl->execute([$row['product_id'],$row['product_type']]);
           foreach($spl as $mow){

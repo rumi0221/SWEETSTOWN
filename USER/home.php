@@ -76,9 +76,9 @@
         if($count == 0){
             echo '<tr>';
         }
-        echo '<td style="width:200px;">';
+        echo '<td style="width:200px; margin-top: 0;">';
         echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$row['gazou'],'" height="50px"></a>';
-        echo '<br>',$row['product_mei'],'<br>','<font color="red">','¥',$row['tanka'],'</font>';;
+        echo '<br>',$row['product_mei'],'<br>','<font color="red">','¥',$row['tanka'],'</font>';
         echo '</td>';
         if($count==3){
             echo '</tr>';

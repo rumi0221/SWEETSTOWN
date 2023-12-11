@@ -31,10 +31,10 @@ require 'db-connect.php';
             and shop.shop_code=?');
         //var_dump($_SESSION);
 
-        // $member_id = $_SESSION['member']['id'];
-        // $shop_code = $_SESSION['shop']['code'];
-        $member_id = 1;
-        $shop_code = 10;
+        $member_id = $_SESSION['member']['id'];
+         $shop_code = $_SESSION['shop']['code'];
+        //$member_id = 1;
+        //$shop_code = 10;
 
         $sql->execute([$member_id,$shop_code]);
             foreach ($sql as $row) {

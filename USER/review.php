@@ -41,7 +41,8 @@ $shopData = $sql2->fetch();
     </p>
     <p><?php echo $shopData['shop_mei']?></p>
 
-    <form action="review-check.php" method="get">
+    <form action="review-check.php?id=<?php echo $_GET['id']?>" method="post">
+    
     <div class="title">
         <textarea rows="1" cols="40" name="title">タイトル</textarea>
     </div>
@@ -61,6 +62,7 @@ $shopData = $sql2->fetch();
         <input id="star1" type="radio" name="rate" value="1">
         <label for="star1">★</label>
     </div>
+        
         <button class="kakunin" type="submit">内容の確認をする</button>
     
 </form>
