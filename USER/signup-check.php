@@ -32,7 +32,11 @@
         よろしければ、登録ボタンを押下してください。</p>
     <p><button type="submit">登録</button></p>
 </from>
+<<<<<<< HEAD
 <a href="login.php">戻る</a>
+=======
+<a href="signup.php">戻る</a>
+>>>>>>> 1986c7819073e9d2da12563013d8278c04401f33
 </div>
 </body>
 </html>
