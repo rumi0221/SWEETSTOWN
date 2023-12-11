@@ -1,8 +1,9 @@
 <?php
-
+session_start();
 if (isset($_SESSION['member'])) {
     unset($_SESSION['member']);
 }
+
 session_destroy(); 
 ?>
 <!DOCTYPE html>
