@@ -33,13 +33,13 @@
                         $sql2 = $pdo->query('select * from product where product_id = '. $_POST['id']);
                         $row2 = $sql2->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
                         echo '<tr>';
-                        echo '<td>', $row['product_id'], '</td>';
+                        echo '<td class="table-center">', $row['product_id'], '</td>';
                         echo '<td>', $row2['product_mei'], '</td>';
                         $sql3 = $pdo->query('select * from shop where shop_code = '. $row2['shop_code']);
                         $row3 = $sql3->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
                         echo '<td>', $row3['shop_mei'], '</td>';
-                        echo '<td>', $row2['tanka'], '</td>';
-                        echo '<td>', $row['su'], '</td>';
+                        echo '<td class="table-right">', $row2['tanka'], '</td>';
+                        echo '<td class="table-right">', $row['su'], '</td>';
                         echo '</tr>';
                     }
                 ?>
@@ -65,8 +65,8 @@
                         $sql3 = $pdo->query('select product_mei from product where product_id = '. $row2['product_id']);
                         $row3 = $sql3->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
                         echo '<tr>';
-                        echo '<td>', $row2['kou_id'], '</td>';
-                        echo '<td>', $row2['product_id'], '</td>';
+                        echo '<td class="table-center">', $row2['kou_id'], '</td>';
+                        echo '<td class="table-center">', $row2['product_id'], '</td>';
                         echo '<td>', $row3['product_mei'], '</td>';
                         echo '<td>', $row['datetime'], '</td>';
                         echo '</tr>';
