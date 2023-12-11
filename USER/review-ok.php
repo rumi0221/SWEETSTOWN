@@ -15,7 +15,8 @@
 
     $sql2=$pdo->prepare('select count(*) from review where member_id = ?');
     $sql2->execute([$_SESSION['member']['member_id']]);
-    $count = $sql2->fetchClolumn()
+    $count = $sql2->fetchClolumn();
+    var_dump($count);
     exit;
 
 
