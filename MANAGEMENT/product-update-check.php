@@ -77,7 +77,7 @@
             <br>
             <form action="product-update.php" method="POST">
                 <input type="hidden" class="link2" name="update" value="<?php echo $_POST['product_id']; ?>">
-                <button class="mdr" type="submit">戻る</button>
+                <button type="submit">戻る</button>
             </form>
     </div>
 
