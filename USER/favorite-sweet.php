@@ -44,12 +44,11 @@ require 'db-connect.php';
                     echo '<p class="shop_name">',$row['shop_mei'],'</p>';
                     echo '<p class="price">','￥',$row['tanka'],'</p>';
                 echo '</div>';
+                echo '</div>';
             }
-            echo '</div>';
         ?> 
         </div>
         </div>
-        <hr> 
     <footer><?php require 'menu.php';?></footer>
 </body>
 </html>

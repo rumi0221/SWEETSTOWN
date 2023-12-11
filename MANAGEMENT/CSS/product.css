@@ -77,6 +77,26 @@ button.registration {
     border: none; 
 } 
 
+.table-center {
+    text-align: center;
+}
+
+.table-right {
+    text-align: right;
+}
+
+.table-a {
+    width: 100px;
+}
+
+.table-b {
+    width: 200px;
+}
+
+.table-c {
+    width: 300px;
+}
+
 .textw {
     width: 400px;
 }
