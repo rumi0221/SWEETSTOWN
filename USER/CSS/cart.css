@@ -7,6 +7,27 @@ p {
     font-size: 18px;
 }
 
+input {
+  margin: 0.2rem;
+}
+
+section {
+  width: 40%;
+}
+
+button {
+  font-size: 19px; 
+}
+
+textarea {
+  resize: none;
+  width: 70%
+}
+
+h4 {
+  font-size: 22px;
+}
+
 .image {
     float: left;
 }
@@ -16,19 +37,19 @@ p {
 }
 
 .item {
-    font-size: 19px;
     display:flex;
-}
-
-section {
-  width: 40%;
+    width: 100%;
+    margin: 10px;
+    font-size: 19px;
 }
 
 .shop {
+  margin: 5px;
   font-size: 15px;
 }
 
 .product {
+  margin-left:5px;
   font-size: 22px;
 }
 
@@ -38,10 +59,6 @@ section {
 
 .su {
   margin-right: auto;
-}
-
-button {
-    font-size: 19px; 
 }
 
 .button2 { 
@@ -62,22 +79,9 @@ button {
     text-align: left;
 }
 
-input {
-    margin: 0.2rem;
-  }
-
   .place {
     font-size: 10px;
     text-align: left;
-  }
-
-  textarea {
-    resize: none;
-    width: 70%
-  }
-
-  h4 {
-    font-size: 22px;
   }
 
   .order {
