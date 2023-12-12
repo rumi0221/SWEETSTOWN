@@ -7,15 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>季節のスイーツ一覧画面</title>
     <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/seasonlist.css">
 </head>
 <body>
     <div class="Header">
-        <link rel="stylesheet" href="CSS/header.css">
         <a style="left: 0;top: 0;position: absolute;" onclick="history.back()"><i class="fas fa-angle-left fa-2x"></i></a>
         SWEETSTOWN
     </div>
-
-    <link rel="stylesheet" href="CSS/seasonlist.css">
     <br><br>
     <h1>季節のスイーツ</h1>
     <hr width="90%" noshade><br>
