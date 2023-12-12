@@ -92,6 +92,20 @@ require 'db-connect.php';
                 echo '</div>';
                 $sql = $pdo->prepare('select * from product where product_mei like ?');
                 $sql->execute(['%'.$_POST['keyword'].'%']);
+                $_SESSION['search'] = $_POST['keyword'];
+            }catch(PDOException $e){
+                echo "エラーが発生しました";
+            }
+        }elseif(isset($_SESSION['search'])){
+            try{
+                echo '<div class="search">';
+                echo '<form method="post">';
+                echo '<input class="keyword" type="text" name="keyword" value="',$_SESSION['search'],'">';
+                echo '<p><button class="search2" type="submit">検索</button></p>';
+                echo '</form>';
+                echo '</div>';
+                $sql = $pdo->prepare('select * from product where product_mei like ?');
+                $sql->execute(['%'.$_SESSION['search'].'%']);
             }catch(PDOException $e){
                 echo "エラーが発生しました";
             }
