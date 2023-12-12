@@ -60,8 +60,9 @@
           }
           echo '<div class="shohin2">';
           echo '<form method="post">';
-          echo '<button type="submit" name="car">🛒 カートに入れる</button>';
+          echo '<a href="cart.php" class="btn btn-tag"><i class="fas fa-shopping-cart"></i>カートに入れる</a>';
           echo '</form>';
+          echo '<br>';
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['car'])) {
             $col=$pdo->prepare('select * from cart where datetime="0000-00-00 00:00:00" and member_id=? and product_id=?');
             $col->execute([$_SESSION['member']['member_id'],$set]);
@@ -71,17 +72,33 @@
             }else{
               $ddd=$pdo->prepare('insert into cart values(default,?,?,1)');
               $ddd->execute([$_SESSION['member']['member_id'],$set]);
-              echo '<div>商品を追加しました';
+              echo '<div>商品を追加しました','</div>';
             }
           }
-          echo '<p>',$row['setumei'],'</p>';
+          echo '<p>',$row['setumei'],'</p>','<br>';
           echo '<button class="searchbutton" onclick="location.href=\'review.php?id=' . $set . '\'">レビュー</button><br>';
           $spl=$pdo->prepare('select * from product where product_id <> ? and product_type = ?');
           $spl->execute([$row['product_id'],$row['product_type']]);
+          echo '<table>';
+          echo '<br>';
+          echo '<div class="best">','おすすめ商品','<hr>','</div>','<br>';
           foreach($spl as $mow){
-            echo '<a href="detail.php?product_id=',$mow['product_id'],'"><img src="img/',$mow['gazou'],'"></a>　';
+              $count++;
+
+              if($count == 0){
+                echo '<tr>';
+            }
+            echo '<td style="width:200px; margin-top: 0;">';
+            echo '<a href="detail.php?product_id=',$mow['product_id'],'"><img src="img/',$mow['gazou'],'" height="50px"></a>';
+            echo '<br>',$row['product_mei'],'<br>','<font color="red">','¥',$row['tanka'],'</font>';
+            echo '</td>';
+            if($count==3){
+                echo '</tr>';
+                $count=0;
+            }
           }
-          echo '</div>';
+          echo '</table>';
+          echo '<br><br><br><br><br><br>';
         }
       ?>
       <footer><?php require 'menu.php';?></footer>
