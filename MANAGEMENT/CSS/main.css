@@ -133,6 +133,10 @@ table.product {
 
 }
 
+.link {
+    margin-top: 100px;
+}
+
 .mdr {
     position: relative; /* 今の位置を基準 */
     left: 150px;

@@ -21,14 +21,6 @@
         $sql=$pdo->prepare('select * from product where product_id=?');
         $set=$_GET['product_id'];
         $sql->execute([$set]);
-        $ppp=$pdo->prepare('select * from favorite where member_id=? and product_id=?');
-        $ppp->execute([$_SESSION['member']['member_id'],$set]);
-        $count = $ppp -> rowCount();
-        if($count == 0){
-          $i = '♥';
-        }else{
-          $i = '♡';
-        }
         foreach($sql as $row){
           $fav=$pdo->prepare('select * from favorite where member_id = ? and product_id = ?');
           $fav->execute([$_SESSION['member']['member_id'],$row['product_id']]);
@@ -45,17 +37,23 @@
           }
           echo '</div>';
           echo '<form method="post">';
-          echo '<button type="submit" name="favorite">',$i,'</button>';
+          
+        $ppp=$pdo->prepare('select * from favorite where member_id=? and product_id=?');
+        $ppp->execute([$_SESSION['member']['member_id'],$set]);
+        $count = $ppp -> rowCount();
+          if($count != 0){
+            echo '<button type="submit" name="favorite"><i class="fa-regular fa-heart fa-2x"></i></button>';
+          }else{
+            echo '<button type="submit" name="favorite"><i class="fa-solid fa-heart fa-2x"></i></button>';
+          }
           echo '</form>';
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['favorite'])) {
-            if($i == '♥'){
+            if($count==0){
               $fav=$pdo->prepare('insert into favorite values(?,?)');
               $fav->execute([$_SESSION['member']['member_id'],$set]);
-              $i = '♡';
             }else{
               $favd=$pdo->prepare('delete from favorite where member_id=? and product_id=?');
               $favd->execute([$_SESSION['member']['member_id'],$set]);
-              $i = '♥';
             }
           }
           echo '<div class="shohin2">';
