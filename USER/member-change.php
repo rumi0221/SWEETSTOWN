@@ -36,24 +36,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <br><br>
-
     <h1>会員情報変更</h1>
-    <hr  noshade><br>
+    <hr noshade><br>
     <form action="member-change.php" method="post">
-    <div style="margin:0 30%;">
-        <abbr>名前<span style="color:red;">　　※必須</span><br>
+        <abbr>　名前<span style="color:red;">　　※必須</span><br>
         <div class="div2"><input type="text" name="new_name" size="30" style="width: 350px; height: 28px;" required="required"></div></abbr><br>
-        <abbr>名前(フリガナ)<span style="color:red;">　　※必須</span><br>
+        <abbr>　名前(フリガナ)<span style="color:red;">　　※必須</span><br>
         <div class="div2"><input type="text" name="new_kana_name" size="30" style="width: 350px; height: 28px;" required="required"></div></abbr><br>
-        <abbr>メールアドレス<span style="color:red;">　　※必須</span><br>
+        <abbr>　メールアドレス<span style="color:red;">　　※必須</span><br>
         <div class="div2"><input type="text" name="new_email" size="30" style="width: 350px; height: 28px;" required="required"></div></abbr><br>
-        <abbr>パスワード<span style="color:red;">　　※必須</span><br>
+        <abbr>　パスワード<span style="color:red;">　　※必須</span><br>
         <div class="div2"><input type="text" name="new_password" size="30" style="width: 350px; height: 28px;" required="required"></div></abbr><br>
 
         <br><br>
         <button type="submit" class="button">確認画面へ</button>
     </form>
-
     <br><br><br><br><br>
     <hr>
     <footer><?php require 'menu.php';?></footer>

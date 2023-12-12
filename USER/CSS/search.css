@@ -59,3 +59,13 @@
     width: 80%;
     line-height: 3;
 }
+
+.item{
+    display: flex;
+    grid: 1fr / 1fr 2fr;
+    margin: 16px;
+}
+
+.item img{
+    width: 200px ; height: 150px;
+}
