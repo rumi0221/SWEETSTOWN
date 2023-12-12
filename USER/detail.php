@@ -73,8 +73,9 @@
               echo '<div>商品を追加しました','</div>';
             }
           }
-          echo '<p>',$row['setumei'],'</p>','<br>';
-          echo '<button class="searchbutton" onclick="location.href=\'review.php?id=' . $set . '\'">レビュー</button><br>';
+
+          echo '<p>',$row['setumei'],'</p>';
+          echo '<button class="searchbutton" onclick="location.href=\'reviewlist.php?id=' . $set . '\'">レビュー</button><br>';
           $spl=$pdo->prepare('select * from product where product_id <> ? and product_type = ?');
           $spl->execute([$row['product_id'],$row['product_type']]);
           echo '<table>';
