@@ -117,6 +117,7 @@ require 'db-connect.php';
             }
             ?>
         </div>
+        <br><br><br><br><br>
         </div>
     <footer><?php require 'menu.php';?></footer>
 </body>
