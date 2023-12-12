@@ -15,7 +15,7 @@
     $sql->execute();
     $result = $sql->fetchAll(PDO::FETCH_ASSOC);
     var_dump($result);
-    exit;
+
     // echo $row['product_mei'];
 // $count = $sql->rowCount();
 // echo $count ;
@@ -42,7 +42,7 @@
     <div class="shohin">
     <hr size="1">
     <?php
-     echo '<p>',$result[0]['product_mei'],'</p>';
+     echo '<p>',$result['product_mei'],'</p>';
     ?>
 </div>
 
