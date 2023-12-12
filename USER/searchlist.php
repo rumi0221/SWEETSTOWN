@@ -10,6 +10,7 @@ require 'db-connect.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/searchlist.css">
+    <link rel="stylesheet" href="CSS/search.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/menu.css">
     <title>検索結果一覧画面</title>
@@ -131,8 +132,7 @@ require 'db-connect.php';
                 }
                 echo '<p>','￥',$row['tanka'],'</p>';
                 echo '<br>';
-                echo '</div>';
-                echo '</div><td></tr>';
+                echo '<td></tr>';
         }
         ?>
         </table>
