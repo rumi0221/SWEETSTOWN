@@ -18,12 +18,29 @@
       </div>
       <?php
         $pdo=new PDO($connect,USER,PASS);
-        $sql=$pdo->prepare('select * from product where product_id=?');
         $set=$_GET['product_id'];
+        $ppp=$pdo->prepare('select * from favorite where member_id=? and product_id=?');
+        $ppp->execute([$_SESSION['member']['member_id'],$set]);
+        $count = $ppp -> rowCount();
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['favorite'])) {
+          if($count!=0){
+            //削除する
+            $favd=$pdo->prepare('delete from favorite where member_id=? and product_id=?');
+            $favd->execute([$_SESSION['member']['member_id'],$set]);
+            $count=0;
+          }else{
+            //追加する
+            $fav=$pdo->prepare('insert into favorite values(?,?)');
+            $fav->execute([$_SESSION['member']['member_id'],$set]);
+            $count=1;
+          }
+        }
+
+        $sql=$pdo->prepare('select * from product where product_id=?');
         $sql->execute([$set]);
         foreach($sql as $row){
-          $fav=$pdo->prepare('select * from favorite where member_id = ? and product_id = ?');
-          $fav->execute([$_SESSION['member']['member_id'],$row['product_id']]);
+          // $fav=$pdo->prepare('select * from favorite where member_id = ? and product_id = ?');
+          // $fav->execute([$_SESSION['member']['member_id'],$row['product_id']]);
           echo '<div class="gazou">';
           echo '<img src="img/',$row['gazou'],'" alt="商品画像" width="350" height="200">';
           echo '</div>';
@@ -38,24 +55,30 @@
           echo '</div>';
           echo '<form method="post">';
           
-        $ppp=$pdo->prepare('select * from favorite where member_id=? and product_id=?');
-        $ppp->execute([$_SESSION['member']['member_id'],$set]);
-        $count = $ppp -> rowCount();
+        
           if($count != 0){
-            echo '<button type="submit" name="favorite"><i class="fa-regular fa-heart fa-2x"></i></button>';
+            //0じゃない⇒登録済み
+            //黒ハート
+            echo '<button type="submit" name="favorite" value=1><i class="fa-solid fa-heart fa-2x"></i></button>';
           }else{
-            echo '<button type="submit" name="favorite"><i class="fa-solid fa-heart fa-2x"></i></button>';
+            //0⇒未登録
+            //白ハート
+            echo '<button type="submit" name="favorite" value=0><i class="fa-regular fa-heart fa-2x"></i></button>';
           }
           echo '</form>';
-          if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['favorite'])) {
-            if($count==0){
-              $fav=$pdo->prepare('insert into favorite values(?,?)');
-              $fav->execute([$_SESSION['member']['member_id'],$set]);
-            }else{
-              $favd=$pdo->prepare('delete from favorite where member_id=? and product_id=?');
-              $favd->execute([$_SESSION['member']['member_id'],$set]);
-            }
-          }
+          // if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['favorite'])) {
+          //   if($count!=0){
+          //     //削除する
+          //     $favd=$pdo->prepare('delete from favorite where member_id=? and product_id=?');
+          //     $favd->execute([$_SESSION['member']['member_id'],$set]);
+          //     $count=0;
+          //   }else{
+          //     //追加する
+          //     $fav=$pdo->prepare('insert into favorite values(?,?)');
+          //     $fav->execute([$_SESSION['member']['member_id'],$set]);
+          //     $count=1;
+          //   }
+          // }
           echo '<div class="shohin2">';
           echo '<form method="post">';
           echo '<button type="submit" name="car">🛒 カートに入れる</button>';
