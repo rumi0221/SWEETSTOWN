@@ -11,8 +11,8 @@
     $productId = 1;
 
     //レビューテーブルのデータをすべて出力
-   $sql=$pdo->prepare('select * from review,product where review.product_id = ? and review.product_id = product.product_id');
-    $sql->execute([$productId]);
+   $sql=$pdo->prepare('select * from review,product where review.product_id = product.product_id');
+    $sql->execute();
     $result = $sql->fetchAll(PDO::FETCH_ASSOC);
     var_dump($result);
     exit;
