@@ -47,9 +47,9 @@ if (isset($_POST['mail']) && isset($_POST['pass'])) {
         
     <dl>
         <dt>メールアドレス</dt>
-        <dd><input type = "text" name = "mail" size="25" required="required"></dd>
+        <dd><input type = "text" name = "mail" size="25"></dd>
         <dt>パスワード</dt>
-        <dd><input type = "password" name = "pass" size="25" required="required"></dd>
+        <dd><input type = "password" name = "pass" size="25"></dd>
     </dl>
     <p><input type = "checkbox" name = "login">
     ログイン状態を保持する</p>

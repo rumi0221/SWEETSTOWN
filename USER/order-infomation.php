@@ -19,7 +19,7 @@
     <form action="order-check.php" method="post">
 
     <h5>お支払方法</h5>
-    <input type="radio" name="payment" value="ツケ払い">ツケ払い<br>
+    <input type="radio" name="payment" value="ツケ払い" checked>ツケ払い<br>
     <input type="radio" name="payment" value="クレジットカード">クレジットカード<br>
     <input type="radio" name="payment" value="代金引換">代金引換<br>
     <input type="radio" name="payment" value="コンビニ払い">コンビニ払い<br>

@@ -36,9 +36,12 @@
         ?>
         <br>
         <table class="table-color">
-            <tr>
-                <th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>単価</th><th>商品説明</th><th>商品画像</th><th>総購入数</th><th>季節</th><th>在庫数</th><th>店舗名</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>単価</th><th>商品説明</th><th>商品画像</th><th>総購入数</th><th>季節</th><th>在庫数</th><th>店舗名</th>
+                </tr>
+            </thead>
+            <tbody>
             <?php
                 $pdo=new PDO($connect,USER,PASS);
                 $sql=$pdo->query('select * from product where season = "'.$s.'"');
@@ -59,6 +62,7 @@
                     echo '</tr>';
                 }
             ?>
+            </tbody>
         </table>
         <br>
         <br>

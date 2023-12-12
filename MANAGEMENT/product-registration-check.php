@@ -74,7 +74,7 @@
             </form>
             <br>
             <br>
-            <a class="mdr" href="product-registration.php">戻る</a>
+            <a href="product-registration.php">戻る</a>
     </div>
 </body>
 </html>

@@ -15,9 +15,12 @@
             <button class="registration">商品登録</button>
         </form>
         <table class="table-color">
-            <tr>
-                <th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>単価</th><th>商品説明</th><th>商品画像</th><th>総購入数</th><th>季節</th><th>在庫</th><th>店舗名</th><th></th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>商品ID</th><th>商品名</th><th>カテゴリ</th><th>単価</th><th>商品説明</th><th>商品画像</th><th>総購入数</th><th>季節</th><th>在庫</th><th>店舗名</th><th></th>
+                </tr>
+            </thead>
+            <tbody>
             <?php
                 $pdo=new PDO($connect,USER,PASS);
                 $sql=$pdo->query('select * from product where delete_flg = 0');
@@ -25,16 +28,16 @@
                     $sql2 = $pdo->query('select * from shop where shop_code = '. $row['shop_code']);
                     $row2 = $sql2->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
                     echo '<tr>';
-                    echo '<td>', $row['product_id'], '</td>';
-                    echo '<td>', $row['product_mei'], '</td>';
-                    echo '<td>', $row['product_type'], '</td>';
-                    echo '<td>', $row['tanka'], '</td>';
-                    echo '<td>', $row['setumei'], '</td>';
-                    echo '<td>', $row['gazou'],'</td>';
-                    echo '<td>', $row['total_su'],'</td>';
+                    echo '<td class="table-center">', $row['product_id'], '</td>';
+                    echo '<td class="table-a">', $row['product_mei'], '</td>';
+                    echo '<td class="table-a">', $row['product_type'], '</td>';
+                    echo '<td class="table-right">', $row['tanka'], '</td>';
+                    echo '<td class="table-c">', $row['setumei'], '</td>';
+                    echo '<td class="table-b">', $row['gazou'],'</td>';
+                    echo '<td class="table-right">', $row['total_su'],'</td>';
                     echo '<td>', $row['season'], '</td>';
-                    echo '<td>', $row['zaiko'], '</td>';
-                    echo '<td>', $row2['shop_mei'], '</td>';
+                    echo '<td class="table-right">', $row['zaiko'], '</td>';
+                    echo '<td class="table-a">', $row2['shop_mei'], '</td>';
                     echo '<td>';
                     echo '<form action="product-update.php" method="POST">';
                     echo '<button type="submit" name="update" value="', $row['product_id'], '">更新</button>';
@@ -46,6 +49,7 @@
                     echo '</tr>';
                 }
             ?>
+            </tbody>
         </table>
     </div>
 </body>

@@ -8,17 +8,40 @@ p {
 
 .ranking {
     text-align: left;
-    font-size: 20px;
+    font-size: 25px;
     display:flex;
     width:12em;
     margin:0 auto;
 }
+    .item{
+    display: flex;
+    grid: 1fr / 1fr 2fr;
+    margin: 16px;
+    }
+    .item img{
+    height: 75px;
+    }
+    .item_detail{
+    padding: 0 16px ;
+    }
+    .item_detail .item_name{
+    font-size: larger;
+    font-weight: bold;
+    }
+    .item_detail .shop_name{
+    font-size: large;
+    }
+    .item_detail .price{
+    color: red;
+    }
 
 /* ShiftキーとF5キーで強制的に更新できる */
 .information {
     color: #000000;
     text-decoration: none;
+    width: 50px;
 }
+
 
 .menu {
     position:fixed;

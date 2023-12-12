@@ -13,11 +13,11 @@
         <div class="content">
             <dl>
                 <dt>メールアドレス</dt>
-                <dd><input type="text" name="mall" required="required"></dd>
+                <dd><input type="text" name="mall"></dd>
                 <dt>新しいパスワード</dt>
-                <dd><input type="password" name="newpass" required="required"></dd>
+                <dd><input type="password" name="newpass"></dd>
                 <dt>新しいパスワード(確認)</dt>
-                <dd><input type="password" name="newpass2" required="required"></dd>
+                <dd><input type="password" name="newpass2"></dd>
             </dl>
 
             <p><button type="submit">登録</button></p>

@@ -11,8 +11,24 @@
 </head>
 <?php 
     $pdo=new PDO($connect,USER,PASS);
-    $sql=$pdo->prepare('INSERT INTO review values(?,?,?,?,?)');
-    $sql->execute([$_SESSION['member']['member_id'],$_POST['rate'],$_POST['product_id'],$_POST['title'],$_POST['review']]);
+// レビューテーブルに自分のデータがあるかないか？
+
+    $sql2=$pdo->prepare('select count(*) from review where member_id = ? and product_id = ?');
+    $sql2->execute([$_SESSION['member']['member_id'],$_POST['product_id']]);
+    $count = $sql2->fetchColumn();
+
+    // データベースにレビューがない場合：登録処理
+    if($count == 0){
+        
+      
+        $sql=$pdo->prepare('INSERT INTO review values(?,?,?,?,?)');
+        $sql->execute([$_SESSION['member']['member_id'],$_POST['product_id'],$_POST['rate'],$_POST['title'],$_POST['review']]);
+
+
+
+    }
+
+
 ?>
 <body>
 
@@ -21,8 +37,12 @@
     </div>
 
     <div class="review-ok">
-        <p>レビューが投稿されました</p>
-
+        <?php if ($count == 0){
+            echo '<p>レビューが投稿されました</p>';
+        } else {
+            echo '<p>この商品に対するあなたのレビューはすでにされています。</p>';
+        }
+        ?>
         <a href="purchase-history.php">購入履歴に戻る</a>
     </div>
 

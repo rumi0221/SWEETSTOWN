@@ -9,16 +9,15 @@ require 'db-connect.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/favorite-sweet.css">
+    <link rel="stylesheet" href="CSS/searchlist.css">
+    <link rel="stylesheet" href="CSS/search.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/menu.css">
     <title>検索結果一覧画面</title>
-    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="Header">
-    <a style="left: 0;top: 0;position: absolute;" onclick="history.back()"><i class="fas fa-angle-left fa-2x"></i></a>
       SWEETSTOWN
     </div>
     <br>
@@ -85,8 +84,8 @@ require 'db-connect.php';
             try{
                 echo '<div class="search">';
                 echo '<form method="post">';
-                echo '<input type="text" name="keyword" value="',$_POST['keyword'],'">';
-                echo '<p><button type="submit">検索</button></p>';
+                echo '<input class="keyword" type="text" name="keyword" value="',$_POST['keyword'],'">';
+                echo '<p><button class="search2" type="submit">検索</button></p>';
                 echo '</form>';
                 echo '</div>';
                 $sql = $pdo->prepare('select * from product where product_mei like ?');
@@ -97,27 +96,47 @@ require 'db-connect.php';
         }
     
             ?>
-        <div class="content">
+        <!-- <div class="content">
            <?php
-            foreach($sql as $row){
-                echo '<div class="item">';
-                echo '<a href="detail.php?product_id=',$row['product_id'],'">';
-                echo '<img src="img/', $row['gazou'],'" alt="商品画像">';
-                echo '</a>';
-                echo '<div class="item_detail">';
-                echo '<p class="item_name">',$row['product_mei'],'</p>';
-                $shopmei=$pdo->prepare('select * from shop where shop_code = ?');
+            // foreach($sql as $row){
+            //     echo '<div class="item">';
+            //     echo '<a href="detail.php?product_id=',$row['product_id'],'">';
+            //     echo '<img src="img/', $row['gazou'],'" alt="商品画像">';
+            //     echo '</a>';
+            //     echo '<div class="item_detail">';
+            //     echo '<p class="item_name">',$row['product_mei'],'</p>';
+            //     $shopmei=$pdo->prepare('select * from shop where shop_code = ?');
+            //     $shopmei->execute([$row['shop_code']]);
+            //     foreach($shopmei as $ewe){
+            //         echo '<p class="shop_name">',$ewe['shop_mei'],'</p>';
+            //     }
+            //     echo '<p class="price">','￥',$row['tanka'],'</p>';
+            //     echo '<br>';
+            //     echo '</div>';
+            //     echo '</div>';
+            // }
+            ?>
+        </div> -->
+        <table class="table-size">
+        <?php
+        foreach($sql as $row){
+            echo '<tr><td class="td1">';
+            echo '<a href="detail.php?product_id=', $row['product_id'], '">';
+            echo '<img src="img/', $row['gazou'], '" width="100px" alt="商品画像">';
+            echo '</a></td>';
+            echo '<td class="td2"><p>', $row['product_mei'], '</p>';
+            $shopmei=$pdo->prepare('select * from shop where shop_code = ?');
                 $shopmei->execute([$row['shop_code']]);
                 foreach($shopmei as $ewe){
-                    echo '<p class="shop_name">',$ewe['shop_mei'],'</p>';
+                    echo '<p>',$ewe['shop_mei'],'</p>';
                 }
-                echo '<p class="price">','￥',$row['tanka'],'</p>';
+                echo '<p>','￥',$row['tanka'],'</p>';
                 echo '<br>';
-                echo '</div>';
-                echo '</div>';
-            }
-            ?>
-        </div>
+                echo '<td></tr>';
+        }
+        ?>
+        </table>
+        <br><br><br><br><br>
         </div>
     <footer><?php require 'menu.php';?></footer>
 </body>

@@ -1,8 +1,6 @@
 
-h2{
+h1{
     text-align: center;
-    border-bottom:1px solid;
-    padding-bottom: px;
     width: 400px;
 	margin-left: auto;
 	margin-right: auto;
@@ -13,7 +11,7 @@ h2{
     
     }
     .item{
-    display: grid;
+    display: flex;
     grid: 1fr / 1fr 2fr;
     margin: 16px;
     }

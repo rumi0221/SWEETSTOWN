@@ -24,6 +24,7 @@ th {
     color: #ffffff;
     border: solid 1px; /* 枠線指定 */
     padding: 5px; /* 余白指定 */
+    position: sticky;
 }
 
 td {
@@ -94,6 +95,26 @@ table.product {
     margin-top: 20px;
 }
 
+.table-center {
+    text-align: center;
+}
+
+.table-right {
+    text-align: right;
+}
+
+.table-a {
+    width: 100px;
+}
+
+.table-b {
+    width: 200px;
+}
+
+.table-c {
+    width: 300px;
+}
+
 .under {
     text-decoration: underline;
 }
@@ -110,6 +131,10 @@ table.product {
     width: 200px;
     border: solid 3px #000;
 
+}
+
+.link {
+    margin-top: 100px;
 }
 
 .mdr {

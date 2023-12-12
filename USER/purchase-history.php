@@ -48,6 +48,11 @@
                     }
                 }
             ?>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         </div>
         <footer><?php require 'menu.php';?></footer>
     </div>
