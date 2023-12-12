@@ -24,17 +24,24 @@
         $pdo=new PDO($connect,USER,PASS);
         if(isset($_POST['add_to_cart'])) {
             $productId = $_POST['product_id'];
-            $sil=$pdo->prepare('update cart set su = su + 1 where member_id = ? and product_id = ?');
+            $sil=$pdo->prepare('update cart set su = su + 1 where datetime = "0000-00-00 00:00:00" and member_id = ? and product_id = ?');
             $sil->execute([$_SESSION['member']['member_id'],$productId]);
         }
         if(isset($_POST['remove_from_cart'])) {
             $productId = $_POST['product_id'];
-            $sil=$pdo->prepare('update cart set su = su - 1 where member_id = ? and product_id = ?');
-            $sil->execute([$_SESSION['member']['member_id'],$productId]);
+            $nba=$pdo->prepare('select * from cart where datetime = "0000-00-00 00:00:00" and member_id = ? and product_id = ?');
+            $nba->execute([$_SESSION['member']['member_id'],$productId]);
+            foreach($nba as $gun){
+                if($gun['su'] != 0){
+                    $productId = $_POST['product_id'];
+                    $sil=$pdo->prepare('update cart set su = su - 1 where datetime = "0000-00-00 00:00:00" and member_id = ? and product_id = ?');
+                    $sil->execute([$_SESSION['member']['member_id'],$productId]);
+                }
+            }
         }
         if(isset($_POST['delete'])) {
             $productId = $_POST['product_id'];
-            $sil=$pdo->prepare('delete from cart where member_id = ? and product_id = ?');
+            $sil=$pdo->prepare('delete from cart where datetime = "0000-00-00 00:00:00" and member_id = ? and product_id = ?');
             $sil->execute([$_SESSION['member']['member_id'],$productId]);
         }
         $sql=$pdo->prepare('select * from cart where datetime = "0000-00-00 00:00:00" and member_id = ?');
