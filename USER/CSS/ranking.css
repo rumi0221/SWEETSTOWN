@@ -6,21 +6,31 @@ p {
     font-size: 18px;
 }
 
+.rank{
+    height: 45px;
+}
+
+.rank2{
+    width: 180px;
+}
+
 .ranking {
     text-align: left;
-    font-size: 25px;
+    font-size: 22px;
     display:flex;
     width:12em;
-    margin:0 auto;
 }
     .item{
     display: flex;
     grid: 1fr / 1fr 2fr;
     margin: 16px;
     }
-    .item img{
-    height: 75px;
-    }
+
+    /* .item img{
+    height: 100px;
+    width: 20px; */
+    /* } */
+
     .item_detail{
     padding: 0 16px ;
     }
@@ -39,7 +49,7 @@ p {
 .information {
     color: #000000;
     text-decoration: none;
-    width: 50px;
+    /* width: 50px; */
 }
 
 
