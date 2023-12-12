@@ -52,8 +52,8 @@
                 $i = 1;
                     foreach ($sql as $row) {
                         echo '<tr><td>';
-                        echo '<img style="width: 200px; " src="img/ranking', $i ,'.png"' . ($row['rank']) . '.png" alt="　">','</img>';
-                        echo '<a href="detail.php?product_id=',$row['product_id'] '><img src="img/', $row['gazou'], '" height="50px">','</a>';
+                        echo '<img style="width: 200px; ">'; 
+                        echo '<a href="detail.php?product_id='{$row['product_id']}'><img src="img/', $row['gazou'], '" height="50px"></a>';
                         echo '</td>';
                         echo '<td>';
                         echo '<a href="detail.php" style="font-weight: bold;">', '　', $row['product_mei'], '</a>', '<br>';
