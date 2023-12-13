@@ -30,6 +30,8 @@
             $pur->execute([$currentDateTime,$_SESSION['member']['member_id'],$_POST['payment'],$_POST['place'],$_POST['live']]);
 
             foreach ($sql as $row) {
+                $zaim=$pdo->prepare('update product set zaiko = zaiko - ? where product_id = ?');
+                $zaim->execute([$row['su'],$row['product_id']]);
                 $bow=$pdo->prepare('update product set total_su = total_su + ? where product_id = ?');
                 $bow->execute([$row['su'],$row['product_id']]);
                 $out=$pdo->prepare('select * from purchase where datetime = ? and member_id = ?');
@@ -45,7 +47,7 @@
                     $ppa->execute([$pow['shop_code']]);
                     echo '<div class="product">';
                     echo '<div class="item">';
-                    echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$pow['gazou'],'"></a>';
+                    echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$pow['gazou'],'"style="width:100px;"></a>';
                     echo '<section>';
                     echo '<p class="description"></p>';
                     echo '　',$pow['product_mei'],'<br>';

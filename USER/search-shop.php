@@ -20,8 +20,14 @@
         <?php
             $pdo=new PDO($connect,USER,PASS);
             $sql=$pdo->query('select * FROM shop');
+            $i=0;
             foreach($sql as $row){
-                echo '<button class="searchbutton" onclick="location.href=\'searchlist.php?shop=' . $row['shop_code'] . '\'">'.$row['shop_mei'].'</button><br>';
+                if($i == 0){
+                    echo '<button class="searchbutton" onclick="location.href=\'searchlist.php?shop=' . $row['shop_code'] . '\'"  style="margin-top:50px;">'.$row['shop_mei'].'</button><br>';
+                    $i = 1;
+                }else{
+                    echo '<button class="searchbutton" onclick="location.href=\'searchlist.php?shop=' . $row['shop_code'] . '\'">'.$row['shop_mei'].'</button><br>';
+                }
             }
         ?>
     </div>
