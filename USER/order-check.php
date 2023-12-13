@@ -36,7 +36,7 @@
                     $ppa->execute([$pow['shop_code']]);
                     echo '<div class="product">';
                     echo '<div class="item">';
-                    echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$pow['gazou'],'"></a>';
+                    echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$pow['gazou'],'"style="width:100px;"></a>';
                     echo '<section>';
                     echo '<p class="description"></p>';
                     echo '　',$pow['product_mei'],'<br>';
