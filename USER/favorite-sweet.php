@@ -19,36 +19,38 @@ require 'db-connect.php';
         SWEETSTOWN
     </div>
 <br><br>
-    <div class="favorite">
+    
         <h1>お気に入り</h1>
-        <hr width="90%" noshade><br>
-        <div class="content">
+        <hr width="90%" noshade>
+        <br><br>
+        
+        <table>
         <?php
-        $pdo=new PDO($connect,USER,PASS);
-        $sql=$pdo->prepare(
-            'select * from favorite,product,shop
-            where favorite.member_id=?
-            and favorite.product_id=product.product_id 
-            and product.shop_code=shop.shop_code');
-
-        $member_id = $_SESSION['member']['member_id'];
-        //$member_id = 1;
-        //$shop_code = 10;
-
-        $sql->execute([$member_id]);
+            $pdo=new PDO($connect,USER,PASS);
+            $sql=$pdo->prepare(
+                'select * from favorite,product,shop
+                where favorite.member_id=?
+                and favorite.product_id=product.product_id 
+                and product.shop_code=shop.shop_code');
+            $member_id = $_SESSION['member']['member_id'];
+            $sql->execute([$member_id]);
             foreach ($sql as $row) {
-                echo '<div class="item">';
-                echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/', $row['gazou'],'" alt="商品画像" width="200" height="130" class="sweet_img"></a>';
-                echo '<div class="item_detail">';
-                    echo '<p class="item_name">', $row['product_mei'],'</p>';
-                    echo '<p class="shop_name">',$row['shop_mei'],'</p>';
-                    echo '<p class="price">','￥',$row['tanka'],'</p>';
-                echo '</div>';
-                echo '</div>';
+                echo '<tr>';
+                echo '<td class="td1">';
+                echo '<a href="detail.php?product_id=',$row['product_id'],'">';
+                echo '<img class="img" src="img/', $row['gazou'],'" alt="商品画像""></a>';
+                echo '</td>';
+                echo '<td class="td2>';
+                echo '<a href="detail.php" class="information">', $row['product_mei'],'</a><br>';
+                echo '<a href="datail.php" class="information">',$row['shop_mei'],'</a><br>';
+                echo '<p href="datail.php" class="information"><font color="red">','￥',$row['tanka'],'</font></a>';
+                echo '</td></tr>';
             }
-        ?> 
-        </div>
-        </div>
+        ?>
+        </table>
+    
+        <br><br><br><br><bt>
+        
     <footer><?php require 'menu.php';?></footer>
 </body>
 </html>
