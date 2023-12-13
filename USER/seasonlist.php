@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="Header">
-        <a style="left: 0;top: 0;position: absolute;" onclick="history.back()"><i class="fas fa-angle-left fa-2x"></i></a>
+        <a style="left: 10px;top: 5px;position: absolute;" onclick="history.back()"><i class="fas fa-angle-left fa-2x"></i></a>
         SWEETSTOWN
     </div>
     <br><br>

@@ -41,9 +41,9 @@ require 'db-connect.php';
                 echo '<img class="img" src="img/', $row['gazou'],'" alt="商品画像""></a>';
                 echo '</td>';
                 echo '<td class="td2>';
-                echo '<a href="detail.php" class="information">', $row['product_mei'],'</a><br>';
-                echo '<a href="datail.php" class="information">',$row['shop_mei'],'</a><br>';
-                echo '<p href="datail.php" class="information"><font color="red">','￥',$row['tanka'],'</font></a>';
+                echo '<p class="information">', $row['product_mei'],'</p><br>';
+                echo '<p class="information">',$row['shop_mei'],'</><br>';
+                echo '<pclass="information"><font color="red">','￥',$row['tanka'],'</font></p>';
                 echo '</td></tr>';
             }
         ?>
