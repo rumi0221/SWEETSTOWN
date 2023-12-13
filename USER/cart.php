@@ -1,5 +1,17 @@
 <?php session_start();?>
 <?php require 'db-connect.php'; ?>
+<?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST['n'])) {
+            if($_POST['n'] != 0){
+                header('Location: order-infomation.php'); 
+                exit();
+            }else{
+                echo 'データが１件も入っていません';
+            }
+        } 
+    }
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -116,7 +128,8 @@
         }
         echo '<p>商品合計　￥',$total,'</p>';
     ?>
-    <form action="order-infomation.php" method="post">
+    <form method="post">
+        <input type="hidden" name="n" value="<?= $count ?>">
         <button class="button2" >レジへ進む</button>
     </form>
     </div>
