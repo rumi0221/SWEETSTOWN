@@ -57,7 +57,7 @@ html {
   }
   
   .btn,
-  a.btn,
+  .btn,
   button.btn {
     font-size: 2rem;
     font-weight: 700;
@@ -80,13 +80,14 @@ html {
     border-radius: 0.5rem;
   }
   
-  a.btn-tag {
+
+  .btn-tag {
     padding: 1.25rem 3rem 1.25rem 80px;
     color: #fff;
     background: #8B4513;
   }
   
-  a.btn-tag:before {
+  .btn-tag:before {
     position: absolute;
     top: 0;
     left: 0;
@@ -100,12 +101,12 @@ html {
     background: rgba(0, 0, 0, 0.07);
   }
   
-  a.btn-tag:hover {
+  .btn-tag:hover {
     color: #fff;
     background: rgb(188,158,135);
   }
   
-  a.btn-tag i {
+  .btn-tag i {
     font-size: 120%;
   
     position: absolute;
