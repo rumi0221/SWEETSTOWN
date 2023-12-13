@@ -41,9 +41,13 @@ require 'db-connect.php';
                 echo '<img class="img" src="img/', $row['gazou'],'" alt="商品画像""></a>';
                 echo '</td>';
                 echo '<td class="td2>';
-                echo '<p class="information">', $row['product_mei'],'</p><br>';
-                echo '<p class="information">',$row['shop_mei'],'</><br>';
-                echo '<pclass="information"><font color="red">','￥',$row['tanka'],'</font></p>';
+                echo '<p class="information">', $row['product_mei'], '<br>';
+                echo $row['shop_mei'], '<br>';
+                echo '<font color="red">','￥',$row['tanka'],'</font>';
+                echo '<form method="post">';
+                echo '<input type="hidden" name="product_id" value="',$row['product_id'],'">';
+                echo '<button type="submit" name="delete">削除する</button>';
+                echo '</p></form>';
                 echo '</td></tr>';
             }
         ?>
