@@ -30,7 +30,7 @@
                     $sql=$pdo->query('select * from cart where member_id = '. $_POST['id']);
                     foreach($sql as $row){
                         $id = $row['product_id'];
-                        $sql2 = $pdo->query('select * from product where product_id = '. $_POST['id']);
+                        $sql2 = $pdo->query('select * from product where product_id = '. $row['product_id']);
                         $row2 = $sql2->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
                         echo '<tr>';
                         echo '<td class="table-center">', $row['product_id'], '</td>';
