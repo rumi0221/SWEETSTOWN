@@ -22,6 +22,7 @@ require 'db-connect.php';
     </div>
     <br>
     <br>
+    <br>
     <div class="favorite">
     <?php
         $pdo = new PDO($connect, USER, PASS);
@@ -122,15 +123,15 @@ require 'db-connect.php';
         foreach($sql as $row){
             echo '<tr><td class="td1">';
             echo '<a href="detail.php?product_id=', $row['product_id'], '">';
-            echo '<img src="img/', $row['gazou'], '" width="100px" alt="商品画像">';
+            echo '<img src="img/', $row['gazou'], '" width="200px" alt="商品画像">';
             echo '</a></td>';
-            echo '<td class="td2"><p>', $row['product_mei'], '</p>';
+            echo '<td class="td2"><p class="promei">', $row['product_mei'], '</p>';
             $shopmei=$pdo->prepare('select * from shop where shop_code = ?');
                 $shopmei->execute([$row['shop_code']]);
                 foreach($shopmei as $ewe){
                     echo '<p>',$ewe['shop_mei'],'</p>';
                 }
-                echo '<p>','￥',$row['tanka'],'</p>';
+                echo '<p class="price">','￥',$row['tanka'],'</p>';
                 echo '<br>';
                 echo '<td></tr>';
         }

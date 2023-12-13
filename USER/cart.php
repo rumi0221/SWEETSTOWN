@@ -1,5 +1,17 @@
 <?php session_start();?>
 <?php require 'db-connect.php'; ?>
+<?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST['n'])) {
+            if($_POST['n'] != 0){
+                header('Location: order-infomation.php'); 
+                exit();
+            }else{
+                echo 'データが１件も入っていません';
+            }
+        } 
+    }
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -24,17 +36,34 @@
         $pdo=new PDO($connect,USER,PASS);
         if(isset($_POST['add_to_cart'])) {
             $productId = $_POST['product_id'];
-            $sil=$pdo->prepare('update cart set su = su + 1 where member_id = ? and product_id = ?');
-            $sil->execute([$_SESSION['member']['member_id'],$productId]);
+            $zai=$pdo->prepare('select * from product where product_id = ?');
+            $zai->execute([$productId]);
+            $zako=$pdo->prepare('select * from cart where datetime = "0000-00-00 00:00:00" and member_id = ? and product_id = ?');
+            $zako->execute([$_SESSION['member']['member_id'],$productId]);
+            foreach($zai as $yuk){
+                foreach($zako as $ymk){
+                    if($ymk['su'] < $yuk['zaiko']){
+                        $sil=$pdo->prepare('update cart set su = su + 1 where datetime = "0000-00-00 00:00:00" and member_id = ? and product_id = ?');
+                        $sil->execute([$_SESSION['member']['member_id'],$productId]);
+                    }
+                }
+            }
         }
         if(isset($_POST['remove_from_cart'])) {
             $productId = $_POST['product_id'];
-            $sil=$pdo->prepare('update cart set su = su - 1 where member_id = ? and product_id = ?');
-            $sil->execute([$_SESSION['member']['member_id'],$productId]);
+            $nba=$pdo->prepare('select * from cart where datetime = "0000-00-00 00:00:00" and member_id = ? and product_id = ?');
+            $nba->execute([$_SESSION['member']['member_id'],$productId]);
+            foreach($nba as $gun){
+                if($gun['su'] > 1){
+                    $productId = $_POST['product_id'];
+                    $sil=$pdo->prepare('update cart set su = su - 1 where datetime = "0000-00-00 00:00:00" and member_id = ? and product_id = ?');
+                    $sil->execute([$_SESSION['member']['member_id'],$productId]);
+                }
+            }
         }
         if(isset($_POST['delete'])) {
             $productId = $_POST['product_id'];
-            $sil=$pdo->prepare('delete from cart where member_id = ? and product_id = ?');
+            $sil=$pdo->prepare('delete from cart where datetime = "0000-00-00 00:00:00" and member_id = ? and product_id = ?');
             $sil->execute([$_SESSION['member']['member_id'],$productId]);
         }
         $sql=$pdo->prepare('select * from cart where datetime = "0000-00-00 00:00:00" and member_id = ?');
@@ -99,7 +128,8 @@
         }
         echo '<p>商品合計　￥',$total,'</p>';
     ?>
-    <form action="order-infomation.php" method="post">
+    <form method="post">
+        <input type="hidden" name="n" value="<?= $count ?>">
         <button class="button2" >レジへ進む</button>
     </form>
     </div>

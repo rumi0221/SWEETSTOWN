@@ -18,7 +18,7 @@
     <p><img alt="img" src="img/check.png"></p>
     <div id="app">
     <span class="checkmark002"><br><br>
-    <a href="login-input.php">ログイン画面へ</a>
+    <a href="login.php">ログイン画面へ</a>
     <br><br>
     </div>
 </body>

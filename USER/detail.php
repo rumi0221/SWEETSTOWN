@@ -13,7 +13,6 @@
 </head>
 <body>
     <div class="Header">
-      <a style="left: 0;top: 0;position: absolute;" onclick="history.back()"><i class="fas fa-angle-left fa-2x"></i></a>
         SWEETSTOWN
       </div>
       <?php
@@ -59,11 +58,15 @@
           if($count != 0){
             //0じゃない⇒登録済み
             //黒ハート
+            echo '<div class="container">';
             echo '<button type="submit" name="favorite" value=1><i class="fa-solid fa-heart fa-2x"></i></button>';
+            echo '</div>';
           }else{
             //0⇒未登録
             //白ハート
+            echo '<div class="container">';
             echo '<button type="submit" name="favorite" value=0><i class="fa-regular fa-heart fa-2x"></i></button>';
+            echo '</div>';
           }
           echo '</form>';
           // if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['favorite'])) {
@@ -80,9 +83,13 @@
           //   }
           // }
           echo '<div class="shohin2">';
-          echo '<form method="post">';
-          echo '<a href="cart.php" class="btn btn-tag"><i class="fas fa-shopping-cart"></i>カートに入れる</a>';
-          echo '</form>';
+          if($row['zaiko'] >= 1){
+            echo '<form method="post">';
+            echo '<button type="submit" name="car"><i class="fas fa-shopping-cart"></i>カートに入れる</button>';
+            echo '</form>';
+          }else{
+            echo '<div class="error">この商品は在庫がありません</div>';
+          }
           echo '<br>';
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['car'])) {
             $col=$pdo->prepare('select * from cart where datetime="0000-00-00 00:00:00" and member_id=? and product_id=?');
@@ -98,7 +105,7 @@
           }
 
           echo '<p>',$row['setumei'],'</p>';
-          echo '<button class="searchbutton" onclick="location.href=\'reviewlist.php?id=' . $set . '\'">レビュー</button><br>';
+          echo '<button class="searchbutton" onclick="location.href=\'reviewlist.php?id=' . $set . '\'">レビュー</button><br>'; 
           $spl=$pdo->prepare('select * from product where product_id <> ? and product_type = ?');
           $spl->execute([$row['product_id'],$row['product_type']]);
           echo '<table>';
@@ -111,7 +118,7 @@
                 echo '<tr>';
             }
             echo '<td style="width:200px; margin-top: 0;">';
-            echo '<a href="detail.php?product_id=',$mow['product_id'],'"><img src="img/',$mow['gazou'],'" height="50px"></a>';
+            echo '<a href="detail.php?product_id=',$row['product_id'],'"><img src="img/',$row['gazou'],'" height="50px"></a>';
             echo '<br>',$row['product_mei'],'<br>','<font color="red">','¥',$row['tanka'],'</font>';
             echo '</td>';
             if($count==3){

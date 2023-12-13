@@ -10,6 +10,7 @@
 <body>
     <div class="Header">
         <link rel="stylesheet" href="CSS/header.css">
+        <link rel="stylesheet" href="CSS/ranking.css">
         <link rel="stylesheet" href="CSS/menu.css">
         SWEETSTOWN
     </div>
@@ -18,34 +19,37 @@
     <br><br>
 
     <h1>ランキング</h1>
-    <hr width="90%" noshade><br>
-        <?php
-            echo '<br>';
-            $pdo=new PDO($connect,USER,PASS);
-            $sql=$pdo->query('select * from product where delete_flg <> 1 && rank <= 10 && rank != 0 ORDER BY rank');
-            echo '<form action="customer-infomation.php" method="POST">';
-            $i = 1;
-                foreach ($sql as $row) {
-                    echo '<div class="item">';
-                    echo '<img src="img/ranking', $i ,'.png"' . ($row['rank']) . '.png" alt="　" width="20%" height="20%">';
+    <hr width="90%" noshade>
+    <br><br>
 
-                    echo '<div class="ranking">';
-                    echo '<a href="detail.php?product_id=',$row['product_id'],'" class="information"><img style=height="45px" width="25px" src=img/', $row['gazou'], '></a>', '<br>';
-                    echo '<section>';
-                    echo '<a href="detail.php" class="information">', '　', $row['product_mei'], '</a>', '<br>';
-                    $sql2= $pdo->query('select * from shop where shop_code = '. $row['shop_code']);
-                    $row2 = $sql2-> fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
-                    echo '<a href="detail.php" class="information">', '　', $row2['shop_mei'], '</a>', '<br>';
-                    echo '<a href="detail.php" class="information">', '<font color="red">', '　', '￥', $row['tanka'], '</font>', '</a>';
-                    echo '<br><br>';
-                    echo '</section></div></div>';
-                    $i++;
-                }
-        ?>
-
+        <table>
+            <?php
+                $pdo=new PDO($connect,USER,PASS);
+                $sql=$pdo->query('select * from product where delete_flg <> 1 && rank <= 10 && rank != 0 ORDER BY rank');
+                $i = 1;
+                    foreach ($sql as $row) {
+                        echo '<tr>';
+                        echo '<td class="td1">';
+                        echo '<img class="rank" src="img/ranking', $i ,'.png" alt="　" />';
+                        echo '</td>';
+                        echo '<td class="td2">';
+                        echo '<img>'; 
+                        echo '<a href="detail.php?product_id=', $row['product_id'], '">';
+                        echo '<img class="img" src="img/', $row['gazou'], '"></a>';
+                        echo '</td>';
+                        echo '<td class="td3">';
+                        echo '<p class="information">', $row['product_mei'], '</p>';
+                        $sql2= $pdo->query('select * from shop where shop_code = '. $row['shop_code']);
+                        $row2 = $sql2-> fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
+                        echo '<p class="information">', $row2['shop_mei'], '</p>';
+                        echo '<p class="information"><font color="red">', '￥', $row['tanka'], '</font>', '</p>';
+                        echo '</td></tr>';
+                        $i++;
+                    }
+            ?>
+        </table>
 
     <br><br><br><br><br>
-        <hr>
     <footer><?php require 'menu.php';?></footer>
 </body>
 </html>

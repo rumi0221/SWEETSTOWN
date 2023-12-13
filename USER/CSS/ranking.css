@@ -2,47 +2,47 @@ h1 {
     text-align: center;
 }
 
-p {
-    font-size: 18px;
+table {
+    margin: auto;
+    width: 400px;
 }
 
-.ranking {
-    text-align: left;
-    font-size: 25px;
-    display:flex;
-    width:12em;
-    margin:0 auto;
+.td1 {
+    width: 50px;
+    height: auto;
 }
-    .item{
-    display: flex;
-    grid: 1fr / 1fr 2fr;
-    margin: 16px;
-    }
-    .item img{
-    height: 75px;
-    }
-    .item_detail{
-    padding: 0 16px ;
-    }
-    .item_detail .item_name{
-    font-size: larger;
-    font-weight: bold;
-    }
-    .item_detail .shop_name{
-    font-size: large;
-    }
-    .item_detail .price{
-    color: red;
-    }
+
+.td2 {
+    width: auto;
+    height: 150px;
+}
+
+.td3 {
+    width: 200px;
+    height: auto;
+    padding-left: 10px;
+}
+
+.rank{
+    margin-top: 0;
+    height: 30px;
+    width: auto;
+}
+
+.img {
+    width: 150px;
+    height: auto;
+}
+
 
 /* ShiftキーとF5キーで強制的に更新できる */
 .information {
     color: #000000;
     text-decoration: none;
-    width: 50px;
+    /* width: 50px; */
 }
 
-
+/* 
 .menu {
     position:fixed;
     bottom: 0;
@@ -51,4 +51,4 @@ p {
     display: block;
     text-align: center;
     background-color: #fff8e8;
-}
+} */

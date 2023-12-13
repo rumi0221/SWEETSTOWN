@@ -1,11 +1,11 @@
 .table-size {
-    width: 300px;
+    width: 400px;
 }
 
-.td1 {
-    width: 40%;
+.promei {
+    font-weight: bold;
 }
 
-.td2 {
-    width: 60%;
+.price {
+    color: red;
 }
