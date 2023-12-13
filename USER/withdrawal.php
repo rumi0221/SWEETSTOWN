@@ -35,7 +35,8 @@ session_destroy();
     <br>
     <br>
     <div class="withdrawal">
-        <h2>●退会手続き</h2>
+        <h1>●退会手続き</h1>
+        <hr noshade><br>
         <p class="withp">「退会する」ボタンを押すと<br>
             退会が完了いたします。<br>
             本当に退会してもよろしいですか？</p>
@@ -43,10 +44,10 @@ session_destroy();
         
             <div class="withbutton">
                 <form action="others.php" method="post">
-                <input type="submit" name="cancel" value="キャンセル" style="width:80px;height:40px">
+                <input type="submit" name="cancel" value="キャンセル" style="width:100px;height:50px">
                 </form>
                 <form action="withdrawal-ok.php" method="post">
-                <input type="submit" name="withdraw" value="退会する" style="width:80px;height:40px" class="with">
+                <input type="submit" name="withdraw" value="退会する" style="width:100px;height:50px" class="with">
                 </form>
             </div>
     </div>
