@@ -25,7 +25,7 @@
 
         <p><button type="submit">確認画面へ</button></p>
 
-        <a href="#" onclick="history.back(-1);return false;">戻る</a>
+        <a href="login.php">戻る</a>
        
     </div>
     </form>
