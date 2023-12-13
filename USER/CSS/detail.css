@@ -118,3 +118,6 @@ html {
     text-align: center;
     letter-spacing: 0;
   }
+  .container {
+    text-align: right;
+  }

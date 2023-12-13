@@ -59,11 +59,15 @@
           if($count != 0){
             //0じゃない⇒登録済み
             //黒ハート
+            echo '<div class="container">';
             echo '<button type="submit" name="favorite" value=1><i class="fa-solid fa-heart fa-2x"></i></button>';
+            echo '</div>';
           }else{
             //0⇒未登録
             //白ハート
+            echo '<div class="container">';
             echo '<button type="submit" name="favorite" value=0><i class="fa-regular fa-heart fa-2x"></i></button>';
+            echo '</div>';
           }
           echo '</form>';
           // if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['favorite'])) {
@@ -81,7 +85,7 @@
           // }
           echo '<div class="shohin2">';
           echo '<form method="post">';
-          echo '<a href="cart.php" class="btn btn-tag"><i class="fas fa-shopping-cart"></i>カートに入れる</a>';
+          echo '<button type="submit" name="car"><i class="fas fa-shopping-cart"></i>カートに入れる</button>';
           echo '</form>';
           echo '<br>';
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['car'])) {
