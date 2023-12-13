@@ -24,15 +24,25 @@
         $pdo=new PDO($connect,USER,PASS);
         if(isset($_POST['add_to_cart'])) {
             $productId = $_POST['product_id'];
-            $sil=$pdo->prepare('update cart set su = su + 1 where datetime = "0000-00-00 00:00:00" and member_id = ? and product_id = ?');
-            $sil->execute([$_SESSION['member']['member_id'],$productId]);
+            $zai=$pdo->prepare('select * from product where product_id = ?');
+            $zai->execute([$productId]);
+            $zako=$pdo->prepare('select * from cart where datetime = "0000-00-00 00:00:00" and member_id = ? and member_id = ? and product_id = ?');
+            $zako->execute([$_SESSION['member']['member_id'],$productId]);
+            foreach($zai as $yuk){
+                foreach($zako as $ymk){
+                    if($ymk['su'] < $yuk['zaiko']){
+                        $sil=$pdo->prepare('update cart set su = su + 1 where datetime = "0000-00-00 00:00:00" and member_id = ? and product_id = ?');
+                        $sil->execute([$_SESSION['member']['member_id'],$productId]);
+                    }
+                }
+            }
         }
         if(isset($_POST['remove_from_cart'])) {
             $productId = $_POST['product_id'];
             $nba=$pdo->prepare('select * from cart where datetime = "0000-00-00 00:00:00" and member_id = ? and product_id = ?');
             $nba->execute([$_SESSION['member']['member_id'],$productId]);
             foreach($nba as $gun){
-                if($gun['su'] != 0){
+                if($gun['su'] > 1){
                     $productId = $_POST['product_id'];
                     $sil=$pdo->prepare('update cart set su = su - 1 where datetime = "0000-00-00 00:00:00" and member_id = ? and product_id = ?');
                     $sil->execute([$_SESSION['member']['member_id'],$productId]);
