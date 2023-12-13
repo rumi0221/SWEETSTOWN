@@ -38,11 +38,11 @@
                         echo '<img class="img" src="img/', $row['gazou'], '"></a>';
                         echo '</td>';
                         echo '<td class="td3">';
-                        echo '<a href="detail.php" class="information">', $row['product_mei'], '</a>', '<br>';
+                        echo '<p class="information">', $row['product_mei'], '</p>';
                         $sql2= $pdo->query('select * from shop where shop_code = '. $row['shop_code']);
                         $row2 = $sql2-> fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
-                        echo '<a href="detail.php" class="information">', $row2['shop_mei'], '</a>', '<br>';
-                        echo '<a href="detail.php" class="information">', '<font color="red">', '￥', $row['tanka'], '</font>', '</a>';
+                        echo '<p class="information">', $row2['shop_mei'], '</p>';
+                        echo '<p class="information"><font color="red">', '￥', $row['tanka'], '</font>', '</p>';
                         echo '</td></tr>';
                         $i++;
                     }
