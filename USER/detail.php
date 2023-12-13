@@ -83,9 +83,13 @@
           //   }
           // }
           echo '<div class="shohin2">';
-          echo '<form method="post">';
-          echo '<button type="submit" name="car"><i class="fas fa-shopping-cart"></i>カートに入れる</button>';
-          echo '</form>';
+          if($row['zaiko'] >= 1){
+            echo '<form method="post">';
+            echo '<button type="submit" name="car"><i class="fas fa-shopping-cart"></i>カートに入れる</button>';
+            echo '</form>';
+          }else{
+            echo '<div class="error">この商品は在庫がありません</div>';
+          }
           echo '<br>';
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['car'])) {
             $col=$pdo->prepare('select * from cart where datetime="0000-00-00 00:00:00" and member_id=? and product_id=?');

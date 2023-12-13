@@ -33,6 +33,7 @@ p{
 .error{
     top:200px;
     color:rgb(255, 0, 0);
+    font-size: 200%;
 }
 
 .searchbutton{
