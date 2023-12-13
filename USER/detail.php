@@ -85,7 +85,7 @@
           // }
           echo '<div class="shohin2">';
           echo '<form method="post">';
-          echo '<a href="cart.php" class="btn btn-tag"><i class="fas fa-shopping-cart"></i>カートに入れる</a>';
+          echo '<button type="submit" name="car"><i class="fas fa-shopping-cart"></i>カートに入れる</button>';
           echo '</form>';
           echo '<br>';
           if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['car'])) {
