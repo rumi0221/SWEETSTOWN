@@ -26,7 +26,7 @@
             $productId = $_POST['product_id'];
             $zai=$pdo->prepare('select * from product where product_id = ?');
             $zai->execute([$productId]);
-            $zako=$pdo->prepare('select * from cart where datetime = "0000-00-00 00:00:00" and member_id = ? and member_id = ? and product_id = ?');
+            $zako=$pdo->prepare('select * from cart where datetime = "0000-00-00 00:00:00" and member_id = ? and product_id = ?');
             $zako->execute([$_SESSION['member']['member_id'],$productId]);
             foreach($zai as $yuk){
                 foreach($zako as $ymk){
