@@ -24,6 +24,7 @@
             foreach($sql as $row){
                 if($i == 0){
                     echo '<button class="searchbutton" onclick="location.href=\'searchlist.php?shop=' . $row['shop_code'] . '\'"  style="margin-top:50px;">'.$row['shop_mei'].'</button><br>';
+                    $i = 1;
                 }else{
                     echo '<button class="searchbutton" onclick="location.href=\'searchlist.php?shop=' . $row['shop_code'] . '\'">'.$row['shop_mei'].'</button><br>';
                 }
