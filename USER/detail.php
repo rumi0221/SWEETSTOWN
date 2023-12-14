@@ -100,7 +100,7 @@
             }else{
               $ddd=$pdo->prepare('insert into cart values(default,?,?,1)');
               $ddd->execute([$_SESSION['member']['member_id'],$set]);
-              echo '<div>商品を追加しました','</div>';
+              echo '<div class="tree">商品を追加しました','</div>';
             }
           }
 
