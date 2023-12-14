@@ -19,7 +19,7 @@ session_start();
             margin-top: 20px;
         }
     </style>
-    <title>退会画面</title>
+    <title>ログアウト画面</title>
 </head>
 <body>
     <div class="Header">
@@ -29,11 +29,11 @@ session_start();
     <br>
     <br>
     <div class="withdrawal">
-        <h1>●退会手続き</h1>
+        <h1>●ログアウト手続き</h1>
         <hr noshade><br>
-        <p class="withp">「退会する」ボタンを押すと<br>
-            退会が完了いたします。<br>
-            本当に退会してもよろしいですか？</p>
+        <p class="withp">「ログアウトする」ボタンを押すと<br>
+            ログアウトが完了いたします。<br>
+            本当にログアウトしてもよろしいですか？</p>
         
         
             <div class="withbutton">
@@ -41,7 +41,7 @@ session_start();
                 <input type="submit" name="cancel" value="キャンセル" style="width:100px;height:50px">
                 </form>
                 <form action="withdrawal-ok.php" method="post">
-                <input type="submit" name="withdraw" value="退会する" style="width:100px;height:50px" class="with">
+                <input type="submit" name="withdraw" value="ログアウトする" style="width:100px;height:50px" class="with">
                 </form>
             </div>
     </div>
