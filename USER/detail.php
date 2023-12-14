@@ -85,7 +85,8 @@
           echo '<div class="shohin2">';
           if($row['zaiko'] >= 1){
             echo '<form method="post">';
-            echo '<button type="submit" name="car"><i class="fas fa-shopping-cart"></i>カートに入れる</button>';
+            // echo '<button class="cartin" type="submit" name="car"><i class="fas fa-shopping-cart"></i>カートに入れる</button>';
+            echo '<button class="cartin" type="submit" name="car">カートに入れる</button>';
             echo '</form>';
           }else{
             echo '<div class="error">この商品は在庫がありません</div>';
