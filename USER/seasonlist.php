@@ -23,7 +23,7 @@
     <?php
         echo '<br>';
         $pdo=new PDO($connect,USER,PASS);
-        $sql=$pdo->query('select * from product');
+        $sql=$pdo->query('select * from product where season_flg = 1');
         echo '<form action="customer-infomation.php" method="POST">';
         foreach ($sql as $row) {
             echo '<tr>';
