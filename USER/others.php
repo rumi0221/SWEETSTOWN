@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form method="post">
                 <button class="etc" type="submit" name="button1" value="購入履歴">購入履歴</button>
                 <button class="etc" type="submit" name="button2" value="会員情報確認・変更">会員情報確認・変更</button>
-                <button class="etc" type="submit" name="button3" value="退会">退会</button>
+                <button class="etc" type="submit" name="button3" value="退会">ログアウト</button>
             </form>
         </div>
         <footer><?php require 'menu.php';?></footer>
