@@ -33,7 +33,7 @@
                         echo '<img class="rank" src="img/ranking', $i ,'.png" alt="　" />';
                         echo '</td>';
                         echo '<td class="td2">';
-                        echo '<img>'; 
+                        // echo '<img>'; 
                         echo '<a href="detail.php?product_id=', $row['product_id'], '">';
                         echo '<img class="img" src="img/', $row['gazou'], '"></a>';
                         echo '</td>';

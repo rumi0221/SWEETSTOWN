@@ -10,18 +10,37 @@ h1 {
     float: left;
 }
 
-section {
+/* section {
     font-size: 19px; 
     float: left;
+    width: 200px;
+    height: auto;
+    padding-left: 10px;
+} */
+
+.td1 {
+    width: auto;
+    height: 150px;
 }
 
-.seasonlist {
+.td2 {
+    width: 200px;
+    height: auto;
+    padding-left: 10px;
+}
+
+.img {
+    width: 150px;
+    height: auto;
+}
+
+/* .seasonlist {
     text-align: left;
     font-size: 20px;
     display:flex;
     width:10em;
     margin:0 auto;
-}
+} */
 
 /* ShiftキーとF5キーで強制的に更新できる */
 .information {

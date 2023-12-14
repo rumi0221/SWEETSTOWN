@@ -19,24 +19,29 @@
     <h1>季節のスイーツ</h1>
     <hr width="90%" noshade><br>
 
+<table>
     <?php
         echo '<br>';
         $pdo=new PDO($connect,USER,PASS);
         $sql=$pdo->query('select * from product');
         echo '<form action="customer-infomation.php" method="POST">';
         foreach ($sql as $row) {
-            echo '<div class="seasonlist">';
-            echo '<a href="detail.php?product_id=',$row['product_id'],'" class="information"><img src="img/', $row['gazou'], '" height="50px"></a>', '<br>';
-            echo '<section>';
-            echo '<a href="detail.php" class="information">', '　', $row['product_mei'], '</a>', '<br>';
+            echo '<tr>';
+            echo '<td class="td1">';
+            echo '<a href="detail.php?product_id=',$row['product_id'],'">';
+            echo '<img class="img" src="img/', $row['gazou'], '"></a><br>';
+            echo '</td>';
+            echo '<td class="td2">';
+            echo '<a href="detail.php?product_id=',$row['product_id'],'" class="information">', '　', $row['product_mei'], '</a><br>';
             $sql2= $pdo->query('select * from shop where shop_code = '. $row['shop_code']);
             $row2 = $sql2-> fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
-            echo '<a href="detail.php" class="information">', '　', $row2['shop_mei'], '</a>', '<br>';
-            echo '<a href="detail.php" class="information">', '<font color="red">', '　', '￥', $row['tanka'], '</font>', '</a>';
+            echo '<a href="detail.php?product_id=',$row['product_id'],'" class="information">', '　', $row2['shop_mei'], '</a><br>';
+            echo '<a href="detail.php?product_id=',$row['product_id'],'" class="information">', '<font color="red">', '　', '￥', $row['tanka'], '</font>', '</a>';
             echo '<br><br>';
-            echo '</section></div>';
+            echo '</td></tr>';
         }
     ?>
+</table>
 
     <br><br><br><br><br>
 
