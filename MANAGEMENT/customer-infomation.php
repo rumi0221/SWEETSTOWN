@@ -62,14 +62,14 @@
                         $id = $row['kou_id'];
                         $sql2 = $pdo->query('select * from purchase_history where kou_id = '. $id);
                         foreach($sql2 as $row2){
-                        $sql3 = $pdo->query('select product_mei from product where product_id = '. $row2['product_id']);
-                        $row3 = $sql3->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
-                        echo '<tr>';
-                        echo '<td class="table-center">', $row2['kou_id'], '</td>';
-                        echo '<td class="table-center">', $row2['product_id'], '</td>';
-                        echo '<td>', $row3['product_mei'], '</td>';
-                        echo '<td>', $row['datetime'], '</td>';
-                        echo '</tr>';
+                            $sql3 = $pdo->query('select product_mei from product where product_id = '. $row2['product_id']);
+                            $row3 = $sql3->fetch(PDO::FETCH_BOTH, PDO::FETCH_ORI_LAST);
+                            echo '<tr>';
+                            echo '<td class="table-center">', $row2['kou_id'], '</td>';
+                            echo '<td class="table-center">', $row2['product_id'], '</td>';
+                            echo '<td>', $row3['product_mei'], '</td>';
+                            echo '<td>', $row['datetime'], '</td>';
+                            echo '</tr>';
                         }
                     }
                 ?>
